@@ -33,7 +33,7 @@ export default function Hero() {
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="inline-block hover:scale-105 transition-transform duration-300">Hi,</span>{' '}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">I'm</span>
+              <span className="inline-block hover:scale-105 transition-transform duration-300">I&apos;m</span>
               <br />
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-text">
                 Demarick Webb-Rivera
