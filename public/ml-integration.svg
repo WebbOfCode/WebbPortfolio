@@ -1,0 +1,13 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#581c87"/>
+  <rect x="80" y="80" width="15" height="80" rx="2" fill="#a78bfa" opacity="0.6"/>
+  <rect x="110" y="60" width="15" height="100" rx="2" fill="#a78bfa" opacity="0.7"/>
+  <rect x="140" y="90" width="15" height="70" rx="2" fill="#a78bfa" opacity="0.6"/>
+  <rect x="170" y="50" width="15" height="110" rx="2" fill="#c4b5fd" opacity="0.8"/>
+  <rect x="200" y="70" width="15" height="90" rx="2" fill="#a78bfa" opacity="0.7"/>
+  <rect x="230" y="95" width="15" height="65" rx="2" fill="#a78bfa" opacity="0.6"/>
+  <rect x="260" y="55" width="15" height="105" rx="2" fill="#c4b5fd" opacity="0.8"/>
+  <rect x="290" y="85" width="15" height="75" rx="2" fill="#a78bfa" opacity="0.6"/>
+  <text x="200" y="195" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="bold">ML Integration</text>
+  <text x="200" y="215" text-anchor="middle" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="13">Data Analysis &amp; Prediction</text>
+</svg>

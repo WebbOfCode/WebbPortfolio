@@ -24,26 +24,33 @@ export default function Contact() {
     setIsSubmitting(true)
     
     try {
-      // EmailJS configuration - replace with your actual IDs when ready
+      // Log environment variables for debugging (in development only)
+      console.log('EmailJS Service ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID)
+      console.log('EmailJS Template ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID)
+      
+      // Send email using EmailJS (init is not needed when using send directly)
       const result = await emailjs.send(
-        'service_vtlp32a',       // Your Service ID here
-        'template_ghiu8yb',      // Your Template ID here
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_vtlp32a',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_ghiu8yb',
         {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
-          to_email: 'demarickw104@live.com'
+          reply_to: formData.email,
+          to_email: 'demarickw104@live.com',
+          to_name: 'Demarick Webb-Rivera'
         },
-        'UNKlFMtz9oZIt0Z7a'       // Replace with your EmailJS public key
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'UNKlFMtz9oZIt0Z7a'
       )
       
-      console.log('Email sent successfully:', result.text)
+      console.log('Email sent successfully:', result)
       alert('Thank you for your message! I\'ll get back to you soon.')
       setFormData({ name: '', email: '', subject: '', message: '' })
       
-    } catch (error) {
+    } catch (error: any) {
       console.error('Failed to send email:', error)
+      console.error('Error details:', error.text || error.message)
       alert('Sorry, there was an error sending your message. Please try again or email me directly at demarickw104@live.com')
     } finally {
       setIsSubmitting(false)
@@ -64,22 +71,12 @@ export default function Contact() {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.8 11.025a8.936 8.936 0 003.175 3.175l1.638-3.424a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
-      label: "Phone",
-      value: "(719) 644-3459",
-      link: "tel:+17196443459"
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
       label: "Location",
-      value: "Middle Tennessee State University",
+      value: "Nashville, TN",
       link: null
     }
   ]

@@ -38,7 +38,9 @@ export default function Skills() {
   const otherSkills = [
     "WSL2", "PowerShell", "Bash", "Linux", "Machine Learning", "Data Analysis", 
     "Network Administration", "Cybersecurity", "System Administration", "TCP/UDP Protocols",
-    "Traffic Analysis", "Dashboard Development", "Multi-branch Git", "Remote Connectivity"
+    "Traffic Analysis", "Dashboard Development", "Multi-branch Git", "Remote Connectivity",
+    "DoD Electronic Key Management", "Cisco Hardware (7975, 1140E, 1120SA)", "Classified Networks",
+    "Help Desk Support", "Discrete Mathematics", "Ethics in Computing", "Customer Service"
   ]
 
   return (
@@ -97,30 +99,36 @@ export default function Skills() {
             <h3 className="text-xl font-semibold text-white mb-4">Education</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="text-lg text-blue-400 font-medium">Computer Science Degree</h4>
-                <p className="text-slate-300">University Name</p>
-                <p className="text-slate-400 text-sm">2018 - 2022</p>
+                <h4 className="text-lg text-blue-400 font-medium">Bachelor of Science in Computer Science</h4>
+                <p className="text-slate-300">Middle Tennessee State University - Murfreesboro, TN</p>
+                <p className="text-slate-400 text-sm mb-2">Expected May 2026 | GPA: 3.1</p>
+                <p className="text-slate-400 text-sm">Concentration: Cybersecurity</p>
               </div>
               <div>
-                <h4 className="text-lg text-blue-400 font-medium">Full Stack Development Bootcamp</h4>
-                <p className="text-slate-300">Coding Bootcamp</p>
-                <p className="text-slate-400 text-sm">2022</p>
+                <h4 className="text-lg text-blue-400 font-medium">Associate of Science in Computer Science</h4>
+                <p className="text-slate-300">Nashville State Community College - Nashville, TN</p>
+                <p className="text-slate-400 text-sm">Graduated May 2024</p>
               </div>
             </div>
           </div>
 
           <div className="bg-slate-800 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-white mb-4">Certifications</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">Military Training & Clearance</h3>
             <div className="space-y-4">
               <div>
-                <h4 className="text-lg text-blue-400 font-medium">AWS Certified Developer</h4>
-                <p className="text-slate-300">Amazon Web Services</p>
-                <p className="text-slate-400 text-sm">2023</p>
+                <h4 className="text-lg text-blue-400 font-medium">Secret Security Clearance</h4>
+                <p className="text-slate-300">U.S. Department of Defense</p>
+                <p className="text-slate-400 text-sm">Active</p>
               </div>
               <div>
-                <h4 className="text-lg text-blue-400 font-medium">React Developer Certification</h4>
-                <p className="text-slate-300">Meta</p>
-                <p className="text-slate-400 text-sm">2023</p>
+                <h4 className="text-lg text-blue-400 font-medium">Advanced Skills & Leadership Course, IT</h4>
+                <p className="text-slate-300">Ft. Gordon, GA</p>
+                <p className="text-slate-400 text-sm">U.S. Army</p>
+              </div>
+              <div>
+                <h4 className="text-lg text-blue-400 font-medium">Structured Self-Development Course</h4>
+                <p className="text-slate-300">Ft. Bliss, TX</p>
+                <p className="text-slate-400 text-sm">U.S. Army</p>
               </div>
             </div>
           </div>

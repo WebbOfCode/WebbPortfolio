@@ -39,17 +39,27 @@ export default function Projects() {
       title: "🔐 Network Security Tools",
       description: "Collection of networking and security tools including socket programming, SSH configurations, Wireshark analysis, Nmap scanning, and port proxying implementations.",
       technologies: ["Python", "C++", "Wireshark", "Nmap", "SSH", "Socket Programming"],
-      image: "/security-tools.svg",
+      image: "/project-placeholder.svg",
+      liveUrl: "https://github.com/WebbOfCode",
+      githubUrl: "https://github.com/WebbOfCode",
+      featured: false
+    },
+    {
+      id: 4,
+      title: "� Network Security Tools",
+      description: "Collection of networking and security tools including socket programming, SSH configurations, Wireshark analysis, Nmap scanning, and port proxying implementations.",
+      technologies: ["Python", "C++", "Wireshark", "Nmap", "SSH", "Socket Programming"],
+      image: "/project-placeholder.svg",
       liveUrl: "https://github.com/WebbOfCode",
       githubUrl: "https://github.com/WebbOfCode",
       featured: false
     },
     {
       id: 5,
-      title: "📊 Data & ML Integration",
+      title: "�📊 Data & ML Integration",
       description: "Python backends with traffic prediction models and dashboard visualization. Includes data analysis, machine learning model integration, and real-time data processing.",
       technologies: ["Python", "Machine Learning", "Data Analysis", "Visualization", "Backend"],
-      image: "/ml-integration.svg",
+      image: "/project-placeholder.svg",
       liveUrl: "https://github.com/WebbOfCode",
       githubUrl: "https://github.com/WebbOfCode",
       featured: false
@@ -59,7 +69,7 @@ export default function Projects() {
       title: "🌐 Portfolio Website",
       description: "This very portfolio website showcasing responsive design, smooth animations, and modern web practices. Built with Next.js, TypeScript, and Tailwind CSS.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-      image: "/portfolio-site.svg",
+      image: "/project-placeholder.svg",
       liveUrl: "#",
       githubUrl: "https://github.com/WebbOfCode/portfolio",
       featured: false
@@ -69,7 +79,7 @@ export default function Projects() {
       title: "⚙️ System Administration",
       description: "Advanced systems work including WSL2 configurations, PowerShell scripting, Bash automation, and cross-platform development environments.",
       technologies: ["WSL2", "PowerShell", "Bash", "Linux", "System Admin", "DevOps"],
-      image: "/sysadmin.svg",
+      image: "/project-placeholder.svg",
       liveUrl: "https://github.com/WebbOfCode",
       githubUrl: "https://github.com/WebbOfCode",
       featured: false

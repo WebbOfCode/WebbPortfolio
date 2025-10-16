@@ -27,7 +27,7 @@ export default function Navigation() {
                 height={40}
                 className="rounded-lg"
               />
-              <span className="text-xl font-bold text-white hidden sm:block">Webb-Rivera</span>
+              <span className="text-xl font-bold text-white hidden sm:block">DWR | Dev Portfolio</span>
             </a>
           </div>
 
@@ -44,9 +44,8 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="/resumewebb-1.docx"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/ResumeWebb-1.docx"
+                download="Demarick_Webb_Resume.docx"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 Resume
@@ -87,9 +86,8 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="/resumewebb-1.docx"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/ResumeWebb-1.docx"
+                download="Demarick_Webb_Resume.docx"
                 className="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
               >
                 Resume

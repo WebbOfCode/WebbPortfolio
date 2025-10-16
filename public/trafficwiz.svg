@@ -1,0 +1,9 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#6b46c1"/>
+  <circle cx="200" cy="90" r="40" fill="#a855f7" opacity="0.3"/>
+  <circle cx="200" cy="90" r="30" fill="#a855f7" opacity="0.5"/>
+  <circle cx="200" cy="90" r="20" fill="#ffffff"/>
+  <rect x="195" y="115" width="10" height="60" rx="2" fill="#374151"/>
+  <text x="200" y="200" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">TrafficWiz</text>
+  <text x="200" y="220" text-anchor="middle" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="14">ML Traffic Analysis</text>
+</svg>
