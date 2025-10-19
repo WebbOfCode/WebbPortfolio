@@ -1,103 +1,149 @@
 'use client'
 
+//nb importing the usual suspects
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useTypewriter } from '@/hooks/useTypewriter'
+import { getFeatureFlags } from '@/config/features'
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
+    // bb keeping track of feature toggles
+  const [featureFlags, setFeatureFlags] = useState(() => getFeatureFlags())
+  
+      // this typewriter effect took forever to get right
+  const { displayText: taglineText, isComplete: taglineComplete } = useTypewriter(
+    "Turning caffeine into code since 2014", 
+    50, 
+    1000
+  )
+  
+  // //////bghgjgn second typewriter for the punchline
+  const { displayText: specializationText } = useTypewriter(
+    ". Army networks to Nashville bars, now (attempting to) build stuff that doesn't break at 2am.", 
+    40, 
+    taglineComplete ? 500 : 5000 // TODO: maybe make this delay configurable?
+  )
 
   useEffect(() => {
     setMounted(true)
+        // Update feature flags on mount
+    setFeatureFlags(getFeatureFlags())
   }, [])
 
   return (
     <section id="hero" className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Animated background gradient */}
+      {/* //nb animated background that looks cool */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-purple-900/20 animate-gradient-shift"></div>
       
-      {/* Floating particles effect */}
+      {/* floating particle things - keeping this simple because it works */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
+          // TODO: maybe add more particles? or is this enough
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+          {/* // bb main text content side */}
           <div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium backdrop-blur-sm animate-pulse-slow">
-                🎖️ Army Veteran | 🎓 CS Student | 💻 Full-Stack Dev
-              </span>
+              <div className="bg-slate-900/80 border-l-2 border-cyan-400 px-4 py-2 font-mono text-sm">
+                <span className="text-slate-400">$ </span>
+                <span className="text-cyan-400">whoami</span>
+                <span className="text-slate-500 ml-2">// Army Veteran | Cybersecurity Developer</span>
+              </div>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Hi,</span>{' '}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">I&apos;m</span>
+            {/* //////bghgjgn big name display */}
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
+              <span className="inline-block hover:scale-105 transition-transform duration-300">Demarick</span>{' '}
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-text">
-                Demarick Webb-Rivera
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Webb-Rivera
               </span>
             </h1>
             
-            <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-              Transforming{' '}
-              <span className="text-blue-400 font-semibold">military precision</span>
-              {' '}into{' '}
-              <span className="text-purple-400 font-semibold">cutting-edge code</span>
-              . Specializing in cybersecurity, full-stack development, and network architecture.
-            </p>
+            <div className="text-xl text-slate-300 mb-8 leading-relaxed min-h-[3.5rem]">
+              <span className="text-cyan-400 font-medium">
+                {taglineText}
+              </span>
+              <span className="text-slate-300">
+                {specializationText}
+              </span>
+              {/* //nb blinking cursor for typewriter effect */}
+              {(!taglineComplete || specializationText.length < 70) && (
+                <span className="inline-block w-0.5 h-6 bg-cyan-400 ml-1 animate-pulse"></span>
+              )}
+            </div>
             
+               // call to action buttons
             <div className="flex flex-wrap gap-4">
               <a
                 href="#projects"
-                className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 hover:scale-105"
               >
-                <span className="relative z-10 flex items-center">
-                  View My Work
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                View Projects
+                  {/* // this animation timing feels right but might tweak later */}
+                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-250" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </a>
               
+              {/* bartender button - only shows when feature flag is on */}
+              {featureFlags.showBartenderServices && (
+                <Link
+                  href="/bartender"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-medium hover:from-amber-600 hover:to-orange-700 transition-all duration-350 hover:scale-105"
+                >
+                  Bartender Services
+                    // //////bghgjgn different timing for variety
+                  <svg className="ml-2 w-5 h-5 transition-transform duration-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M5 12V7a1 1 0 011-1h1V4a2 2 0 114 0v2h1a1 1 0 011 1v5a6 6 0 01-12 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"/>
+                  </svg>
+                </Link>
+              )}
+              
+                  // simple contact button
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-medium rounded-lg hover:border-blue-500 hover:text-white hover:bg-blue-500/10 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-medium hover:border-cyan-500 hover:text-white transition-all duration-300 hover:scale-105"
               >
                 Get In Touch
               </a>
             </div>
           </div>
 
-          {/* Headshot & Logo Side */}
+          {/* //nb image and stats side */}
           <div className={`transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative">
-              {/* Main profile circle with animated rings */}
+              {/* // main profile circle with spinning rings that look sick */}
               <div className="relative w-80 h-80 mx-auto">
-                {/* Animated rings */}
+                {/* //////bghgjgn animated ring effects */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 animate-spin-slow opacity-75 blur-md"></div>
                 <div className="absolute inset-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 animate-spin-slower opacity-50 blur-lg"></div>
                 
-                {/* Inner container */}
+                  // actual image container
                 <div className="absolute inset-4 rounded-full bg-slate-900 border-4 border-slate-800 overflow-hidden shadow-2xl">
-                  {/* Headshot placeholder - PUT YOUR IMAGE HERE */}
+                  {/* TODO: maybe add dark mode toggle? idk */}
                   <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
                     <Image
                       src="/logo dwr com.png"
                       alt="Demarick Webb-Rivera"
                       width={300}
                       height={300}
+                        // hover effects that took way too long to perfect
                       className="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-300 hover:scale-110 transform transition-transform duration-500"
                     />
                   </div>
                 </div>
 
-                {/* Floating tech badges */}
+                {/* //nb floating tech skill badges */}
                 <div className="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slow">
                   Python
                 </div>
+                    // purple is my favorite color
                 <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slower">
                   C++
                 </div>
@@ -106,17 +152,20 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Stats cards */}
+              {/* // stats cards section - still tweaking the alignment */}
               <div className="grid grid-cols-3 gap-4 mt-8">
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-blue-500 transition-all duration-300 hover:scale-105">
+                   {/* //////bghgjgn first card slightly higher */}
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-blue-500 transition-all duration-350 hover:scale-105 transform translate-y-1">
                   <div className="text-2xl font-bold text-blue-400">4+</div>
                   <div className="text-xs text-slate-400">Years Military IT</div>
                 </div>
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-purple-500 transition-all duration-300 hover:scale-105">
+                    // middle card normal positioning
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-purple-500 transition-all duration-250 hover:scale-105">
                   <div className="text-2xl font-bold text-purple-400">7+</div>
                   <div className="text-xs text-slate-400">Projects Built</div>
                 </div>
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-pink-500 transition-all duration-300 hover:scale-105">
+                  // last card slightly lower for that authentic feel
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-pink-500 transition-all duration-400 hover:scale-105 transform -translate-y-0.5">
                   <div className="text-2xl font-bold text-pink-400">3.1</div>
                   <div className="text-xs text-slate-400">GPA @ MTSU</div>
                 </div>

@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 
 export default function About() {
+      // //////bghgjgn experience timeline - mix of military/tech/bartending  
   const experience = [
     {
       title: "Help Desk Team Chief",
@@ -14,6 +17,7 @@ export default function About() {
       period: "2014 - 2016",
       description: "Maintained and troubleshot network devices (switches, routers, firewalls). Ensured secure communications using DoD electronic key management systems. Performed installations and preventive maintenance on cybersecurity devices."
     },
+          // bartending keeps the bills paid while in school
     {
       title: "Bartender Team Lead",
       company: "Nashville Symphony, Bridgestone Arena, Nissan Stadium",
@@ -21,10 +25,16 @@ export default function About() {
       description: "Managed high-volume bar operations at major event venues. Trained and supervised staff to ensure efficiency and top-tier customer service. Maintained compliance with alcohol service regulations and venue policies."
     },
     {
-      title: "Computer Science Student",
+      title: "Bachelor's in Computer Science",
       company: "Middle Tennessee State University",
-      period: "May 2026",
+      period: "2024 - May 2026",
       description: "Bachelor of Science in Computer Science with Cybersecurity concentration (3.1 GPA). Coursework: Linux Essentials for Cybersecurity, Data Algorithms & Structures, Python for Business Applications, Data Analysis, Ethics and Computing Technology."
+    },
+    {
+      title: "Associate of Science - Computer Science", 
+      company: "Nashville State Community College",
+      period: "Jan 2022 - May 2024",
+      description: "Completed Associate degree in Computer Science. Built foundational knowledge in programming fundamentals, data structures, algorithms, and system administration while transitioning from military to civilian tech career."
     }
   ]
 
@@ -32,61 +42,95 @@ export default function About() {
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          {/* Small subtle headshot - out of the way */}
-          <div className="flex justify-center mb-6">
-            <div className="w-24 h-24 rounded-full border-2 border-slate-700 overflow-hidden shadow-lg opacity-80 hover:opacity-100 transition-opacity">
-              <Image
-                src="/headshot.jpg"
-                alt="Demarick Webb-Rivera"
-                width={96}
-                height={96}
-                className="object-cover w-full h-full"
-              />
+        // geometric pattern with my actual photo
+          <div className="flex justify-center mb-8">
+            <div className="relative">
+              <div className="w-32 h-32 relative">
+                    // layered rotating borders for visual interest
+                <div className="absolute inset-0 border border-slate-600 rounded-sm rotate-12 opacity-20"></div>
+                <div className="absolute inset-2 border border-blue-500 rounded-sm rotate-45 opacity-40"></div>
+                <div className="absolute inset-4 border border-cyan-400 rounded-sm opacity-60"></div>
+                <div className="w-20 h-20 absolute top-6 left-6 rounded-full border-2 border-slate-700 overflow-hidden shadow-lg opacity-90 hover:opacity-100 transition-opacity">
+                  <Image
+                    src="/headshot.jpg"
+                    alt="Demarick Webb-Rivera"
+                    width={80}
+                    height={80}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-            I&apos;m Demarick Webb-Rivera, a dedicated IT professional with experience in help desk support, cybersecurity, 
-            and network troubleshooting. Army veteran turned Computer Science student at MTSU. When I&apos;m not working on tech projects, 
-            you&apos;ll find me spending quality time with my wife and family, cheering for the Florida State Seminoles, catching live concerts, 
-            exploring nature, or watching football with friends.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About</h2>
+          
+          <div className="bg-slate-900/50 border-l-4 border-cyan-400 px-8 py-6 max-w-4xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed font-light">
+              Army veteran building secure, scalable systems.<br/>
+              <span className="text-cyan-400">Currently studying CS at MTSU</span> with a cybersecurity focus.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Bio */}
           <div>
-            <h3 className="text-2xl font-semibold text-white mb-6">My Story</h3>
-            <div className="space-y-4 text-slate-300">
-              <p>
-                My journey began as an Information Technology Specialist in the U.S. Army (2014-2018), where I served 
-                as a Help Desk Team Chief in Colorado Springs and Information Systems Maintainer in Daegu, South Korea. 
-                I led over 5,000 network moves, adds, and changes while managing $750,000 in communications equipment 
-                with zero losses. I hold a Secret Security Clearance and developed strong leadership, problem-solving, 
-                and customer service skills through both IT and hospitality roles.
-              </p>
-              <p>
-                Currently pursuing a Bachelor of Science in Computer Science at Middle Tennessee State University 
-                (3.1 GPA, expected May 2026) with a concentration in Cybersecurity. I also earned my Associate of 
-                Science in Computer Science from Nashville State Community College in May 2024. My technical foundation 
-                includes coursework in Linux Essentials for Cybersecurity, Data Algorithms & Structures, Python for 
-                Business Applications, Security Plus, Penetration Testing and Ethical Hacking, and Data Analysis.
-              </p>
-              <p>
-                My military experience includes maintaining and troubleshooting network infrastructure (enterprise switches, 
-                routers, firewalls), ensuring secure communications using government encryption and key management systems, 
-                and performing installations on cybersecurity devices. I supported both classified and unclassified networks, 
-                managing enterprise VoIP phone systems and wireless access points. I completed Advanced Skills & Leadership 
-                Course in IT at Ft. Gordon, GA and Structured Self-Development Course at Ft. Bliss, TX.
-              </p>
-              <p>
-                Beyond tech, what matters most is spending time with my wife and family. I&apos;m also a die-hard 
-                Florida State Seminoles fan 🍢 — nothing beats game day! I love getting outdoors for hiking and 
-                nature photography, hitting up live concerts and music festivals, and gathering with friends to 
-                watch football. Life&apos;s about balance: code hard, play harder, and cherish the moments with 
-                loved ones.
-              </p>
+            <h3 className="text-2xl font-semibold text-white mb-8">My Story</h3>
+            
+            <div className="space-y-8 text-slate-300">
+              
+              <div className="mb-8">
+                <h4 className="text-cyan-400 font-semibold mb-3">Military Foundation</h4>
+                <p className="text-slate-300 leading-relaxed">
+                  Four years as an Army IT Specialist taught me that reliable systems aren't built by chance. 
+                  I managed classified networks across two continents, handled $750K in critical infrastructure, 
+                  and learned that security isn't just a feature—it's the foundation everything else relies on.
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <h4 className="text-cyan-400 font-semibold mb-3">Academic Foundation</h4>
+                <p className="text-slate-300 leading-relaxed">
+                  Completed Associate of Science in Computer Science at Nashville State Community College (Jan 2022 - May 2024). 
+                  Currently pursuing Bachelor's in Computer Science with cybersecurity concentration at MTSU. 
+                  Military discipline translates directly to systematic debugging, secure coding practices, and deadline-driven development cycles.
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <h4 className="text-cyan-400 font-semibold mb-3">How I Debug</h4>
+                <p className="text-slate-300 leading-relaxed">
+                  I debug like I troubleshoot Army networks - systematically, coffee-fueled, until it works. 
+                  Break it down, Google the weird error, try stuff until something clicks. 
+                  Usually works around 2am with enough caffeine.
+                </p>
+              </div>
+
+              <div className="mb-8">
+                <h4 className="text-cyan-400 font-semibold mb-3">Beyond Code</h4>
+                <p className="text-slate-300 leading-relaxed">
+                  Behind the bar at Nashville's biggest venues, I've learned to read people, handle pressure, 
+                  and deliver under chaos. FSU Seminoles bleed through my veins on Saturdays. 
+                  Live music feeds the soul, good food fuels the grind, and art keeps the mind creative. 
+                  Family anchors everything - they're my why for all the late nights coding and studying.
+                </p>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-slate-700">
+                <div className="flex flex-wrap gap-3">
+                  <span className="px-3 py-1 bg-slate-800 text-cyan-400 text-sm rounded-full border border-slate-600">Bartending</span>
+                  <span 
+                    className="px-3 py-1 bg-slate-800 text-cyan-400 text-sm rounded-full border border-slate-600 hover:bg-garnet-600 transition-colors cursor-pointer" 
+                    onMouseEnter={() => console.log('Go Noles 🍢')}
+                  >
+                    FSU Football
+                  </span>
+                  <span className="px-3 py-1 bg-slate-800 text-cyan-400 text-sm rounded-full border border-slate-600">Live Music</span>
+                  <span className="px-3 py-1 bg-slate-800 text-cyan-400 text-sm rounded-full border border-slate-600">Photography</span>
+                </div>
+              </div>
+              
             </div>
             
             {/* Download Resume Button */}
