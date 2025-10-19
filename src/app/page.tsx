@@ -9,11 +9,6 @@ import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 
 export default function Home() {
-  // little easter egg for the curious devs 
-  if (typeof window !== 'undefined') {
-    console.log("if you're reading this, we should talk 🤝")
-  }
-
   return (
     <main className="min-h-screen bg-black">
       <ScrollProgress />

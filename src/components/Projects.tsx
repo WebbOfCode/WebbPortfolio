@@ -104,7 +104,6 @@ export default function Projects() {
           <div className="grid md:grid-cols-2 gap-8">
             {projects.filter(project => project.featured).map((project, index) => (
               <div key={project.id} className={`bg-slate-900 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl ${
-                // make the TrafficWiz card slightly wider - still tweaking this layout
                 index === 0 ? 'transform translate-x-1 md:w-[calc(100%+4px)]' : ''
               }`}>
                 <div className="relative group overflow-hidden">

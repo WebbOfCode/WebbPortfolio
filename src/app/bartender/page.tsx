@@ -172,7 +172,7 @@ export default function BartenderPage() {
               </h1>
               <p className="text-xl mb-8 leading-relaxed" style={{color: '#5d4e37'}}>
                 At DeMix Cocktail Co, we transform your gatherings into extraordinary experiences. 
-                From Nashville's premier venues to intimate celebrations, our artisanal approach 
+                From Nashville&apos;s premier venues to intimate celebrations, our artisanal approach 
                 to mixology creates unforgettable moments that your guests will treasure.
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
@@ -311,7 +311,7 @@ export default function BartenderPage() {
               Moments That Matter
             </h2>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed" style={{color: '#5d4e37'}}>
-              Every event tells a story. Here's what our clients say about their DeMix Cocktail Co experience 
+              Every event tells a story. Here&apos;s what our clients say about their DeMix Cocktail Co experience 
               and how we helped make their celebrations truly unforgettable.
             </p>
           </div>
@@ -337,7 +337,7 @@ export default function BartenderPage() {
                   ))}
                 </div>
                 <blockquote className="italic text-center leading-relaxed" style={{color: '#6b7280'}}>
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </blockquote>
               </div>
             ))}
@@ -489,7 +489,7 @@ export default function BartenderPage() {
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-block mb-6">
             <span className="bg-white/10 text-white px-6 py-3 rounded-full text-sm font-semibold border border-white/20">
-              ✨ Let's Create Magic Together
+              ✨ Let&apos;s Create Magic Together
             </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{fontFamily: 'serif'}}>
@@ -497,7 +497,7 @@ export default function BartenderPage() {
             <span className="block" style={{color: '#d4af37'}}>Your Celebration?</span>
           </h2>
           <p className="text-xl mb-12 max-w-3xl mx-auto leading-relaxed" style={{color: '#f5f5f0'}}>
-            Every exceptional event begins with a conversation. Let's discuss your vision and craft 
+            Every exceptional event begins with a conversation. Let&apos;s discuss your vision and craft 
             a bespoke cocktail experience that will leave your guests with memories to treasure forever.
           </p>
           
@@ -510,7 +510,7 @@ export default function BartenderPage() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2" style={{fontFamily: 'serif'}}>Get In Touch</h3>
-                <p style={{color: '#f5f5f0'}}>Let's start planning your perfect event</p>
+                <p style={{color: '#f5f5f0'}}>Let&apos;s start planning your perfect event</p>
               </div>
               <div className="space-y-4 text-center">
                 <div style={{color: '#f5f5f0'}}>
@@ -531,7 +531,7 @@ export default function BartenderPage() {
                     <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2" style={{fontFamily: 'serif'}}>What's Included</h3>
+                <h3 className="text-2xl font-bold text-white mb-2" style={{fontFamily: 'serif'}}>What&apos;s Included</h3>
                 <p style={{color: '#f5f5f0'}}>Every experience comes with</p>
               </div>
               <div className="space-y-3 text-center" style={{color: '#f5f5f0'}}>

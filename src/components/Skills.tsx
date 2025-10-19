@@ -3,6 +3,9 @@
 import { useInView } from '@/hooks/useInView'
 
 export default function Skills() {
+  // Use the hook at the top level
+  const [ref, isInView] = useInView(0.3, '-50px')
+
   const skillCategories = [
     {
       title: "Programming Languages",
@@ -70,19 +73,14 @@ export default function Skills() {
         </div>
 
         {/* Technical Skills with Progress Bars */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {skillCategories.map((category, categoryIndex) => {
-            // Each category gets its own intersection observer for staggered animations
-            const [ref, isInView] = useInView(0.3, '-50px')
-            
-            return (
-              <div 
-                key={categoryIndex} 
-                ref={ref}
-                className={`bg-slate-900/30 backdrop-blur-sm border border-slate-700/40 rounded-xl p-8 hover:border-cyan-400/30 transition-all duration-700 group hover:shadow-lg hover:shadow-cyan-500/10 ${
-                  isInView 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-8'
+        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {skillCategories.map((category, categoryIndex) => (
+            <div 
+              key={categoryIndex}
+              className={`bg-slate-900/30 backdrop-blur-sm border border-slate-700/40 rounded-xl p-8 hover:border-cyan-400/30 transition-all duration-700 group hover:shadow-lg hover:shadow-cyan-500/10 ${
+                isInView 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
                 }`}
                 style={{ 
                   transitionDelay: `${categoryIndex * 200}ms` // Staggered appearance
@@ -116,8 +114,7 @@ export default function Skills() {
                   ))}
                 </div>
               </div>
-            )
-          })}
+            ))}
         </div>
 
         {/* Additional Skills */}

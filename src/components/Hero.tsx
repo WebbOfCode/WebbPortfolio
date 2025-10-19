@@ -9,8 +9,8 @@ import { getFeatureFlags } from '@/config/features'
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
-    // bb keeping track of feature toggles
-  const [featureFlags, setFeatureFlags] = useState(() => getFeatureFlags())
+    // bb keeping track of feature toggles - initialize with defaults to avoid hydration issues
+  const [featureFlags, setFeatureFlags] = useState({ showBartenderServices: false })
   
       // this typewriter effect took forever to get right
   const { displayText: taglineText, isComplete: taglineComplete } = useTypewriter(
@@ -21,7 +21,7 @@ export default function Hero() {
   
   // //////bghgjgn second typewriter for the punchline
   const { displayText: specializationText } = useTypewriter(
-    ". Army networks to Nashville bars, now (attempting to) build stuff that doesn't break at 2am.", 
+    ". Army networks to Nashville's biggest bars, now (attempting to) build stuff that doesn't break at 2am.", 
     40, 
     taglineComplete ? 500 : 5000 // TODO: maybe make this delay configurable?
   )
@@ -40,19 +40,19 @@ export default function Hero() {
       {/* floating particle things - keeping this simple because it works */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
-          // TODO: maybe add more particles? or is this enough
+          {/* TODO: maybe add more particles? or is this enough */}
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* // bb main text content side */}
+          {/* bb main text content side */}
           <div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="inline-block mb-4">
               <div className="bg-slate-900/80 border-l-2 border-cyan-400 px-4 py-2 font-mono text-sm">
                 <span className="text-slate-400">$ </span>
-                <span className="text-cyan-400">whoami</span>
-                <span className="text-slate-500 ml-2">// Army Veteran | Cybersecurity Developer</span>
+                <span className="text-cyan-400">WhoAmI</span>
+                <span className="text-slate-500 ml-2"># US Army Veteran | Full Stack Developer</span>
               </div>
             </div>
             
@@ -78,7 +78,7 @@ export default function Hero() {
               )}
             </div>
             
-               // call to action buttons
+            {/* call to action buttons */}
             <div className="flex flex-wrap gap-4">
               <a
                 href="#projects"
@@ -98,14 +98,14 @@ export default function Hero() {
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-medium hover:from-amber-600 hover:to-orange-700 transition-all duration-350 hover:scale-105"
                 >
                   Bartender Services
-                    // //////bghgjgn different timing for variety
+                  {/* //////bghgjgn different timing for variety */}
                   <svg className="ml-2 w-5 h-5 transition-transform duration-400" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M5 12V7a1 1 0 011-1h1V4a2 2 0 114 0v2h1a1 1 0 011 1v5a6 6 0 01-12 0zm6 0a1 1 0 11-2 0 1 1 0 012 0z"/>
                   </svg>
                 </Link>
               )}
               
-                  // simple contact button
+              {/* simple contact button */}
               <a
                 href="#contact"
                 className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-medium hover:border-cyan-500 hover:text-white transition-all duration-300 hover:scale-105"
@@ -124,7 +124,7 @@ export default function Hero() {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 animate-spin-slow opacity-75 blur-md"></div>
                 <div className="absolute inset-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 animate-spin-slower opacity-50 blur-lg"></div>
                 
-                  // actual image container
+                {/* actual image container */}
                 <div className="absolute inset-4 rounded-full bg-slate-900 border-4 border-slate-800 overflow-hidden shadow-2xl">
                   {/* TODO: maybe add dark mode toggle? idk */}
                   <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center">
@@ -133,7 +133,6 @@ export default function Hero() {
                       alt="Demarick Webb-Rivera"
                       width={300}
                       height={300}
-                        // hover effects that took way too long to perfect
                       className="object-cover w-full h-full opacity-90 hover:opacity-100 transition-opacity duration-300 hover:scale-110 transform transition-transform duration-500"
                     />
                   </div>
@@ -143,7 +142,7 @@ export default function Hero() {
                 <div className="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slow">
                   Python
                 </div>
-                    // purple is my favorite color
+                {/* purple is my favorite color */}
                 <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slower">
                   C++
                 </div>
@@ -154,17 +153,17 @@ export default function Hero() {
 
               {/* // stats cards section - still tweaking the alignment */}
               <div className="grid grid-cols-3 gap-4 mt-8">
-                   {/* //////bghgjgn first card slightly higher */}
+                {/* //////bghgjgn first card slightly higher */}
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-blue-500 transition-all duration-350 hover:scale-105 transform translate-y-1">
                   <div className="text-2xl font-bold text-blue-400">4+</div>
                   <div className="text-xs text-slate-400">Years Military IT</div>
                 </div>
-                    // middle card normal positioning
+                {/* middle card normal positioning */}
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-purple-500 transition-all duration-250 hover:scale-105">
                   <div className="text-2xl font-bold text-purple-400">7+</div>
                   <div className="text-xs text-slate-400">Projects Built</div>
                 </div>
-                  // last card slightly lower for that authentic feel
+                {/* last card slightly lower for that authentic feel */}
                 <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-pink-500 transition-all duration-400 hover:scale-105 transform -translate-y-0.5">
                   <div className="text-2xl font-bold text-pink-400">3.1</div>
                   <div className="text-xs text-slate-400">GPA @ MTSU</div>

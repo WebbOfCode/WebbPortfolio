@@ -42,11 +42,11 @@ export default function About() {
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-        // geometric pattern with my actual photo
+          {/* geometric pattern with my actual photo */}
           <div className="flex justify-center mb-8">
             <div className="relative">
               <div className="w-32 h-32 relative">
-                    // layered rotating borders for visual interest
+                {/* layered rotating borders for visual interest */}
                 <div className="absolute inset-0 border border-slate-600 rounded-sm rotate-12 opacity-20"></div>
                 <div className="absolute inset-2 border border-blue-500 rounded-sm rotate-45 opacity-40"></div>
                 <div className="absolute inset-4 border border-cyan-400 rounded-sm opacity-60"></div>
@@ -83,9 +83,9 @@ export default function About() {
               <div className="mb-8">
                 <h4 className="text-cyan-400 font-semibold mb-3">Military Foundation</h4>
                 <p className="text-slate-300 leading-relaxed">
-                  Four years as an Army IT Specialist taught me that reliable systems aren't built by chance. 
+                  Four years as an Army IT Specialist taught me that reliable systems aren&apos;t built by chance. 
                   I managed classified networks across two continents, handled $750K in critical infrastructure, 
-                  and learned that security isn't just a feature—it's the foundation everything else relies on.
+                  and learned that security isn&apos;t just a feature—it&apos;s the foundation everything else relies on.
                 </p>
               </div>
 
@@ -93,7 +93,7 @@ export default function About() {
                 <h4 className="text-cyan-400 font-semibold mb-3">Academic Foundation</h4>
                 <p className="text-slate-300 leading-relaxed">
                   Completed Associate of Science in Computer Science at Nashville State Community College (Jan 2022 - May 2024). 
-                  Currently pursuing Bachelor's in Computer Science with cybersecurity concentration at MTSU. 
+                  Currently pursuing Bachelor&apos;s in Computer Science with cybersecurity concentration at MTSU. 
                   Military discipline translates directly to systematic debugging, secure coding practices, and deadline-driven development cycles.
                 </p>
               </div>
@@ -110,10 +110,10 @@ export default function About() {
               <div className="mb-8">
                 <h4 className="text-cyan-400 font-semibold mb-3">Beyond Code</h4>
                 <p className="text-slate-300 leading-relaxed">
-                  Behind the bar at Nashville's biggest venues, I've learned to read people, handle pressure, 
+                  Behind the bar at Nashville&apos;s biggest venues, I&apos;ve learned to read people, handle pressure, 
                   and deliver under chaos. FSU Seminoles bleed through my veins on Saturdays. 
                   Live music feeds the soul, good food fuels the grind, and art keeps the mind creative. 
-                  Family anchors everything - they're my why for all the late nights coding and studying.
+                  Family anchors everything - they&apos;re my why for all the late nights coding and studying.
                 </p>
               </div>
               

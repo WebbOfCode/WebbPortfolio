@@ -139,7 +139,7 @@ export default function Contact() {
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-slate-400 leading-relaxed">
-              Got a project? Need someone who won't ghost you? Let's talk.
+              Got a project? Need someone who won&apos;t ghost you? Let&apos;s talk.
             </p>
           </div>
         </div>
