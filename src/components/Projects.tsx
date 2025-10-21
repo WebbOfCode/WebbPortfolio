@@ -40,7 +40,7 @@ export default function Projects() {
       description: "PantryMate — AI-powered food inventory tracker that helps people see what's in their pantry, plan meals, and reduce food waste.",
       technologies: ["Python", "React", "AI", "Barcode Scanner"],
       image: "/pantrymate.svg",
-      liveUrl: "https://github.com/WebbOfCode/PantryMate",
+      liveUrl: "https://pantry-mate-khaki.vercel.app/",
       githubUrl: "https://github.com/WebbOfCode/PantryMate",
       featured: true
     },
