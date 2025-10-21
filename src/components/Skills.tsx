@@ -10,11 +10,11 @@ export default function Skills() {
     {
       title: "Programming Languages",
       skills: [
-        { name: "Python", level: 87, color: "bg-gradient-to-r from-blue-400 to-blue-500" }, // honestly use this daily
-        { name: "C++", level: 79, color: "bg-gradient-to-r from-blue-600 to-indigo-600" }, // still figuring out pointers sometimes
+  { name: "Python", level: 87, color: "bg-gradient-to-r from-amber-400 to-amber-500" }, // honestly use this daily
+  { name: "C++", level: 79, color: "bg-gradient-to-r from-slate-600 to-emerald-600" }, // still figuring out pointers sometimes
         { name: "JavaScript", level: 83, color: "bg-gradient-to-r from-yellow-500 to-yellow-400" }, // async/await is my friend
-        { name: "React", level: 76, color: "bg-gradient-to-r from-cyan-400 to-blue-500" }, // hooks make sense now
-        { name: "SQL", level: 82, color: "bg-gradient-to-r from-blue-700 to-blue-600" }, // JOIN queries all day
+  { name: "React", level: 76, color: "bg-gradient-to-r from-emerald-400 to-amber-500" }, // hooks make sense now
+  { name: "SQL", level: 82, color: "bg-gradient-to-r from-slate-600 to-slate-500" }, // JOIN queries all day
         { name: "HTML/CSS", level: 89, color: "bg-gradient-to-r from-orange-500 to-red-500" }, // flexbox wizard
       ]
     },
@@ -22,11 +22,11 @@ export default function Skills() {
       title: "Real World Tools", // what I actually use
       skills: [
         { name: "Git", level: 88, color: "bg-gradient-to-r from-red-600 to-orange-500" }, // merge conflicts happen
-        { name: "VS Code", level: 93, color: "bg-gradient-to-r from-blue-600 to-cyan-500" }, // extensions galore  
-        { name: "Vite", level: 74, color: "bg-gradient-to-r from-purple-500 to-purple-400" }, // fast builds
+  { name: "VS Code", level: 93, color: "bg-gradient-to-r from-emerald-500 to-amber-400" }, // extensions galore  
+  { name: "Vite", level: 74, color: "bg-gradient-to-r from-slate-500 to-slate-400" }, // fast builds
         { name: "Node.js", level: 71, color: "bg-gradient-to-r from-green-600 to-green-500" }, // backend stuff
         { name: "Next.js", level: 72, color: "bg-gradient-to-r from-slate-100 to-slate-300" }, // this portfolio runs on it
-        { name: "Tailwind CSS", level: 84, color: "bg-gradient-to-r from-teal-500 to-cyan-400" }, // utility classes FTW
+  { name: "Tailwind CSS", level: 84, color: "bg-gradient-to-r from-amber-300 to-emerald-300" }, // utility classes FTW
       ]
     },
     {
@@ -34,10 +34,10 @@ export default function Skills() {
       skills: [
         { name: "Socket Programming", level: 88, color: "bg-gradient-to-r from-green-500 to-green-400" },
         { name: "SSH", level: 90, color: "bg-gradient-to-r from-slate-600 to-slate-500" },
-        { name: "Wireshark", level: 82, color: "bg-gradient-to-r from-blue-500 to-blue-400" },
+  { name: "Wireshark", level: 82, color: "bg-gradient-to-r from-slate-600 to-slate-500" },
         { name: "Nmap", level: 85, color: "bg-gradient-to-r from-red-500 to-red-400" },
         { name: "Port Proxying", level: 80, color: "bg-gradient-to-r from-yellow-600 to-yellow-500" },
-        { name: "TCP/IP", level: 87, color: "bg-gradient-to-r from-purple-600 to-purple-500" },
+  { name: "TCP/IP", level: 87, color: "bg-gradient-to-r from-slate-600 to-emerald-500" },
       ]
     },
     {
@@ -48,7 +48,7 @@ export default function Skills() {
         { name: "High-Pressure Management", level: 90, color: "bg-gradient-to-r from-orange-600 to-orange-500" },
         { name: "Customer Relations", level: 88, color: "bg-gradient-to-r from-green-600 to-green-500" },
         { name: "Military Operations", level: 95, color: "bg-gradient-to-r from-slate-600 to-slate-500" },
-        { name: "Problem Solving", level: 93, color: "bg-gradient-to-r from-purple-600 to-purple-500" },
+  { name: "Problem Solving", level: 93, color: "bg-gradient-to-r from-amber-400 to-emerald-400" },
       ]
     }
   ]
@@ -65,72 +65,44 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">
-            Technologies and tools I work with to build secure, scalable solutions.
-          </p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-[Inter] text-white mb-3">Core Strengths</h2>
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto">Short, scannable focus areas — what I reach for first when solving problems.</p>
         </div>
 
-        {/* Technical Skills with Progress Bars */}
-        <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {skillCategories.map((category, categoryIndex) => (
-            <div 
-              key={categoryIndex}
-              className={`bg-slate-900/30 backdrop-blur-sm border border-slate-700/40 rounded-xl p-8 hover:border-cyan-400/30 transition-all duration-700 group hover:shadow-lg hover:shadow-cyan-500/10 ${
-                isInView 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-                }`}
-                style={{ 
-                  transitionDelay: `${categoryIndex * 200}ms` // Staggered appearance
-                }}
-              >
-                <h3 className="text-lg font-semibold text-slate-200 mb-6 text-center group-hover:text-cyan-300 transition-colors duration-300">{category.title}</h3>
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-slate-300 font-medium">{skill.name}</span>
-                        <span className={`text-cyan-400 text-sm transition-all duration-500 ${
-                          isInView ? 'opacity-100' : 'opacity-0'
-                        }`}>
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full bg-slate-800/60 rounded-full h-2 overflow-hidden mb-4">
-                        <div
-                          className={`h-2 rounded-full ${skill.color} transition-all duration-1200 ease-out transform origin-left shadow-sm ${
-                            // python bar gets a slight tweak - been adjusting this one manually
-                            skill.name === 'Python' ? 'h-2.5' : ''
-                          }`}
-                          style={{ 
-                            width: isInView ? `${skill.level}%` : '0%',
-                            transitionDelay: `${(skillIndex * 100) + (categoryIndex * 200)}ms`
-                          }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-        </div>
+          <div className="grid sm:grid-cols-3 gap-6 mb-12">
+          <div className="bg-slate-900/30 border border-slate-700/40 rounded-md p-6">
+            <h4 className="text-sm text-amber-300 font-semibold mb-3">Core Languages</h4>
+            <ul className="space-y-2 text-slate-300 text-sm">
+              <li>Python</li>
+              <li>C++</li>
+              <li>JavaScript</li>
+              <li>SQL</li>
+            </ul>
+          </div>
 
-        {/* Additional Skills */}
-        <div className="bg-slate-800/50 p-8 rounded-lg">
-          <h3 className="text-2xl font-semibold text-white mb-6 text-center">Additional Skills</h3>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {otherSkills.map((skill, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 transition-colors duration-200"
-              >
-                {skill}
-              </span>
-            ))}
+          <div className="bg-slate-900/30 border border-slate-700/40 rounded-md p-6">
+            <h4 className="text-sm text-amber-300 font-semibold mb-3">Frameworks &amp; Tools</h4>
+            <ul className="space-y-2 text-slate-300 text-sm">
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Tailwind</li>
+              <li>Git / VS Code</li>
+            </ul>
+          </div>
+
+          <div className="bg-slate-900/30 border border-slate-700/40 rounded-md p-6">
+            <h4 className="text-sm text-amber-300 font-semibold mb-3">Security &amp; Networking</h4>
+            <ul className="space-y-2 text-slate-300 text-sm">
+              <li>SSH</li>
+              <li>Wireshark</li>
+              <li>Nmap</li>
+              <li>Socket Programming</li>
+            </ul>
           </div>
         </div>
+
+        <div className="text-sm text-slate-400 italic mb-8">Military discipline + bartender hustle = dependable, people-first engineering.</div>
 
         {/* Credentials and Training */}
         <div className="mt-16 grid md:grid-cols-2 gap-8">

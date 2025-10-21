@@ -40,7 +40,7 @@ export default function ScrollProgress() {
       {/* Progress bar */}
       <div className="fixed top-0 left-0 w-full h-1 bg-slate-800/50 z-50">
         <div 
-          className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-600 transition-all duration-150 ease-out"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -51,7 +51,7 @@ export default function ScrollProgress() {
           <div className="relative">
             <div className="w-12 h-12 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-600 flex items-center justify-center">
               <svg 
-                className="w-6 h-6 text-blue-400 transform -rotate-90" 
+                className="w-6 h-6 text-amber-300 transform -rotate-90" 
                 viewBox="0 0 36 36"
               >
                 <path

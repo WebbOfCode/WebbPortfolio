@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 384" width="640" height="384" role="img" aria-label="PantryMate logo: jar and barcode">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8f6f0"/>
+      <stop offset="1" stop-color="#fff7ed"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="1" stop-color="#b8941f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded rectangle -->
+  <rect width="100%" height="100%" rx="24" fill="url(#g1)" />
+
+  <!-- Jar body -->
+  <g transform="translate(80,48)">
+    <rect x="48" y="40" width="256" height="224" rx="28" fill="#ffffff" stroke="#e6e2d8" stroke-width="6" />
+
+    <!-- Label -->
+    <rect x="84" y="120" width="188" height="96" rx="12" fill="#fff8ef" stroke="#efe6d6" stroke-width="3" />
+
+    <!-- Simplified barcode on label -->
+    <g transform="translate(100,140)" fill="#3b7960">
+      <rect x="0" y="0" width="6" height="64"/>
+      <rect x="12" y="0" width="4" height="64"/>
+      <rect x="20" y="0" width="10" height="64"/>
+      <rect x="34" y="0" width="5" height="64"/>
+      <rect x="44" y="0" width="3" height="64"/>
+      <rect x="50" y="0" width="8" height="64"/>
+    </g>
+
+    <!-- Spoon icon overlapping jar -->
+    <g transform="translate(260,40) rotate(18 24 24)" fill="#8fbc8f">
+      <rect x="0" y="0" width="16" height="84" rx="8" />
+      <ellipse cx="8" cy="96" rx="20" ry="12" fill="#d4af37" />
+    </g>
+
+    <!-- Lid -->
+    <rect x="36" y="12" width="272" height="36" rx="10" fill="url(#g2)" stroke="#cda533" stroke-width="2" />
+    <rect x="56" y="20" width="232" height="8" rx="4" fill="#fff" opacity="0.18" />
+
+    <!-- Decorative grains/beans inside jar -->
+    <g transform="translate(100,80)" fill="#b29a59" opacity="0.85">
+      <circle cx="12" cy="10" r="4"/>
+      <circle cx="38" cy="24" r="3"/>
+      <circle cx="64" cy="14" r="4"/>
+      <circle cx="96" cy="36" r="3"/>
+      <circle cx="140" cy="18" r="4"/>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(360,240)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="28" fill="#2c1810" font-weight="700">PantryMate</text>
+    <text x="0" y="28" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6b7280">inventory • meals • reduce waste</text>
+  </g>
+</svg>

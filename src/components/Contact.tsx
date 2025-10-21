@@ -135,7 +135,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-6">
-            Get In Touch
+            Lets Get In Touch
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-slate-400 leading-relaxed">
@@ -161,7 +161,7 @@ export default function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-400/50 focus:bg-slate-800/80 transition-all duration-200"
+                    className="w-full px-4 py-3 bg-slate-800/60 border border-slate-600/50 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none focus:border-amber-400/50 focus:bg-slate-800/80 transition-all duration-200"
                     placeholder="Your Name"
                   />
                 </div>
@@ -214,7 +214,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white py-3 px-6 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-amber-400/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
               >
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
@@ -224,20 +224,20 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-slate-900/30 backdrop-blur-sm border border-slate-700/40 rounded-xl p-8">
-              <h3 className="text-xl font-semibold text-slate-200 mb-6">Contact Information</h3>
+              <h3 className="text-xl font-semibold text-slate-200 mb-6">Contact Info</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center space-x-4">
-                    <div className="text-cyan-400 bg-slate-800/50 p-2 rounded-lg">
+                    <div className="text-amber-400 bg-slate-800/50 p-2 rounded-lg">
                       {info.icon}
                     </div>
                     <div>
                       <div className="text-slate-300 text-sm">{info.label}</div>
                       {info.link ? (
                         <a
-                          href={info.link}
-                          className="text-slate-200 hover:text-cyan-400 transition-colors duration-200 font-medium"
-                        >
+                            href={info.link}
+                            className="text-slate-200 hover:text-amber-300 transition-colors duration-200 font-medium"
+                          >
                           {info.value}
                         </a>
                       ) : (
@@ -272,14 +272,14 @@ export default function Contact() {
             {/* Quick Response Note */}
             <div className="bg-slate-900/20 border border-slate-600/30 rounded-xl p-6">
               <div className="flex items-start space-x-3">
-                <svg className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-amber-300 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h4 className="text-cyan-400 font-medium mb-1">Quick Response</h4>
+                  <h4 className="text-amber-300 font-medium mb-1">Quick Response</h4>
                   <p className="text-slate-400 text-sm">
                     I typically respond to emails within 24 hours. For urgent matters, 
-                    feel free to reach out on LinkedIn.
+                    feel free to reach out to me on LinkedIn and I will respond ASAP.
                   </p>
                 </div>
               </div>

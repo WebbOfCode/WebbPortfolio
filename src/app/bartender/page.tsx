@@ -414,7 +414,7 @@ export default function BartenderPage() {
 
             {/* Cocktail 4 - Seasonal Special */}
             <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-50 flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-stone-100 to-amber-50 flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-32 h-32 mx-auto mb-6 rounded-full flex items-center justify-center" style={{backgroundColor: '#f8f8f8', border: '3px solid #d4af37'}}>
                     <svg className="w-16 h-16" style={{color: '#d4af37'}} fill="currentColor" viewBox="0 0 24 24">

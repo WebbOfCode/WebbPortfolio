@@ -5,9 +5,9 @@ import Image from 'next/image'
 export default function Projects() {
   const projects = [
     {
-      id: 1,
+      id: 0,
       title: "🚦 TrafficWiz",
-      description: "Built this while bartending Titans games - Nashville traffic data meets ML. Purple theme because why not. Predicts traffic better than my ability to predict if customers will tip.",
+      description: "Built this for Database Management Capstone project - Nashville traffic data meets ML. Predicts traffic better than my ability to predict if customers will tip using multiple APIs.",
       technologies: ["React", "Python", "Machine Learning", "SQL", "Dashboard", "Git"],
       image: "/trafficwiz.svg",
       liveUrl: "https://github.com/WebbOfCode/TrafficWiz",
@@ -15,7 +15,7 @@ export default function Projects() {
       featured: true
     },
     {
-      id: 2,
+      id: 1,
       title: "🔒 Safe URL Checker",
       description: "Checks if URLs are sketchy or not. Made it after falling for one too many 'you won a free iPhone' links. Works surprisingly well.",
       technologies: ["Next.js", "TypeScript", "Security", "API Integration", "Vercel"],
@@ -25,13 +25,23 @@ export default function Projects() {
       featured: true
     },
     {
-      id: 3,
+      id: 2,
       title: " Chat-Room MTSU",
-      description: "C++ chat app for class. Two people can talk to each other. Revolutionary stuff. Actually got it working from my iPad to PC using SSH, which felt pretty cool.",
+      description: "C++ chat app for class. Two people can talk to each other across different devices. Revolutionary stuff lol. I actually got it working from my iPad to PC using SSH, which felt pretty rewarding.",
       technologies: ["C++", "TCP Sockets", "Networking", "SSH", "Real-time Communication"],
       image: "/chatroom.svg",
       liveUrl: "https://github.com/WebbOfCode/Chat-Room-MTSU",
       githubUrl: "https://github.com/WebbOfCode/Chat-Room-MTSU",
+      featured: true
+    },
+    {
+      id: 3,
+      title: "PantryMate",
+      description: "PantryMate — AI-powered food inventory tracker that helps people see what's in their pantry, plan meals, and reduce food waste.",
+      technologies: ["Python", "React", "AI", "Barcode Scanner"],
+      image: "/pantrymate.svg",
+      liveUrl: "https://github.com/WebbOfCode/PantryMate",
+      githubUrl: "https://github.com/WebbOfCode/PantryMate",
       featured: true
     },
     {
@@ -121,15 +131,15 @@ export default function Projects() {
                     {/* Top: Quick stats */}
                     <div className="flex justify-between items-start">
                       <div className="bg-black/50 backdrop-blur-sm rounded-full px-3 py-1 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
-                        <span className="text-white text-xs font-medium">
+                          <span className="text-white text-xs font-medium">
                           {project.technologies.length} Technologies
                         </span>
                       </div>
-                      <div className="bg-green-500/20 backdrop-blur-sm rounded-full px-3 py-1 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
-                        <span className="text-green-400 text-xs font-medium">
-                          ✓ {project.featured ? 'Featured' : 'Production'}
-                        </span>
-                      </div>
+                        <div className="bg-emerald-500/20 backdrop-blur-sm rounded-full px-3 py-1 transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
+                          <span className="text-emerald-300 text-xs font-medium">
+                            ✓ {project.featured ? 'Featured' : 'Production'}
+                          </span>
+                        </div>
                     </div>
 
                     {/* Bottom: Action buttons */}
@@ -137,17 +147,17 @@ export default function Projects() {
                       {project.liveUrl !== project.githubUrl && (
                         <button
                           onClick={() => handleLiveDemo(project.liveUrl, project.title)}
-                          className="bg-black border border-green-500/50 text-green-400 hover:bg-green-500/10 hover:border-green-400 px-4 py-2 font-mono text-sm font-medium transition-all duration-200 flex items-center"
+                          className="bg-black border border-amber-500/30 text-amber-300 hover:bg-amber-500/10 hover:border-amber-400 px-4 py-2 font-mono text-sm font-medium transition-all duration-200 flex items-center"
                         >
-                          <span className="text-blue-400 mr-1">$</span>
+                          <span className="text-amber-300 mr-1">$</span>
                           ./run_demo.sh
                         </button>
                       )}
                       <button
                         onClick={() => handleGithubView(project.githubUrl)}
-                        className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-4 py-2 font-mono text-sm font-medium transition-all duration-200 flex items-center"
+                        className="bg-black border border-amber-500/30 text-amber-300 hover:bg-amber-500/10 hover:border-amber-400 px-4 py-2 font-mono text-sm font-medium transition-all duration-200 flex items-center"
                       >
-                        <span className="text-blue-400 mr-1">$</span>
+                        <span className="text-amber-300 mr-1">$</span>
                         ./git_clone.sh
                       </button>
                     </div>
@@ -191,7 +201,7 @@ export default function Projects() {
                       {project.liveUrl !== project.githubUrl && (
                         <button
                           onClick={() => handleLiveDemo(project.liveUrl, project.title)}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs font-medium transition-colors duration-200"
+                          className="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1 rounded text-xs font-medium transition-colors duration-200"
                         >
                           Demo
                         </button>
@@ -212,16 +222,11 @@ export default function Projects() {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-blue-600/20 text-blue-400 text-xs rounded-full"
+                        className="px-2 py-1 bg-slate-800 border border-emerald-500/20 text-emerald-300 text-xs rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 3 && (
-                      <span className="px-2 py-1 bg-slate-700 text-slate-400 text-xs rounded-full">
-                        +{project.technologies.length - 3}
-                      </span>
-                    )}
                   </div>
                 </div>
               </div>
@@ -235,7 +240,7 @@ export default function Projects() {
             href="https://github.com/WebbOfCode"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-3 border border-blue-600 text-base font-medium rounded-md text-blue-400 hover:bg-blue-600 hover:text-white transition-colors duration-200"
+            className="inline-flex items-center px-8 py-3 border border-amber-600 text-base font-medium rounded-md text-amber-400 hover:bg-amber-600 hover:text-white transition-colors duration-200"
           >
             View More on GitHub
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

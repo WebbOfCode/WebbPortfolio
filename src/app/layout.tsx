@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Demarick Webb-Rivera | Full Stack Developer & Army Veteran',
-  description: 'Army Veteran and Computer Science student specializing in full-stack development, cybersecurity, and network systems. View projects including TrafficWiz and Chat-Room MTSU.',
+  title: 'Demarick Webb-Rivera | Full Stack Developer',
+  description: 'Full-stack developer and Computer Science student focused on practical web apps, security, and network systems. View projects including TrafficWiz and Chat-Room MTSU.',
   icons: {
     icon: '/logo dwr com.png',
     apple: '/logo dwr com.png',

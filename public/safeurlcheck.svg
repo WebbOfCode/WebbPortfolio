@@ -1,9 +1,32 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="250" fill="#1e40af"/>
-  <rect x="120" y="60" width="160" height="120" rx="8" fill="#3b82f6" opacity="0.3"/>
-  <rect x="130" y="70" width="140" height="100" rx="6" fill="#60a5fa"/>
-  <circle cx="200" cy="120" r="25" fill="#1e40af"/>
-  <path d="M200 105 L200 135 M185 120 L215 120" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
-  <text x="200" y="200" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Safe URL Check</text>
-  <text x="200" y="220" text-anchor="middle" fill="#dbeafe" font-family="Arial, sans-serif" font-size="14">Security Scanner</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 384" width="640" height="384" role="img" aria-label="Safe URL Checker logo">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#f8f6f0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" rx="24" fill="url(#g1)" />
+
+  <g transform="translate(72,48)">
+    <rect x="0" y="0" width="232" height="232" rx="20" fill="#ffffff" stroke="#e6e2d8" stroke-width="6" />
+
+    <g transform="translate(32,40)" fill="#2c1810">
+      <rect x="0" y="0" width="160" height="18" rx="6" />
+      <rect x="0" y="40" width="120" height="18" rx="6" />
+      <rect x="0" y="80" width="88" height="18" rx="6" />
+    </g>
+
+    <!-- Small barcode visual -->
+    <g transform="translate(180,40)" fill="#d4af37">
+      <rect x="0" y="0" width="12" height="84" />
+      <rect x="18" y="0" width="6" height="84" />
+      <rect x="28" y="0" width="10" height="84" />
+    </g>
+  </g>
+
+  <g transform="translate(320,244)">
+    <text x="0" y="0" font-family="Inter, Arial" font-size="28" fill="#2c1810" font-weight="700">Safe URL Checker</text>
+    <text x="0" y="28" font-family="Inter, Arial" font-size="12" fill="#6b7280">Security • Heuristics • API</text>
+  </g>
 </svg>

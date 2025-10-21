@@ -21,7 +21,7 @@ export default function Hero() {
   
   // //////bghgjgn second typewriter for the punchline
   const { displayText: specializationText } = useTypewriter(
-    ". Army networks to Nashville's biggest bars, now (attempting to) build stuff that doesn't break at 2am.", 
+  ". From network ops to bartending Nashville's stages, I build things that (usually) don't break at 2am.", 
     40, 
     taglineComplete ? 500 : 5000 // TODO: maybe make this delay configurable?
   )
@@ -35,13 +35,13 @@ export default function Hero() {
   return (
     <section id="hero" className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* //nb animated background that looks cool */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-purple-900/20 animate-gradient-shift"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800/20 to-amber-900/20 animate-gradient-shift"></div>
       
       {/* floating particle things - keeping this simple because it works */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-float"></div>
+  <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl animate-float"></div>
           {/* TODO: maybe add more particles? or is this enough */}
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float-delayed"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -49,10 +49,10 @@ export default function Hero() {
           {/* bb main text content side */}
           <div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="inline-block mb-4">
-              <div className="bg-slate-900/80 border-l-2 border-cyan-400 px-4 py-2 font-mono text-sm">
+              <div className="bg-slate-900/80 border-l-2 border-amber-400 px-4 py-2 font-mono text-sm">
                 <span className="text-slate-400">$ </span>
-                <span className="text-cyan-400">WhoAmI</span>
-                <span className="text-slate-500 ml-2"># US Army Veteran | Full Stack Developer</span>
+                <span className="text-amber-400">WhoAmI</span>
+                <span className="text-slate-500 ml-2"># Full Stack Developer</span>
               </div>
             </div>
             
@@ -60,13 +60,13 @@ export default function Hero() {
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
               <span className="inline-block hover:scale-105 transition-transform duration-300">Demarick</span>{' '}
               <br />
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-slate-500 to-amber-500 bg-clip-text text-transparent">
                 Webb-Rivera
               </span>
             </h1>
             
             <div className="text-xl text-slate-300 mb-8 leading-relaxed min-h-[3.5rem]">
-              <span className="text-cyan-400 font-medium">
+              <span className="text-amber-300 font-medium">
                 {taglineText}
               </span>
               <span className="text-slate-300">
@@ -74,7 +74,7 @@ export default function Hero() {
               </span>
               {/* //nb blinking cursor for typewriter effect */}
               {(!taglineComplete || specializationText.length < 70) && (
-                <span className="inline-block w-0.5 h-6 bg-cyan-400 ml-1 animate-pulse"></span>
+                <span className="inline-block w-0.5 h-6 bg-amber-300 ml-1 animate-pulse"></span>
               )}
             </div>
             
@@ -82,7 +82,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#projects"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-medium hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-slate-700 to-amber-600 text-white font-medium hover:from-slate-600 hover:to-amber-500 transition-all duration-300 hover:scale-105"
               >
                 View Projects
                   {/* // this animation timing feels right but might tweak later */}
@@ -108,10 +108,13 @@ export default function Hero() {
               {/* simple contact button */}
               <a
                 href="#contact"
-                className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-medium hover:border-cyan-500 hover:text-white transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-medium hover:border-amber-500 hover:text-white transition-all duration-300 hover:scale-105"
               >
                 Get In Touch
               </a>
+            </div>
+            <div className="mt-6 text-sm text-slate-400">
+              If you&apos;re looking for someone who codes like an engineer and thinks like a problem solver — let&apos;s connect.
             </div>
           </div>
 
@@ -121,8 +124,8 @@ export default function Hero() {
               {/* // main profile circle with spinning rings that look sick */}
               <div className="relative w-80 h-80 mx-auto">
                 {/* //////bghgjgn animated ring effects */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 animate-spin-slow opacity-75 blur-md"></div>
-                <div className="absolute inset-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 animate-spin-slower opacity-50 blur-lg"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-slate-600 to-amber-700 animate-spin-slow opacity-85 blur-md"></div>
+                <div className="absolute inset-2 rounded-full bg-gradient-to-r from-amber-700 to-emerald-700 animate-spin-slower opacity-60 blur-lg"></div>
                 
                 {/* actual image container */}
                 <div className="absolute inset-4 rounded-full bg-slate-900 border-4 border-slate-800 overflow-hidden shadow-2xl">
@@ -139,14 +142,13 @@ export default function Hero() {
                 </div>
 
                 {/* //nb floating tech skill badges */}
-                <div className="absolute -top-4 -right-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slow">
+                <div className="absolute -top-4 -right-4 bg-amber-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slow">
                   Python
                 </div>
-                {/* purple is my favorite color */}
-                <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slower">
+                <div className="absolute -bottom-4 -left-4 bg-emerald-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slower">
                   C++
                 </div>
-                <div className="absolute top-1/2 -right-8 bg-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slow" style={{animationDelay: '0.5s'}}>
+                <div className="absolute top-1/2 -right-8 bg-slate-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-bounce-slow" style={{animationDelay: '0.5s'}}>
                   React
                 </div>
               </div>
@@ -154,18 +156,18 @@ export default function Hero() {
               {/* // stats cards section - still tweaking the alignment */}
               <div className="grid grid-cols-3 gap-4 mt-8">
                 {/* //////bghgjgn first card slightly higher */}
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-blue-500 transition-all duration-350 hover:scale-105 transform translate-y-1">
-                  <div className="text-2xl font-bold text-blue-400">4+</div>
-                  <div className="text-xs text-slate-400">Years Military IT</div>
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-amber-500 transition-all duration-350 hover:scale-105 transform translate-y-1">
+                  <div className="text-2xl font-bold text-amber-400">4+</div>
+                  <div className="text-xs text-slate-400">Years IT Experience</div>
                 </div>
                 {/* middle card normal positioning */}
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-purple-500 transition-all duration-250 hover:scale-105">
-                  <div className="text-2xl font-bold text-purple-400">7+</div>
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-emerald-500 transition-all duration-250 hover:scale-105">
+                  <div className="text-2xl font-bold text-emerald-400">7+</div>
                   <div className="text-xs text-slate-400">Projects Built</div>
                 </div>
                 {/* last card slightly lower for that authentic feel */}
-                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-pink-500 transition-all duration-400 hover:scale-105 transform -translate-y-0.5">
-                  <div className="text-2xl font-bold text-pink-400">3.1</div>
+                <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg p-4 text-center hover:border-amber-500 transition-all duration-400 hover:scale-105 transform -translate-y-0.5">
+                  <div className="text-2xl font-bold text-amber-400">3.1</div>
                   <div className="text-xs text-slate-400">GPA @ MTSU</div>
                 </div>
               </div>

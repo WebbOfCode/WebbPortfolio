@@ -2,9 +2,9 @@
 
 # Demarick Webb-Rivera Portfolio
 
-🎖️ **Army Veteran | Full-Stack Developer | Network & Security Enthusiast**
+� **Full-Stack Developer | Network & Security Enthusiast**
 
-A modern, responsive portfolio website showcasing my journey from military service to software engineering.
+A modern, responsive portfolio website showcasing practical projects, learning, and the tools I use to build reliable software.
 
 ## Features
 

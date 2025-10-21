@@ -1,13 +1,45 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="250" fill="#581c87"/>
-  <rect x="80" y="80" width="15" height="80" rx="2" fill="#a78bfa" opacity="0.6"/>
-  <rect x="110" y="60" width="15" height="100" rx="2" fill="#a78bfa" opacity="0.7"/>
-  <rect x="140" y="90" width="15" height="70" rx="2" fill="#a78bfa" opacity="0.6"/>
-  <rect x="170" y="50" width="15" height="110" rx="2" fill="#c4b5fd" opacity="0.8"/>
-  <rect x="200" y="70" width="15" height="90" rx="2" fill="#a78bfa" opacity="0.7"/>
-  <rect x="230" y="95" width="15" height="65" rx="2" fill="#a78bfa" opacity="0.6"/>
-  <rect x="260" y="55" width="15" height="105" rx="2" fill="#c4b5fd" opacity="0.8"/>
-  <rect x="290" y="85" width="15" height="75" rx="2" fill="#a78bfa" opacity="0.6"/>
-  <text x="200" y="195" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="bold">ML Integration</text>
-  <text x="200" y="215" text-anchor="middle" fill="#e9d5ff" font-family="Arial, sans-serif" font-size="13">Data Analysis &amp; Prediction</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 384" width="640" height="384" role="img" aria-label="Data &amp; ML Integration logo">
+  <defs>
+    <!-- Softer, modern gradient background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fafaf9"/>
+      <stop offset="100%" stop-color="#f2f2ed"/>
+    </linearGradient>
+    <!-- Accent gradient for nodes -->
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded soft background -->
+  <rect width="100%" height="100%" rx="24" fill="url(#bg)" />
+
+  <!-- Node Graph Container -->
+  <g transform="translate(80,64)">
+    <rect width="260" height="240" rx="16" fill="#ffffff" stroke="#e5e7eb" stroke-width="4" />
+
+    <!-- Node network -->
+    <g transform="translate(40,40)">
+      <circle cx="40" cy="40" r="10" fill="url(#accent)" />
+      <circle cx="120" cy="80" r="10" fill="url(#accent)" />
+      <rect x="180" y="40" width="28" height="28" rx="6" fill="#fefce8" stroke="#eab308" stroke-width="2" />
+      <!-- connecting lines -->
+      <path d="M50 46 L110 74" stroke="#86efac" stroke-width="3" stroke-linecap="round" />
+      <path d="M130 70 L180 54" stroke="#86efac" stroke-width="3" stroke-linecap="round" />
+    </g>
+  </g>
+
+  <!-- Accent sidebar block -->
+  <rect x="380" y="80" width="140" height="200" rx="16" fill="#facc15" opacity="0.15" />
+
+  <!-- Text Section -->
+  <g transform="translate(360,250)">
+    <text font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#1e293b">
+      Data &amp; ML Integration
+    </text>
+    <text y="30" font-family="Inter, sans-serif" font-size="14" fill="#64748b">
+      Python · Models · Dashboards
+    </text>
+  </g>
 </svg>
