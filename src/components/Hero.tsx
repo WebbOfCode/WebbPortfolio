@@ -21,7 +21,7 @@ export default function Hero() {
   
   // //////bghgjgn second typewriter for the punchline
   const { displayText: specializationText } = useTypewriter(
-  ". From network ops to bartending Nashville's stages, I build things that (usually) don't break at 2am.", 
+  ". From Army network ops to bartending Nashville's stages, I (try to) build things that (usually) don't break at 2am.", 
     40, 
     taglineComplete ? 500 : 5000 // TODO: maybe make this delay configurable?
   )
@@ -52,7 +52,7 @@ export default function Hero() {
               <div className="bg-slate-900/80 border-l-2 border-amber-400 px-4 py-2 font-mono text-sm">
                 <span className="text-slate-400">$ </span>
                 <span className="text-amber-400">WhoAmI</span>
-                <span className="text-slate-500 ml-2"># Full Stack Developer</span>
+                <span className="text-slate-500 ml-2"># Full Stack Developer | U.S Army Veteran</span>
               </div>
             </div>
             
