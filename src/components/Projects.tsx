@@ -7,7 +7,7 @@ export default function Projects() {
     {
       id: 0,
       title: "🚦 TrafficWiz",
-      description: "Built this for Database Management Capstone project - Nashville traffic data meets ML. Predicts traffic better than my ability to predict if customers will tip using multiple APIs.",
+      description: "Built this for an MTSU Database Management Capstone project - Nashville traffic data meets ML. Predicts traffic better than existing city dashboards and navigation apps.",
       technologies: ["React", "Python", "Machine Learning", "SQL", "Dashboard", "Git"],
       image: "/trafficwiz.svg",
       liveUrl: "https://github.com/WebbOfCode/TrafficWiz",
@@ -17,7 +17,7 @@ export default function Projects() {
     {
       id: 1,
       title: "🔒 Safe URL Checker",
-      description: "Checks if URLs are sketchy or not. Made it after falling for one too many 'you won a free iPhone' links. Works surprisingly well.",
+      description: "Checks if URLs are sketchy or not. I made this tool after falling for one too many 'you won a free iPhone' links. Works surprisingly well.",
       technologies: ["Next.js", "TypeScript", "Security", "API Integration", "Vercel"],
       image: "/safeurlcheck.svg",
       liveUrl: "https://safeurlcheck.vercel.app/",
@@ -27,7 +27,7 @@ export default function Projects() {
     {
       id: 2,
       title: " Chat-Room MTSU",
-      description: "C++ chat app for class. Two people can talk to each other across different devices. Revolutionary stuff lol. I actually got it working from my iPad to PC using SSH, which felt pretty rewarding.",
+      description: "C++ chat app using TCP Sockets. Two people can talk to each other across different devices. Revolutionary stuff lol. I actually got it working from my iPad to PC using SSH, which felt pretty good.",
       technologies: ["C++", "TCP Sockets", "Networking", "SSH", "Real-time Communication"],
       image: "/chatroom.svg",
       liveUrl: "https://github.com/WebbOfCode/Chat-Room-MTSU",
