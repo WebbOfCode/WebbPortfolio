@@ -13,52 +13,51 @@ interface YouTubeVideo {
   viewCount?: string
 }
 
+// Static placeholder videos - move out of component to avoid recreating on each render
+const realVideos: YouTubeVideo[] = [
+  {
+    id: '1',
+    videoId: 'VnFk7XomBAo',
+    title: 'Milestone 3 CYBM 3350',
+    description: 'Cybersecurity project milestone demonstrating advanced security implementations',
+    thumbnail: '/api/placeholder/320/180',
+    publishedAt: '2024-08-18T00:00:00Z',
+    viewCount: '4',
+  },
+  {
+    id: '2',
+    videoId: 'ZnwqCxthF8o',
+    title: 'Project Milestone 2 Ubuntu',
+    description: 'Linux system administration and security configuration on Ubuntu',
+    thumbnail: '/api/placeholder/320/180',
+    publishedAt: '2024-08-18T00:00:00Z',
+    viewCount: '14',
+  },
+  {
+    id: '3',
+    videoId: '_a-lc5xRkjs',
+    title: 'Project Milestone 1',
+    description: 'Initial cybersecurity project setup and network analysis',
+    thumbnail: '/api/placeholder/320/180',
+    publishedAt: '2024-07-18T00:00:00Z',
+    viewCount: '15',
+  },
+  {
+    id: '4',
+    videoId: 'ZQRKpjgHf8E',
+    title: 'FINAL PROJECT CISP 3240 Simple Chat Room (C programming language)',
+    description: 'C programming final project - building a networked chat room application',
+    thumbnail: '/api/placeholder/320/180',
+    publishedAt: '2023-12-18T00:00:00Z',
+    viewCount: '31',
+  },
+]
+
 export default function YouTube() {
   const [videos, setVideos] = useState<YouTubeVideo[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
-
-  // IMPORTANT: Replace these with your actual YouTube video IDs
-  // To get video ID: Go to youtube.com/@only1webbie, click on video, copy ID from URL after "watch?v="
-  const realVideos: YouTubeVideo[] = [
-    {
-      id: "1",
-      videoId: "VnFk7XomBAo", // REPLACE: Go to your YouTube channel and get the actual video ID
-      title: "Milestone 3 CYBM 3350",
-      description: "Cybersecurity project milestone demonstrating advanced security implementations",
-      thumbnail: "/api/placeholder/320/180",
-      publishedAt: "2024-08-18T00:00:00Z",
-      viewCount: "4"
-    },
-    {
-      id: "2", 
-      videoId: "ZnwqCxthF8o", // REPLACE: Go to your YouTube channel and get the actual video ID
-      title: "Project Milestone 2 Ubuntu",
-      description: "Linux system administration and security configuration on Ubuntu",
-      thumbnail: "/api/placeholder/320/180",
-      publishedAt: "2024-08-18T00:00:00Z",
-      viewCount: "14"
-    },
-    {
-      id: "3",
-      videoId: "_a-lc5xRkjs", // REPLACE: Go to your YouTube channel and get the actual video ID
-      title: "Project Milestone 1",
-      description: "Initial cybersecurity project setup and network analysis",
-      thumbnail: "/api/placeholder/320/180", 
-      publishedAt: "2024-07-18T00:00:00Z",
-      viewCount: "15"
-    },
-    {
-      id: "4",
-      videoId: "ZQRKpjgHf8E", // REPLACE: Go to your YouTube channel and get the actual video ID
-      title: "FINAL PROJECT CISP 3240 Simple Chat Room (C programming language)",
-      description: "C programming final project - building a networked chat room application",
-      thumbnail: "/api/placeholder/320/180", 
-      publishedAt: "2023-12-18T00:00:00Z",
-      viewCount: "31"
-    }
-  ]
 
   useEffect(() => {
     // Simulate API call
