@@ -102,7 +102,7 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="/ResumeWebb-1.docx"
+                href="/Demarick Webb-Resume Fall 25.docx"
                 download="Demarick_Webb_Resume.docx"
                 className="bg-black border border-amber-500/30 text-amber-300 hover:bg-amber-500/10 hover:border-amber-400 px-4 py-2 text-sm font-mono font-medium transition-colors duration-200 flex items-center"
               >

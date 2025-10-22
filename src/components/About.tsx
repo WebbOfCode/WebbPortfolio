@@ -142,8 +142,8 @@ export default function About() {
             {/* Download Resume Button */}
             <div className="mt-8">
               <a
-                href="/ResumeWebb-1.docx"
-                download="Demarick_Webb_Resume.docx"
+                href="/Demarick Webb-Resume Fall 25.docx"
+                download="Demarick Webb-Resume Fall 25.docx"
                 className="inline-flex items-center px-6 py-3 border border-emerald-600 text-base font-medium rounded-md text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors duration-200"
               >
                 <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
