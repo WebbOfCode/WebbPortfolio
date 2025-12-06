@@ -45,127 +45,86 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          {/* geometric pattern with my actual photo */}
-          <div className="flex justify-center mb-8">
-            <div className="relative">
-              <div className="w-32 h-32 relative">
-                {/* layered rotating borders for visual interest */}
-                <div className="absolute inset-0 border border-slate-600 rounded-sm rotate-12 opacity-20"></div>
-                <div className="absolute inset-2 border border-emerald-600 rounded-sm rotate-45 opacity-40"></div>
-                <div className="absolute inset-4 border border-amber-400 rounded-sm opacity-60"></div>
-                <div className="w-20 h-20 absolute top-6 left-6 rounded-full border-2 border-slate-700 overflow-hidden shadow-lg opacity-90 hover:opacity-100 transition-opacity">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Demarick Webb-Rivera"
-                    width={80}
-                    height={80}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-              </div>
-            </div>
+    <section id="about" className="py-12 px-6 lg:px-8 bg-bg-main">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-text-primary mb-4">About me</h2>
+          
+          <div className="bg-bg-elevated border-l-4 border-accent-gold rounded-xl px-6 py-4 max-w-3xl mb-6">
+            <p className="text-lg text-text-muted leading-relaxed">
+              I spent 4 years managing critical Army networks, then transitioned into web development. Now I'm finishing my CS degree while bartending on weekends—balancing building software with keeping the bills paid.
+            </p>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About</h2>
-          
-          <div className="bg-slate-900/50 border-l-4 border-amber-400 px-8 py-6 max-w-4xl mx-auto mb-8">
-            <p className="text-xl md:text-2xl text-slate-200 leading-relaxed font-light">
-              Army background with practical engineering experience — I build reliable systems and learn fast.<br/>
-              <span className="text-amber-400">Currently studying CS at MTSU</span> with a cybersecurity focus.
+
+          {/* What I'm Looking For */}
+          <div className="bg-accent-gold/20 border-2 border-accent-gold rounded-xl px-6 py-4 max-w-3xl">
+            <h3 className="text-accent-gold font-bold mb-2 flex items-center text-lg">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              What I'm looking for
+            </h3>
+            <p className="text-text-primary font-medium leading-relaxed">
+              Looking for my first dev role where I can contribute on day one. I'm strongest in full-stack work and anything security-related. My clearance is still active, so I'm open to government/defense contracts too. Ideally somewhere I can learn from good engineers.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Bio */}
-          <div>
-            <h3 className="text-2xl font-semibold text-white mb-8">My Story</h3>
+          <div className="space-y-5">
             
-            <div className="space-y-8 text-slate-300">
-              
-              <div className="mb-8">
-                <h4 className="text-amber-400 font-semibold mb-3">Military Foundation</h4>
-                <p className="text-slate-300 leading-relaxed">
-                  Four years as an Army IT Specialist taught me that reliable systems aren&apos;t built by chance. 
-                  I managed classified networks across two continents, handled $750K in critical infrastructure, 
-                  and learned that security isn&apos;t just a feature—it&apos;s the foundation everything else relies on.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-accent-gold font-semibold mb-2">Military IT background</h3>
+              <p className="text-text-secondary leading-relaxed">
+                Four years as an Army IT Specialist managing classified networks across two continents. Led 5,000+ configuration changes, oversaw $750K in infrastructure with zero losses. Security and reliability aren't optional—they're foundational.
+              </p>
+            </div>
 
-              <div className="mb-8">
-                <h4 className="text-amber-400 font-semibold mb-3">Academic Foundation</h4>
-                <p className="text-slate-300 leading-relaxed">
-                  Completed Associate of Science in Computer Science at Nashville State Community College (Jan 2022 - May 2024). 
-                  Currently pursuing Bachelor&apos;s in Computer Science with cybersecurity concentration at MTSU. 
-                  Military discipline translates directly to systematic debugging, secure coding practices, and deadline-driven development cycles.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-accent-gold font-semibold mb-2">Education & growth</h3>
+              <p className="text-text-secondary leading-relaxed">
+                Completed Associate at Nashville State, currently pursuing Bachelor's in Computer Science at MTSU with cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
+              </p>
+            </div>
 
-              <div className="mb-8">
-                <h4 className="text-amber-400 font-semibold mb-3">How I Debug</h4>
-                <p className="text-slate-300 leading-relaxed">
-                  I debug like I troubleshoot Army networks - systematically, coffee-fueled, until it works. 
-                  Break it down, Google the weird error, try stuff until something clicks. 
-                  Usually works around 2am with enough caffeine.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-accent-gold font-semibold mb-2">How I work</h3>
+              <p className="text-text-secondary leading-relaxed">
+                Break it down, research thoroughly, test everything. I approach debugging like troubleshooting military networks—systematically and persistently until it works.
+              </p>
+            </div>
 
-              <div className="mb-8">
-                <h4 className="text-amber-400 font-semibold mb-3">Beyond Code</h4>
-                <p className="text-slate-300 leading-relaxed">
-                  Behind the bar at Nashville&apos;s biggest venues, I&apos;ve learned to read people, handle pressure, 
-                  and deliver under chaos. FSU Seminoles bleed through my veins on Saturdays. 
-                  Live music feeds the soul, good food fuels the grind, and art keeps the mind creative. 
-                  Family anchors everything - they&apos;re my why for all the late nights coding and studying.
-                </p>
-              </div>
-              
-              <div className="mt-8 pt-6 border-t border-slate-700">
-                <div className="flex flex-wrap gap-3">
-                  <span className="px-3 py-1 bg-slate-800 text-amber-400 text-sm rounded-full border border-slate-600">Bartending</span>
-                  <span 
-                    className="px-3 py-1 bg-slate-800 text-amber-400 text-sm rounded-full border border-slate-600 hover:bg-garnet-600 transition-colors cursor-pointer" 
-                    onMouseEnter={() => console.log('Go Noles 🍢')}
-                  >
-                    FSU Football
-                  </span>
-                  <span className="px-3 py-1 bg-slate-800 text-amber-400 text-sm rounded-full border border-slate-600">Live Music</span>
-                  <span className="px-3 py-1 bg-slate-800 text-amber-400 text-sm rounded-full border border-slate-600">Photography</span>
-                </div>
-              </div>
-              
+            <div>
+              <h3 className="text-accent-gold font-semibold mb-2">Beyond the code</h3>
+              <p className="text-text-secondary leading-relaxed">
+                Bartending at major Nashville venues keeps me grounded in real-world people skills. FSU football, live music, family time, and photography round out the picture.
+              </p>
             </div>
             
-            {/* Download Resume Button */}
-            <div className="mt-8">
-              <a
-                href="/Demarick Webb-Resume Fall 25.docx"
-                download="Demarick Webb-Resume Fall 25.docx"
-                className="inline-flex items-center px-6 py-3 border border-emerald-600 text-base font-medium rounded-md text-emerald-400 hover:bg-emerald-600 hover:text-white transition-colors duration-200"
-              >
-                <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Resume
-              </a>
+            <div className="pt-4">
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Bartending</span>
+                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">FSU Football</span>
+                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Live Music</span>
+                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Photography</span>
+              </div>
             </div>
+            
           </div>
 
           {/* Experience Timeline */}
           <div>
-            <h3 className="text-2xl font-semibold text-white mb-6">Experience</h3>
-            <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-white mb-4">Experience</h3>
+            <div className="space-y-4">
               {experience.map((job, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-amber-400">
-                  <div className="absolute w-4 h-4 bg-amber-400 rounded-full -left-2 top-0"></div>
-                  <div className="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors duration-200">
+                <div key={index} className="relative pl-8 border-l-2 border-orange-500">
+                  <div className="absolute w-4 h-4 bg-orange-500 rounded-full -left-2 top-0"></div>
+                  <div className="bg-gray-800 border border-gray-700 p-4 rounded-lg hover:shadow-sm transition-shadow duration-200">
                     <h4 className="text-lg font-semibold text-white">{job.title}</h4>
-                    <p className="text-blue-400 font-medium">{job.company}</p>
-                    <p className="text-sm text-slate-400 mb-2">{job.period}</p>
-                    <p className="text-slate-300">{job.description}</p>
+                    <p className="text-accent-teal font-medium">{job.company}</p>
+                    <p className="text-sm text-text-muted mb-2">{job.period}</p>
+                    <p className="text-text-muted leading-relaxed text-sm">{job.description}</p>
                   </div>
                 </div>
               ))}

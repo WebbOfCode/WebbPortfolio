@@ -1,29 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-burnt-orange: #fbbf24;
+  --color-warm-white: #eff6ff;
+  --color-text-primary: #e1e1e2;
+  --color-text-secondary: #979898;
+  --color-teal: #22c55e;
+  --color-slate-dark: #0c0b0d;
+  --color-bg-primary: #0c0b0d;
+  --color-bg-secondary: #0c0b0d;
+  --color-bg-card: #323b44;
+  --color-bg-elevated: #323b44;
+  --color-accent-gold: #fbbf24;
+  --color-accent-gold-dark: #9a6427;
+  --color-accent-teal: #22c55e;
+  --color-border: #58595a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 @layer utilities {
@@ -32,11 +41,11 @@ body {
   }
 }
 
-/* Custom animations */
-@keyframes fadeInUp {
+/* Subtle animations for human feel */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -44,129 +53,60 @@ body {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(-20px) translateX(10px);
-  }
-}
-
-@keyframes floatDelayed {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  50% {
-    transform: translateY(20px) translateX(-10px);
-  }
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes gradientText {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes hoverLift {
   to {
-    transform: rotate(360deg);
+    transform: translateY(-2px);
   }
 }
 
-@keyframes spinSlower {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
 }
 
-@keyframes bounceSlow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+.hover-lift:hover {
+  animation: hoverLift 0.2s ease-out forwards;
 }
 
-@keyframes bounceSlower {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+/* Custom utility classes */
+.bg-warm-white {
+  background-color: var(--color-warm-white);
 }
 
-@keyframes pulseSlow {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.6;
-  }
+.text-burnt-orange {
+  color: var(--color-burnt-orange);
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+.border-burnt-orange {
+  border-color: var(--color-burnt-orange);
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.bg-burnt-orange {
+  background-color: var(--color-burnt-orange);
 }
 
-.animate-float-delayed {
-  animation: floatDelayed 8s ease-in-out infinite;
+.shadow-subtle {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
 }
 
-.animate-gradient-shift {
-  animation: gradientShift 3s ease-in-out infinite;
+.shadow-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
-.animate-gradient-text {
-  background-size: 200% 200%;
-  animation: gradientText 3s ease infinite;
+/* Typography */
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
 }
 
-.animate-spin-slow {
-  animation: spinSlow 10s linear infinite;
-}
-
-.animate-spin-slower {
-  animation: spinSlower 15s linear infinite;
-}
-
-.animate-bounce-slow {
-  animation: bounceSlow 3s ease-in-out infinite;
-}
-
-.animate-bounce-slower {
-  animation: bounceSlower 4s ease-in-out infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulseSlow 3s ease-in-out infinite;
-}
-
-/* Smooth scrolling for navigation */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Focus states */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-burnt-orange);
+  outline-offset: 2px;
 }

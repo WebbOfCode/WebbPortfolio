@@ -1,143 +1,168 @@
 'use client'
 
-import { useInView } from '@/hooks/useInView'
-
 export default function Skills() {
-  // Use the hook at the top level
-  const [ref, isInView] = useInView(0.3, '-50px')
+  const skillsByProficiency = {
+    expert: {
+      title: "Expert",
+      description: "Daily use, production experience, deep understanding",
+      skills: ["Python", "Git", "VS Code", "HTML/CSS", "JavaScript", "SQL"]
+    },
+    proficient: {
+      title: "Proficient",
+      description: "Regular use, project experience, solid foundation",
+      skills: ["React", "C++", "Next.js", "Tailwind CSS", "PostgreSQL", "Linux Systems"]
+    },
+    familiar: {
+      title: "Familiar",
+      description: "Working knowledge, learning and building",
+      skills: ["TypeScript", "Node.js", "Flask", "Machine Learning", "MongoDB", "AWS"]
+    }
+  }
 
-  const skillCategories = [
+  const specializedSkills = [
     {
-      title: "Programming Languages",
-      skills: [
-  { name: "Python", level: 87, color: "bg-gradient-to-r from-amber-400 to-amber-500" }, // honestly use this daily
-  { name: "C++", level: 79, color: "bg-gradient-to-r from-slate-600 to-emerald-600" }, // still figuring out pointers sometimes
-        { name: "JavaScript", level: 83, color: "bg-gradient-to-r from-yellow-500 to-yellow-400" }, // async/await is my friend
-  { name: "React", level: 76, color: "bg-gradient-to-r from-emerald-400 to-amber-500" }, // hooks make sense now
-  { name: "SQL", level: 82, color: "bg-gradient-to-r from-slate-600 to-slate-500" }, // JOIN queries all day
-        { name: "HTML/CSS", level: 89, color: "bg-gradient-to-r from-orange-500 to-red-500" }, // flexbox wizard
-      ]
+      category: "Networking & Security",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      skills: ["TCP/IP", "Socket Programming", "SSH", "Wireshark", "Nmap", "Port Proxying", "DoD Security Protocols"]
     },
     {
-      title: "Real World Tools", // what I actually use
-      skills: [
-        { name: "Git", level: 88, color: "bg-gradient-to-r from-red-600 to-orange-500" }, // merge conflicts happen
-  { name: "VS Code", level: 93, color: "bg-gradient-to-r from-emerald-500 to-amber-400" }, // extensions galore  
-  { name: "Vite", level: 74, color: "bg-gradient-to-r from-slate-500 to-slate-400" }, // fast builds
-        { name: "Node.js", level: 71, color: "bg-gradient-to-r from-green-600 to-green-500" }, // backend stuff
-        { name: "Next.js", level: 72, color: "bg-gradient-to-r from-slate-100 to-slate-300" }, // this portfolio runs on it
-  { name: "Tailwind CSS", level: 84, color: "bg-gradient-to-r from-amber-300 to-emerald-300" }, // utility classes FTW
-      ]
+      category: "Development Tools",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        </svg>
+      ),
+      skills: ["VS Code", "GitHub", "Vercel", "WSL2", "PowerShell", "Bash", "Vite"]
     },
     {
-      title: "Networking & Security",
-      skills: [
-        { name: "Socket Programming", level: 88, color: "bg-gradient-to-r from-green-500 to-green-400" },
-        { name: "SSH", level: 90, color: "bg-gradient-to-r from-slate-600 to-slate-500" },
-  { name: "Wireshark", level: 82, color: "bg-gradient-to-r from-slate-600 to-slate-500" },
-        { name: "Nmap", level: 85, color: "bg-gradient-to-r from-red-500 to-red-400" },
-        { name: "Port Proxying", level: 80, color: "bg-gradient-to-r from-yellow-600 to-yellow-500" },
-  { name: "TCP/IP", level: 87, color: "bg-gradient-to-r from-slate-600 to-emerald-500" },
-      ]
-    },
-    {
-      title: "Professional Experience",
-      skills: [
-        { name: "Bartending & Service", level: 95, color: "bg-gradient-to-r from-amber-500 to-yellow-500" },
-        { name: "Team Leadership", level: 92, color: "bg-gradient-to-r from-red-600 to-red-500" },
-        { name: "High-Pressure Management", level: 90, color: "bg-gradient-to-r from-orange-600 to-orange-500" },
-        { name: "Customer Relations", level: 88, color: "bg-gradient-to-r from-green-600 to-green-500" },
-        { name: "Military Operations", level: 95, color: "bg-gradient-to-r from-slate-600 to-slate-500" },
-  { name: "Problem Solving", level: 93, color: "bg-gradient-to-r from-amber-400 to-emerald-400" },
-      ]
+      category: "Frameworks & Libraries",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+      ),
+      skills: ["React", "Next.js", "Tailwind CSS", "Flask", "Scikit-learn", "OpenCV"]
     }
   ]
 
-  const otherSkills = [
-    "WSL2", "PowerShell", "Bash", "Linux", "Machine Learning", "Data Analysis", 
-    "Network Administration", "Cybersecurity", "System Administration", "TCP/UDP Protocols",
-    "Traffic Analysis", "Dashboard Development", "Multi-branch Git", "Remote Connectivity",
-    "DoD Electronic Key Management", "Cisco Hardware", "Classified Networks",
-    "Venue Management", "High-Volume Operations", "Event Coordination", "FSU Football Analysis",
-    "Live Music Industry", "Food & Beverage", "Photography", "Content Creation"
-  ]
-
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-[Inter] text-white mb-3">Core Strengths</h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto">Short, scannable focus areas — what I reach for first when solving problems.</p>
+    <section id="skills" className="py-16 px-6 lg:px-8 bg-bg-main">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">What I Can Do</h2>
+          <p className="text-lg text-text-muted max-w-2xl">
+            Built with these tools across real projects—not just tutorial-level knowledge.
+          </p>
         </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 mb-12">
-          <div className="bg-slate-900/30 border border-slate-700/40 rounded-md p-6">
-            <h4 className="text-sm text-amber-300 font-semibold mb-3">Core Languages</h4>
-            <ul className="space-y-2 text-slate-300 text-sm">
-              <li>Python</li>
-              <li>C++</li>
-              <li>JavaScript</li>
-              <li>SQL</li>
-            </ul>
-          </div>
+        {/* Proficiency Levels */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {Object.entries(skillsByProficiency).map(([key, group]) => (
+            <div key={key} className="bg-bg-elevated border border-border-default rounded-xl p-6">
+              <div className="flex items-center mb-3">
+                <div className={`w-3 h-3 rounded-full mr-2 ${
+                  key === 'expert' ? 'bg-accent-teal' : 
+                  key === 'proficient' ? 'bg-accent-gold' : 
+                  'bg-blue-500'
+                }`}></div>
+                <h3 className="text-lg font-semibold text-text-primary">{group.title}</h3>
+              </div>
+              <p className="text-xs text-text-muted mb-4">{group.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 bg-bg-main text-text-primary text-sm rounded-lg border border-accent-teal/30 hover:border-accent-teal transition-colors duration-200"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
 
-          <div className="bg-slate-900/30 border border-slate-700/40 rounded-md p-6">
-            <h4 className="text-sm text-amber-300 font-semibold mb-3">Frameworks &amp; Tools</h4>
-            <ul className="space-y-2 text-slate-300 text-sm">
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Tailwind</li>
-              <li>Git / VS Code</li>
-            </ul>
-          </div>
-
-          <div className="bg-slate-900/30 border border-slate-700/40 rounded-md p-6">
-            <h4 className="text-sm text-amber-300 font-semibold mb-3">Security &amp; Networking</h4>
-            <ul className="space-y-2 text-slate-300 text-sm">
-              <li>SSH</li>
-              <li>Wireshark</li>
-              <li>Nmap</li>
-              <li>Socket Programming</li>
-            </ul>
+        {/* Specialized Skills */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold text-text-primary mb-6">Specialized Areas</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {specializedSkills.map((area) => (
+              <div key={area.category} className="bg-bg-elevated border border-border-default rounded-xl p-6">
+                <div className="flex items-center text-accent-gold mb-4">
+                  {area.icon}
+                  <h4 className="ml-2 font-bold text-accent-gold text-lg">{area.category}</h4>
+                </div>
+                <ul className="space-y-2">
+                  {area.skills.map((skill) => (
+                    <li key={skill} className="text-sm text-text-muted flex items-start">
+                      <span className="text-accent-teal mr-2">•</span>
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="text-sm text-slate-400 italic mb-8">Military discipline + bartender hustle = dependable, people-first engineering.</div>
+        {/* Professional Strengths */}
+        <div className="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-8 mb-12">
+          <h3 className="text-xl font-semibold text-text-primary mb-4 text-center">
+            Core Strengths
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div>
+              <div className="text-3xl font-bold text-burnt-orange mb-2">4+</div>
+              <div className="text-sm text-text-secondary">Years Military IT</div>
+              <div className="text-xs text-text-secondary mt-1">Network operations & security</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-burnt-orange mb-2">$750K</div>
+              <div className="text-sm text-text-secondary">Infrastructure Managed</div>
+              <div className="text-xs text-text-secondary mt-1">Zero losses or security incidents</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-burnt-orange mb-2">5,000+</div>
+              <div className="text-sm text-text-secondary">Network Changes</div>
+              <div className="text-xs text-text-secondary mt-1">Classified & unclassified systems</div>
+            </div>
+          </div>
+        </div>
 
         {/* Credentials and Training */}
-        <div className="mt-16 grid md:grid-cols-2 gap-8">
-          <div className="bg-black border border-green-500/30 p-6">
-            <div className="border-b border-green-500/30 pb-2 mb-4">
-              <h3 className="text-sm font-mono text-green-400 uppercase tracking-wider">education.log</h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white/60 border border-gray-100 rounded-xl p-6">
+            <div className="border-b border-gray-100 pb-4 mb-4">
+              <h3 className="text-lg font-semibold text-text-primary">Education</h3>
             </div>
-            <div className="space-y-3 font-mono text-sm">
+            <div className="space-y-4">
               <div>
-                <div className="text-cyan-400 mb-1">[2024-2026] BS_COMPUTER_SCIENCE</div>
-                <div className="text-slate-300 text-xs">→ MTSU | Cybersecurity Focus | GPA: 3.1</div>
+                <div className="text-burnt-orange font-medium mb-1">BS Computer Science</div>
+                <div className="text-text-secondary text-sm">MTSU • Cybersecurity Focus • Expected May 2026</div>
               </div>
               <div>
-                <div className="text-cyan-400 mb-1">[2022-2024] AS_COMPUTER_SCIENCE</div>
-                <div className="text-slate-300 text-xs">→ Nashville State CC | Foundation Complete</div>
+                <div className="text-burnt-orange font-medium mb-1">AS Computer Science</div>
+                <div className="text-text-secondary text-sm">Nashville State CC • Completed 2024</div>
               </div>
             </div>
           </div>
 
-          <div className="bg-black border border-green-500/30 p-6">
-            <div className="border-b border-green-500/30 pb-2 mb-4">
-              <h3 className="text-sm font-mono text-green-400 uppercase tracking-wider">clearance.sec</h3>
+          <div className="bg-white/60 border border-gray-100 rounded-xl p-6">
+            <div className="border-b border-gray-100 pb-4 mb-4">
+              <h3 className="text-lg font-semibold text-text-primary">Clearances & Background</h3>
             </div>
-            <div className="space-y-3 font-mono text-sm">
+            <div className="space-y-4">
               <div>
-                <div className="text-red-400 mb-1">[ACTIVE] SECRET_CLEARANCE</div>
-                <div className="text-slate-300 text-xs">→ DoD | Security Level: SECRET</div>
+                <div className="text-burnt-orange font-medium mb-1">Secret Security Clearance</div>
+                <div className="text-text-secondary text-sm">DoD • Active status</div>
               </div>
               <div>
-                <div className="text-yellow-400 mb-1">[CERT] ARMY_IT_LEADERSHIP</div>
-                <div className="text-slate-300 text-xs">→ Ft. Gordon, GA | Advanced Skills</div>
-              </div>
-              <div>
-                <div className="text-yellow-400 mb-1">[CERT] STRUCTURED_DEV</div>
-                <div className="text-slate-300 text-xs">→ Ft. Bliss, TX | Professional Development</div>
+                <div className="text-burnt-orange font-medium mb-1">Army IT Specialist</div>
+                <div className="text-text-secondary text-sm">4 years • Network operations & cybersecurity</div>
               </div>
             </div>
           </div>

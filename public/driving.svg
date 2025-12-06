@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 384" width="640" height="384" role="img" aria-label="Cognitive research game logo">
+  <defs>
+    <!-- Same warm background gradient as TrafficWiz -->
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff7ed"></stop>
+      <stop offset="1" stop-color="#f8f6f0"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer rounded card -->
+  <rect width="100%" height="100%" rx="24" fill="url(#g1)"></rect>
+
+  <!-- Left white card (same size/position as TrafficWiz) -->
+  <g transform="translate(64,48)">
+    <rect x="0" y="0" width="240" height="240" rx="20" fill="#ffffff" stroke="#e6e2d8" stroke-width="6"></rect>
+
+    <!-- Cognitive / split-attention icon -->
+    <g transform="translate(36,36)" fill="none" stroke="#d4af37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Outer circle (head / focus area) -->
+      <circle cx="84" cy="64" r="44"></circle>
+
+      <!-- Vertical split line (driving vs minigame) -->
+      <line x1="84" y1="32" x2="84" y2="96"></line>
+
+      <!-- Left hemisphere curves -->
+      <path d="M 72 40
+               C 60 44 56 56 60 66
+               C 52 72 52 86 60 94"></path>
+
+      <!-- Right hemisphere curves -->
+      <path d="M 96 40
+               C 108 44 112 56 108 66
+               C 116 72 116 86 108 94"></path>
+
+      <!-- Connection nodes -->
+      <circle cx="70" cy="56" r="3" fill="#d4af37" stroke="none"></circle>
+      <circle cx="70" cy="80" r="3" fill="#d4af37" stroke="none"></circle>
+      <circle cx="98" cy="56" r="3" fill="#d4af37" stroke="none"></circle>
+      <circle cx="98" cy="80" r="3" fill="#d4af37" stroke="none"></circle>
+
+      <!-- Bottom rectangles = two tasks/screens -->
+      <rect x="24" y="116" width="60" height="20" rx="8" fill="#d4af37" stroke="none"></rect>
+      <rect x="84" y="116" width="60" height="20" rx="8" fill="#d4af37" stroke="none"></rect>
+
+      <!-- Tiny "signal" bars above right screen -->
+      <line x1="104" y1="108" x2="104" y2="100"></line>
+      <line x1="112" y1="108" x2="112" y2="96"></line>
+      <line x1="120" y1="108" x2="120" y2="92"></line>
+    </g>
+  </g>
+
+  <!-- Right-side text block (same placement & styling as TrafficWiz) -->
+  <g transform="translate(360,248)">
+    <text x="0" y="0" font-family="Inter, Arial" font-size="28" fill="#2c1810" font-weight="700">
+      CognitiveLab
+    </text>
+    <text x="0" y="28" font-family="Inter, Arial" font-size="12" fill="#6b7280">
+      Split-Attention Research Game
+    </text>
+  </g>
+</svg>
