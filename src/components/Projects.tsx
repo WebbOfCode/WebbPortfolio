@@ -58,6 +58,19 @@ export default function Projects() {
     },
     {
       id: 4,
+      title: "Cadence",
+      problem: "Veterans face overwhelming transition from military to civilian life with unclear career paths, confusing benefits, and lack of personalized guidance.",
+      approach: "Built full-stack Next.js application with OpenAI GPT-4o integration that generates personalized mission plans. Features multi-step onboarding flow, interactive dashboard with task tracking, progress visualization, search/filtering, and resource recommendations using Zustand state management and Zod validation.",
+      result: "Production-deployed tool helping veterans transition smoothly. Demonstrates full-stack expertise with AI integration, sophisticated state management, and deployment to Vercel. Handles complex user flows and data persistence.",
+      technologies: ["Next.js", "TypeScript", "OpenAI API", "Zustand", "Tailwind CSS", "Framer Motion"],
+      image: "/cadence.svg",
+      liveUrl: "https://cadence-blond.vercel.app/",
+      githubUrl: "https://github.com/WebbOfCode/cadence",
+      featured: true,
+      year: "2024"
+    },
+    {
+      id: 5,
       title: "🔐 Network Security Tools",
       description: "Collection of networking and security tools including socket programming, SSH configurations, Wireshark analysis, Nmap scanning, and port proxying implementations.",
       technologies: ["Python", "C++", "Wireshark", "Nmap", "SSH", "Socket Programming"],
@@ -67,7 +80,7 @@ export default function Projects() {
       featured: false
     },
     {
-      id: 5,
+      id: 6,
       title: "💬 Chat-Room MTSU",
       description: "Real-time chat application using TCP sockets in C++. Cross-platform messaging system supporting communication from iPad to PC via SSH with multi-threading.",
       technologies: ["C++", "TCP Sockets", "SSH", "Threading", "Network Programming"],
@@ -77,7 +90,7 @@ export default function Projects() {
       featured: false
     },
     {
-      id: 6,
+      id: 7,
       title: "📊 Data & ML Integration",
       description: "Python backends with traffic prediction models and dashboard visualization. Includes data analysis, machine learning model integration, and real-time data processing.",
       technologies: ["Python", "Machine Learning", "Data Analysis", "Visualization", "Backend"],
@@ -87,7 +100,7 @@ export default function Projects() {
       featured: false
     },
     {
-      id: 7,
+      id: 8,
       title: "🌐 Portfolio Website",
       description: "This very portfolio website showcasing responsive design, smooth animations, and modern web practices. Built with Next.js, TypeScript, and Tailwind CSS.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
@@ -97,7 +110,7 @@ export default function Projects() {
       featured: false
     },
     {
-      id: 8,
+      id: 9,
       title: "⚙️ System Administration",
       description: "Advanced systems work including WSL2 configurations, PowerShell scripting, Bash automation, and cross-platform development environments.",
       technologies: ["WSL2", "PowerShell", "Bash", "Linux", "System Admin", "DevOps"],
@@ -124,9 +137,9 @@ export default function Projects() {
     <section id="projects" className="py-16 px-6 lg:px-8 bg-bg-elevated">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">Work I'm Proud Of</h2>
+          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">Here's some Work I'm Proud Of</h2>
           <p className="text-lg text-text-muted max-w-2xl">
-            Projects that went from idea to deployed. Each one taught me something about building real products.
+            Projects that went from idea to deployed. Each one taught me foundational skills, and I learned valuable lessons about building real products.
           </p>
         </div>
 

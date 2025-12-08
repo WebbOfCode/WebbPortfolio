@@ -12,16 +12,16 @@ export default function Hero() {
             <div className="animate-fade-in">
               <div className="mb-6">
                 <div className="inline-block px-3 py-1 bg-bg-elevated/80 border border-border-default text-text-muted text-sm font-medium rounded-full mb-6">
-                  Currently building at MTSU
+                  Currently Senior C.S student at MTSU
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-manrope font-bold text-text-primary leading-tight mb-4">
-                  I'm Demarick
+                  Whats up I'm Demarick
                 </h1>
                 <p className="text-lg md:text-xl text-accent-gold font-semibold mb-6">
                   Full Stack Developer • Cybersecurity • Army Vet
                 </p>
                 <p className="text-xl text-text-muted leading-relaxed mb-8">
-                  I write code that actually works. Started securing networks in the Army, now building full-stack applications that don't break. I care about security, performance, and writing code I'd actually want to maintain in 6 months.
+                  I try to write code that actually works. I started my tech career by securing networks in the Army but now I'm building full-stack applications that don't break. I care about security, performance, and writing code I'd actually want to maintain in 6 months.
                 </p>
               </div>
               
@@ -40,7 +40,6 @@ export default function Hero() {
                   href="/Demarick Webb-Resume Fall 25.docx"
                   download="Demarick_Webb_Resume.docx"
                   className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-accent-gold text-text-primary font-semibold rounded-lg hover:bg-bg-elevated transition-all duration-200">
-                >
                   Download Resume
                   <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -51,7 +50,7 @@ export default function Hero() {
               {/* Single key stat */}
               <div className="inline-flex items-center space-x-2 text-text-secondary">
                 <div className="w-2 h-2 bg-burnt-orange rounded-full"></div>
-                <span className="text-sm">Secret clearance holder • 4+ years building systems</span>
+                <span className="text-sm"> Clearance holder • 4+ years building systems</span>
               </div>
             </div>
 
@@ -97,11 +96,11 @@ export default function Hero() {
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-accent-gold">2018</div>
-              <div className="text-sm text-text-muted">Coding since</div>
+              <div className="text-sm text-text-muted">Been coding since</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-accent-gold">∞</div>
-              <div className="text-sm text-text-muted">Coffees consumed</div>
+              <div className="text-sm text-text-muted">Coffees drank</div>
             </div>
           </div>
         </div>

@@ -3,19 +3,19 @@
 import Image from 'next/image'
 
 export default function About() {
-      // //////bghgjgn experience timeline - mix of military/tech/bartending  
+      // beginning of my experience timeline that has a mix of military/tech/bartending  
   const experience = [
     {
       title: "Bachelor's in Computer Science",
       company: "Middle Tennessee State University",
       period: "2024 - May 2026",
-      description: "Bachelor of Science in Computer Science with Cybersecurity concentration (3.1 GPA). Coursework: Linux Essentials for Cybersecurity, Data Algorithms & Structures, Python for Business Applications, Data Analysis, Ethics and Computing Technology."
+      description: "Bachelor of Science in Computer Science with Cybersecurity concentration (3.4 GPA). Coursework: Linux Essentials for Cybersecurity, Data Algorithms & Structures, Python for Business Applications, Data Analysis, Ethics and Computing Technology."
     },
     {
       title: "Associate of Science - Computer Science", 
       company: "Nashville State Community College",
       period: "Jan 2022 - May 2024",
-      description: "Completed Associate degree in Computer Science. Built foundational knowledge in programming fundamentals, data structures, algorithms, and system administration while transitioning from military to civilian tech career."
+      description: "Completed Associate degree in Computer Science. Here I built foundational the knowledge in programming fundamentals, data structures, algorithms, and system administration after transitioning from the U.S. Army to my civilian tech career."
     },
     {
       title: "Remote Help Desk Technician",
@@ -23,14 +23,14 @@ export default function About() {
       period: "2019 - 2020",
       description: "Provided remote IT support for 200+ enterprise clients across multiple industries. Troubleshot hardware/software issues, managed ticketing systems, and maintained 95% customer satisfaction rating. Company operations ceased due to COVID-19 pandemic impact and client contract losses."
     },
-          // bartending keeps the bills paid while in school
+          // bartending keeps the bills paid while in school so lets put it on the timeline
     {
       title: "Bartender Team Lead",
       company: "Nashville Symphony, Bridgestone Arena, Nissan Stadium",
       period: "2018 - Present", 
       description: "Managed high-volume bar operations at major event venues. Trained and supervised staff to ensure efficiency and top-tier customer service. Maintained compliance with alcohol service regulations and venue policies."
     },
-    {
+    { // military experience
       title: "Help Desk Team Chief",
       company: "U.S. Army - IT Specialist",
       period: "2016 - 2018",
@@ -52,7 +52,7 @@ export default function About() {
           
           <div className="bg-bg-elevated border-l-4 border-accent-gold rounded-xl px-6 py-4 max-w-3xl mb-6">
             <p className="text-lg text-text-muted leading-relaxed">
-              I spent 4 years managing critical Army networks, then transitioned into web development. Now I'm finishing my CS degree while bartending on weekends—balancing building software with keeping the bills paid.
+              I spent 4 years managing critical Army networks, then transitioned into Computer Science. I'm currently finishing my CS degree while bartending on weekends—balancing building software with keeping the bills paid.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function About() {
               What I'm looking for
             </h3>
             <p className="text-text-primary font-medium leading-relaxed">
-              Looking for my first dev role where I can contribute on day one. I'm strongest in full-stack work and anything security-related. My clearance is still active, so I'm open to government/defense contracts too. Ideally somewhere I can learn from good engineers.
+              I am looking for my first dev role where I can contribute on day one. I'm strongest in full-stack work and anything security-related. My clearance is still active, so I'm open to government/defense contracts too. Ideally somewhere I can learn from good engineers and make meaningful contributions to the team.
             </p>
           </div>
         </div>
@@ -77,28 +77,28 @@ export default function About() {
             <div>
               <h3 className="text-accent-gold font-semibold mb-2">Military IT background</h3>
               <p className="text-text-secondary leading-relaxed">
-                Four years as an Army IT Specialist managing classified networks across two continents. Led 5,000+ configuration changes, oversaw $750K in infrastructure with zero losses. Security and reliability aren't optional—they're foundational.
+              I served as an Army IT Specialist managing classified networks across two continents for four years. Led 5,000+ configuration changes and oversaw $750K in infrastructure equipment with zero losses. It is here where I learned that security and reliability aren't optional—they're foundational.
               </p>
             </div>
 
             <div>
               <h3 className="text-accent-gold font-semibold mb-2">Education & growth</h3>
               <p className="text-text-secondary leading-relaxed">
-                Completed Associate at Nashville State, currently pursuing Bachelor's in Computer Science at MTSU with cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
+                Completed Associate at Nashville State and currently pursuing Bachelor's degree in Computer Science at MTSU with a cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
               </p>
             </div>
 
             <div>
               <h3 className="text-accent-gold font-semibold mb-2">How I work</h3>
               <p className="text-text-secondary leading-relaxed">
-                Break it down, research thoroughly, test everything. I approach debugging like troubleshooting military networks—systematically and persistently until it works.
+                Break it down, research thoroughly, test everything. I approach debugging like troubleshooting military networks—systematically and persistently until it works, breaking things into simple stepsand knocking them out.
               </p>
             </div>
 
             <div>
               <h3 className="text-accent-gold font-semibold mb-2">Beyond the code</h3>
               <p className="text-text-secondary leading-relaxed">
-                Bartending at major Nashville venues keeps me grounded in real-world people skills. FSU football, live music, family time, and photography round out the picture.
+                WHen im not knee deep in code i'm most likely bartending at some of the major Nashville venues and that keeps me grounded in real-world people skills. FSU football, live music, and having family time round out the picture.
               </p>
             </div>
             

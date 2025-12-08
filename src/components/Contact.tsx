@@ -131,7 +131,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-16 px-6 lg:px-8 bg-bg-elevated">
+    <section id="contact" className="py-16 px-6 lg:px-8 bg-bg-main">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">
@@ -144,7 +144,7 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-warm-white rounded-xl border border-gray-100 p-8">
+          <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
             <h3 className="text-xl font-semibold text-text-primary mb-6">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
               <div className="grid md:grid-cols-2 gap-6">
@@ -236,8 +236,8 @@ export default function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            <div className="bg-warm-white rounded-xl border border-gray-100 p-8">
-              <h3 className="text-xl font-semibold text-text-primary mb-6">Contact Information</h3>
+            <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
+              <h3 className="text-xl font-semibold text-text-primary mb-6\">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center space-x-4">
@@ -263,8 +263,8 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="bg-warm-white rounded-xl border border-gray-100 p-8">
-              <h3 className="text-xl font-semibold text-text-primary mb-6">Connect Online</h3>
+            <div className="bg-bg-elevated rounded-xl border border-border-default p-8\">
+              <h3 className="text-xl font-semibold text-text-primary mb-6\">Connect Online</h3>
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((social) => (
                   <a

@@ -8,8 +8,11 @@ import { useEffect, useState } from 'react'
  */
 export default function ScrollProgress() {
   const [progress, setProgress] = useState(0)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    
     const updateProgress = () => {
       const scrollTop = window.scrollY
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -34,6 +37,10 @@ export default function ScrollProgress() {
 
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <>
