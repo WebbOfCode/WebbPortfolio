@@ -1,112 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Root theme tokens – tuned to match demarickwebb.dev */
 :root {
-  --color-burnt-orange: #fbbf24;
-  --color-warm-white: #eff6ff;
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #b0b0b0;
-  --color-teal: #22c55e;
-  --color-slate-dark: #0a0a0a;
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #0a0a0a;
-  --color-bg-card: #1a1a1a;
-  --color-bg-elevated: #151515;
-  --color-accent-gold: #fbbf24;
-  --color-accent-gold-dark: #f59e0b;
-  --color-accent-teal: #22c55e;
-  --color-border: #2a2a2a;
+  --bg-main: #020617; /* deep slate / almost black */
+  --bg-gradient: radial-gradient(circle at top left, #111827 0, #020617 40%, #000000 100%);
+  --accent-gold: #fbbf24;
+  --accent-teal: #22d3ee;
+  --accent-orange: #f97316;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+  --card-bg: rgba(15, 23, 42, 0.9);
+  --card-border: rgba(148, 163, 184, 0.15);
+  --glow-soft: 0 0 60px rgba(249, 115, 22, 0.25);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+html,
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--color-text-primary);
-  background: var(--color-bg-primary);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  color: var(--text-main);
+  background: var(--bg-gradient);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Use Manrope for headings / big hero text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Subtle animations for human feel */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
+/* Default link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Utility classes to match the portfolio “feel” */
+
+/* Hero background orb behind logo */
+.hero-orb {
+  position: relative;
+}
+
+.hero-orb::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.4), transparent 60%);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+/* Glassy cards (stats, skill chips, etc.) */
+.card-glass {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+}
+
+/* Small pill tags like “Python”, “React”, etc. */
+.tech-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+/* Accent buttons similar to View Projects / Get In Touch */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-semibold inline-flex items-center justify-center;
+  background: linear-gradient(135deg, #f97316, #fbbf24);
+  color: #020617;
+  box-shadow: 0 18px 45px rgba(248, 250, 252, 0.12);
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  @apply px-6 py-3 rounded-xl font-semibold inline-flex items-center justify-center border border-slate-600;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text-main);
+}
+
+/* Abstract Background Enhancements */
+body {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('/abstract-pattern.svg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Abstract Floating Elements */
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    opacity: 1;
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
     transform: translateY(0);
   }
 }
 
-@keyframes hoverLift {
-  to {
-    transform: translateY(-2px);
-  }
+.floating {
+  animation: float 6s ease-in-out infinite;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-out;
+/* Enhanced Button Styling */
+button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.hover-lift:hover {
-  animation: hoverLift 0.2s ease-out forwards;
+button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Custom utility classes */
-.bg-warm-white {
-  background-color: var(--color-warm-white);
+/* Abstract Shapes */
+.abstract-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  filter: blur(50px);
 }
 
-.text-burnt-orange {
-  color: var(--color-burnt-orange);
+/* Example Shape Positions */
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 20%;
 }
 
-.border-burnt-orange {
-  border-color: var(--color-burnt-orange);
+.shape-2 {
+  width: 300px;
+  height: 300px;
+  bottom: 15%;
+  right: 25%;
 }
 
-.bg-burnt-orange {
-  background-color: var(--color-burnt-orange);
+/* Scrollbar, because why not be fancy */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.shadow-subtle {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+::-webkit-scrollbar-track {
+  background: #020617;
 }
 
-.shadow-card {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 9999px;
 }
 
-/* Typography */
-.font-manrope {
-  font-family: 'Manrope', sans-serif;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus states */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid var(--color-burnt-orange);
-  outline-offset: 2px;
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563;
 }

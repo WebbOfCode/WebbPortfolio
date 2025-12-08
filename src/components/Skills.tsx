@@ -5,21 +5,30 @@ export default function Skills() {
     expert: {
       title: "Expert",
       description: "Daily use, production experience, deep understanding",
-      skills: ["Python", "Git", "VS Code", "HTML/CSS", "JavaScript", "SQL"]
+      skills: ["Python", "Git", "VS Code", "HTML/CSS", "JavaScript", "SQL", "Network Troubleshooting", "Linux Administration"]
     },
     proficient: {
       title: "Proficient",
       description: "Regular use, project experience, solid foundation",
-      skills: ["React", "C++", "Next.js", "Tailwind CSS", "PostgreSQL", "Linux Systems"]
+      skills: ["React", "C++", "Next.js", "Tailwind CSS", "PostgreSQL", "Linux Systems", "Active Directory", "VoIP Systems"]
     },
     familiar: {
       title: "Familiar",
       description: "Working knowledge, learning and building",
-      skills: ["TypeScript", "Node.js", "Flask", "Machine Learning", "MongoDB", "AWS"]
+      skills: ["TypeScript", "Node.js", "Flask", "Machine Learning", "MongoDB", "AWS", "Kubernetes", "Docker"]
     }
   }
 
   const specializedSkills = [
+    {
+      category: "Military IT (25B)",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      skills: ["SIPRNET/NIPRNET", "EKMS (Key Management)", "STIGs Compliance", "IA Controls", "Cisco Routers/Switches", "Active Directory", "VoIP (VTC Systems)", "Help Desk Operations"]
+    },
     {
       category: "Networking & Security",
       icon: (
@@ -27,7 +36,16 @@ export default function Skills() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
         </svg>
       ),
-      skills: ["TCP/IP", "Socket Programming", "SSH", "Wireshark", "Nmap", "Port Proxying", "DoD Security Protocols"]
+      skills: ["TCP/IP", "Socket Programming", "SSH", "Wireshark", "Nmap", "Firewalls", "VPN Configuration", "Network Hardening"]
+    },
+    {
+      category: "Computer Science (MTSU)",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+      skills: ["Data Structures & Algorithms", "OOP Design Patterns", "Linux Essentials", "Database Design", "Machine Learning", "Cybersecurity Fundamentals", "Software Engineering", "Ethical Hacking"]
     },
     {
       category: "Development Tools",
@@ -36,7 +54,7 @@ export default function Skills() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
-      skills: ["VS Code", "GitHub", "Vercel", "WSL2", "PowerShell", "Bash", "Vite"]
+      skills: ["VS Code", "GitHub", "Vercel", "WSL2", "PowerShell", "Bash", "Docker", "Unity"]
     },
     {
       category: "Frameworks & Libraries",
@@ -45,7 +63,7 @@ export default function Skills() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
         </svg>
       ),
-      skills: ["React", "Next.js", "Tailwind CSS", "Flask", "Scikit-learn", "OpenCV"]
+      skills: ["React", "Next.js", "Tailwind CSS", "Flask", "Scikit-learn", "OpenCV", "Express.js", "Framer Motion"]
     }
   ]
 
@@ -89,7 +107,7 @@ export default function Skills() {
         {/* Specialized Skills */}
         <div className="mb-12">
           <h3 className="text-2xl font-semibold text-text-primary mb-6">Specialized Areas</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {specializedSkills.map((area) => (
               <div key={area.category} className="bg-bg-elevated border border-border-default rounded-xl p-6">
                 <div className="flex items-center text-accent-gold mb-4">
@@ -135,8 +153,8 @@ export default function Skills() {
 
         {/* Credentials and Training */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white/60 border border-gray-100 rounded-xl p-6">
-            <div className="border-b border-gray-100 pb-4 mb-4">
+          <div className="bg-bg-elevated border border-border-default rounded-xl p-6">
+            <div className="border-b border-border-default pb-4 mb-4">
               <h3 className="text-lg font-semibold text-text-primary">Education</h3>
             </div>
             <div className="space-y-4">
@@ -151,8 +169,8 @@ export default function Skills() {
             </div>
           </div>
 
-          <div className="bg-white/60 border border-gray-100 rounded-xl p-6">
-            <div className="border-b border-gray-100 pb-4 mb-4">
+          <div className="bg-bg-elevated border border-border-default rounded-xl p-6">
+            <div className="border-b border-border-default pb-4 mb-4">
               <h3 className="text-lg font-semibold text-text-primary">Clearances & Background</h3>
             </div>
             <div className="space-y-4">

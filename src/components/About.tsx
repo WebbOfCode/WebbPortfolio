@@ -3,50 +3,25 @@
 import Image from 'next/image'
 
 export default function About() {
-      // beginning of my experience timeline that has a mix of military/tech/bartending  
-  const experience = [
-    {
-      title: "Bachelor's in Computer Science",
-      company: "Middle Tennessee State University",
-      period: "2024 - May 2026",
-      description: "Bachelor of Science in Computer Science with Cybersecurity concentration (3.4 GPA). Coursework: Linux Essentials for Cybersecurity, Data Algorithms & Structures, Python for Business Applications, Data Analysis, Ethics and Computing Technology."
-    },
-    {
-      title: "Associate of Science - Computer Science", 
-      company: "Nashville State Community College",
-      period: "Jan 2022 - May 2024",
-      description: "Completed Associate degree in Computer Science. Here I built foundational the knowledge in programming fundamentals, data structures, algorithms, and system administration after transitioning from the U.S. Army to my civilian tech career."
-    },
-    {
-      title: "Remote Help Desk Technician",
-      company: "TechBridge Solutions (Dissolved 2020)",
-      period: "2019 - 2020",
-      description: "Provided remote IT support for 200+ enterprise clients across multiple industries. Troubleshot hardware/software issues, managed ticketing systems, and maintained 95% customer satisfaction rating. Company operations ceased due to COVID-19 pandemic impact and client contract losses."
-    },
-          // bartending keeps the bills paid while in school so lets put it on the timeline
-    {
-      title: "Bartender Team Lead",
-      company: "Nashville Symphony, Bridgestone Arena, Nissan Stadium",
-      period: "2018 - Present", 
-      description: "Managed high-volume bar operations at major event venues. Trained and supervised staff to ensure efficiency and top-tier customer service. Maintained compliance with alcohol service regulations and venue policies."
-    },
-    { // military experience
-      title: "Help Desk Team Chief",
-      company: "U.S. Army - IT Specialist",
-      period: "2016 - 2018",
-      description: "Led over 5,000 network configuration changes and user support tickets for classified/unclassified systems. Managed and troubleshot enterprise networking equipment including VoIP phones and wireless access points. Oversaw $750,000 in communications equipment with zero losses."
-    },
-    {
-      title: "Information Systems Maintainer", 
-      company: "U.S. Army - Daegu, South Korea",
-      period: "2014 - 2016",
-      description: "Maintained and troubleshot network devices (switches, routers, firewalls). Ensured secure communications using DoD electronic key management systems. Performed installations and preventive maintenance on cybersecurity devices."
-    }
-  ]
 
   return (
     <section id="about" className="py-12 px-6 lg:px-8 bg-bg-main">
       <div className="max-w-5xl mx-auto">
+        {/* Headshot above About */}
+        <div className="flex justify-center mb-12">
+          <div className="relative">
+            <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-xl border border-border-default">
+              <Image
+                src="/headshot.jpg"
+                alt="Demarick Webb-Rivera"
+                width={192}
+                height={192}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+        
         <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-manrope font-bold text-text-primary mb-4">About me</h2>
           
@@ -70,64 +45,41 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Bio */}
-          <div className="space-y-5">
-            
-            <div>
-              <h3 className="text-accent-gold font-semibold mb-2">Military IT background</h3>
-              <p className="text-text-secondary leading-relaxed">
-              I served as an Army IT Specialist managing classified networks across two continents for four years. Led 5,000+ configuration changes and oversaw $750K in infrastructure equipment with zero losses. It is here where I learned that security and reliability aren't optional—they're foundational.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-accent-gold font-semibold mb-2">Education & growth</h3>
-              <p className="text-text-secondary leading-relaxed">
-                Completed Associate at Nashville State and currently pursuing Bachelor's degree in Computer Science at MTSU with a cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-accent-gold font-semibold mb-2">How I work</h3>
-              <p className="text-text-secondary leading-relaxed">
-                Break it down, research thoroughly, test everything. I approach debugging like troubleshooting military networks—systematically and persistently until it works, breaking things into simple stepsand knocking them out.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-accent-gold font-semibold mb-2">Beyond the code</h3>
-              <p className="text-text-secondary leading-relaxed">
-                WHen im not knee deep in code i'm most likely bartending at some of the major Nashville venues and that keeps me grounded in real-world people skills. FSU football, live music, and having family time round out the picture.
-              </p>
-            </div>
-            
-            <div className="pt-4">
-              <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Bartending</span>
-                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">FSU Football</span>
-                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Live Music</span>
-                <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Photography</span>
-              </div>
-            </div>
-            
+        <div className="space-y-5">
+          <div>
+            <h3 className="text-accent-gold font-semibold mb-2">Military IT background</h3>
+            <p className="text-text-secondary leading-relaxed">
+            I served as an Army IT Specialist managing classified networks across two continents for four years. Led 5,000+ configuration changes and oversaw $750K in infrastructure equipment with zero losses. It is here where I learned that security and reliability aren't optional—they're foundational.
+            </p>
           </div>
 
-          {/* Experience Timeline */}
           <div>
-            <h3 className="text-2xl font-semibold text-white mb-4">Experience</h3>
-            <div className="space-y-4">
-              {experience.map((job, index) => (
-                <div key={index} className="relative pl-8 border-l-2 border-orange-500">
-                  <div className="absolute w-4 h-4 bg-orange-500 rounded-full -left-2 top-0"></div>
-                  <div className="bg-gray-800 border border-gray-700 p-4 rounded-lg hover:shadow-sm transition-shadow duration-200">
-                    <h4 className="text-lg font-semibold text-white">{job.title}</h4>
-                    <p className="text-accent-teal font-medium">{job.company}</p>
-                    <p className="text-sm text-text-muted mb-2">{job.period}</p>
-                    <p className="text-text-muted leading-relaxed text-sm">{job.description}</p>
-                  </div>
-                </div>
-              ))}
+            <h3 className="text-accent-gold font-semibold mb-2">Education & growth</h3>
+            <p className="text-text-secondary leading-relaxed">
+              Completed Associate at Nashville State and currently pursuing Bachelor's degree in Computer Science at MTSU with a cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-accent-gold font-semibold mb-2">How I work</h3>
+            <p className="text-text-secondary leading-relaxed">
+              Break it down, research thoroughly, test everything. I approach debugging like troubleshooting military networks—systematically and persistently until it works, breaking things into simple stepsand knocking them out.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-accent-gold font-semibold mb-2">Beyond the code</h3>
+            <p className="text-text-secondary leading-relaxed">
+              WHen im not knee deep in code i'm most likely bartending at some of the major Nashville venues and that keeps me grounded in real-world people skills. FSU football, live music, and having family time round out the picture.
+            </p>
+          </div>
+          
+          <div className="pt-4">
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Bartending</span>
+              <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">FSU Football</span>
+              <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Live Music</span>
+              <span className="px-3 py-1 bg-bg-elevated text-accent-teal text-sm rounded-lg border border-accent-teal/30">Photography</span>
             </div>
           </div>
         </div>

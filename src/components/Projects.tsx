@@ -45,16 +45,13 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "PantryMate",
-      problem: "Food waste costs households money and impacts environment due to forgotten expiration dates.",
-      approach: "Created AI-powered inventory tracker with Python/OpenCV barcode scanning, React frontend, and Flask backend. Auto-suggests recipes based on available ingredients.",
-      result: "Functional prototype demonstrating computer vision integration and full-stack development. Reduces food waste through intelligent tracking.",
+      title: "🍱 PantryMate",
+      description: "AI-powered inventory tracker with Python/OpenCV barcode scanning, React frontend, and Flask backend. Auto-suggests recipes based on available ingredients to reduce food waste.",
       technologies: ["Python", "React", "OpenCV", "Flask"],
       image: "/pantrymate.svg",
       liveUrl: "https://pantry-mate-khaki.vercel.app/",
       githubUrl: "https://github.com/WebbOfCode/PantryMate",
-      featured: true,
-      year: "2024"
+      featured: false
     },
     {
       id: 4,
