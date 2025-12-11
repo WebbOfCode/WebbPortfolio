@@ -135,10 +135,10 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">
-            Let's Build Something
+            Let&apos;s Build Something
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto">
-            Got a project, job lead, or just want to chat about tech? Send me a message—I'll get back to you within 24 hours.
+            Got a project, job lead, or just want to chat about tech? Send me a message—I&apos;ll get back to you within 24 hours.
           </p>
         </div>
 
@@ -237,7 +237,7 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-6">
             <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
-              <h3 className="text-xl font-semibold text-text-primary mb-6\">Contact Information</h3>
+              <h3 className="text-xl font-semibold text-text-primary mb-6">Contact Information</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-center space-x-4">
@@ -263,8 +263,8 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="bg-bg-elevated rounded-xl border border-border-default p-8\">
-              <h3 className="text-xl font-semibold text-text-primary mb-6\">Connect Online</h3>
+            <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
+              <h3 className="text-xl font-semibold text-text-primary mb-6">Connect Online</h3>
               <div className="grid grid-cols-3 gap-4">
                 {socialLinks.map((social) => (
                   <a

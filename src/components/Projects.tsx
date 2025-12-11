@@ -20,7 +20,7 @@ export default function Projects() {
     {
       id: 1,
       title: "Safe URL Checker",
-      problem: "Phishing attacks increasingly target non-technical users who can't identify malicious links.",
+      problem: "Phishing attacks increasingly target non-technical users who can&apos;t identify malicious links.",
       approach: "Developed Next.js security tool integrating multiple threat intelligence APIs to analyze URLs for malicious content, malware, and phishing indicators.",
       result: "Real-time threat detection with intuitive UI. Demonstrates security-first development approach and API integration skills.",
       technologies: ["Next.js", "TypeScript", "Vercel", "Security APIs"],
@@ -35,7 +35,7 @@ export default function Projects() {
       title: "Smart Wheel Research Simulator",
       problem: "Vanderbilt robotics research needed a way to study driver reactions and cognitive load during autonomous vehicle transitions.",
       approach: "Built Unity-based driving simulator with split-screen rendering that integrates cognitive minigames (Stroop tests, math puzzles) alongside main gameplay. Used C# for game logic and speech recognition integration.",
-      result: "Research-grade simulator enabling real-time driver attention monitoring. Supports Vanderbilt's development of intelligent steering wheels that improve autonomous vehicle safety.",
+      result: "Research-grade simulator enabling real-time driver attention monitoring. Supports Vanderbilt&apos;s development of intelligent steering wheels that improve autonomous vehicle safety.",
       technologies: ["Unity", "C#", "Speech Recognition", "FFmpeg"],
       image: "/driving.svg",
       liveUrl: "https://github.com/WebbOfCode/sample9632",
@@ -120,7 +120,7 @@ export default function Projects() {
 
   const handleLiveDemo = (url: string, title: string) => {
     if (url === '#') {
-      alert(`This is the ${title} you're currently viewing!`)
+      alert(`This is the ${title} you&apos;re currently viewing!`)
       return
     }
     window.open(url, '_blank', 'noopener,noreferrer')
@@ -134,7 +134,7 @@ export default function Projects() {
     <section id="projects" className="py-16 px-6 lg:px-8 bg-bg-elevated">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">Here's some Work I'm Proud Of</h2>
+          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">Here&apos;s some Work I&apos;m Proud Of</h2>
           <p className="text-lg text-text-muted max-w-2xl">
             Projects that went from idea to deployed. Each one taught me foundational skills, and I learned valuable lessons about building real products.
           </p>

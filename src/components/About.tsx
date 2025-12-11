@@ -27,7 +27,7 @@ export default function About() {
           
           <div className="bg-bg-elevated border-l-4 border-accent-gold rounded-xl px-6 py-4 max-w-3xl mb-6">
             <p className="text-lg text-text-muted leading-relaxed">
-              I spent 4 years managing critical Army networks, then transitioned into Computer Science. I'm currently finishing my CS degree while bartending on weekends—balancing building software with keeping the bills paid.
+              I spent 4 years managing critical Army networks, then transitioned into Computer Science. I&apos;m currently finishing my CS degree while bartending on weekends—balancing building software with keeping the bills paid.
             </p>
           </div>
 
@@ -37,10 +37,10 @@ export default function About() {
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              What I'm looking for
+              What I&apos;m looking for
             </h3>
             <p className="text-text-primary font-medium leading-relaxed">
-              I am looking for my first dev role where I can contribute on day one. I'm strongest in full-stack work and anything security-related. My clearance is still active, so I'm open to government/defense contracts too. Ideally somewhere I can learn from good engineers and make meaningful contributions to the team.
+              I am looking for my first dev role where I can contribute on day one. I&apos;m strongest in full-stack work and anything security-related. My clearance is still active, so I&apos;m open to government/defense contracts too. Ideally somewhere I can learn from good engineers and make meaningful contributions to the team.
             </p>
           </div>
         </div>
@@ -49,14 +49,14 @@ export default function About() {
           <div>
             <h3 className="text-accent-gold font-semibold mb-2">Military IT background</h3>
             <p className="text-text-secondary leading-relaxed">
-            I served as an Army IT Specialist managing classified networks across two continents for four years. Led 5,000+ configuration changes and oversaw $750K in infrastructure equipment with zero losses. It is here where I learned that security and reliability aren't optional—they're foundational.
+            I served as an Army IT Specialist managing classified networks across two continents for four years. Led 5,000+ configuration changes and oversaw $750K in infrastructure equipment with zero losses. It is here where I learned that security and reliability aren&apos;t optional—they&apos;re foundational.
             </p>
           </div>
 
           <div>
             <h3 className="text-accent-gold font-semibold mb-2">Education & growth</h3>
             <p className="text-text-secondary leading-relaxed">
-              Completed Associate at Nashville State and currently pursuing Bachelor's degree in Computer Science at MTSU with a cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
+              Completed Associate at Nashville State and currently pursuing Bachelor&apos;s degree in Computer Science at MTSU with a cybersecurity concentration. Combining military discipline with academic theory for cleaner code and better solutions.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function About() {
           <div>
             <h3 className="text-accent-gold font-semibold mb-2">Beyond the code</h3>
             <p className="text-text-secondary leading-relaxed">
-              WHen im not knee deep in code i'm most likely bartending at some of the major Nashville venues and that keeps me grounded in real-world people skills. FSU football, live music, and having family time round out the picture.
+              WHen im not knee deep in code I&apos;m most likely bartending at some of the major Nashville venues and that keeps me grounded in real-world people skills. FSU football, live music, and having family time round out the picture.
             </p>
           </div>
           

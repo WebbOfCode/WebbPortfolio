@@ -137,7 +137,7 @@ export default function YouTube() {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-4">Behind the Code</h2>
           <p className="text-text-muted max-w-2xl mx-auto">
-            Videos showing how stuff actually gets built. Projects, walkthroughs, and things I've learned along the way.
+            Videos showing how stuff actually gets built. Projects, walkthroughs, and things I&apos;ve learned along the way.
           </p>
         </div>
 
