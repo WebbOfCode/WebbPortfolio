@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="modern">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demarick Webb-Rivera | Systems Engineer & Full-Stack Developer</title>
+    <meta name="description" content="Army Veteran and MTSU Computer Science student specializing in full-stack development, networking, and security.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Console Container -->
+    <div class="console-frame">
+        <!-- Header / Navigation -->
+        <header class="site-header">
+            <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                <div class="nav-brand">
+                    <span class="brand-text">DWR_SYSTEMS</span>
+                    <span class="status-indicator" aria-label="System online"></span>
+                </div>
+                
+                <ul class="nav-tabs">
+                    <li><a href="#hero" class="nav-link active">IDENTITY</a></li>
+                    <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <li><a href="#skills" class="nav-link">STACK</a></li>
+                    <li><a href="#about" class="nav-link">BACKGROUND</a></li>
+                    <li><a href="#contact" class="nav-link">SIGNAL</a></li>
+                </ul>
+
+                <button 
+                    id="theme-toggle" 
+                    class="theme-toggle-btn"
+                    aria-pressed="false"
+                    aria-label="Toggle between modern and retro theme">
+                    <span class="toggle-icon">⚡</span>
+                    <span class="toggle-text">RETRO</span>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section panel">
+                <div class="hero-content">
+                    <div class="hero-status">
+                        <span class="status-badge">ACTIVE</span>
+                        <span class="status-text">Available for Opportunities</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line-1">DEMARICK</span>
+                        <span class="title-line-2">WEBB-RIVERA</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle">Systems Engineer / Full-Stack Developer</p>
+                    
+                    <div class="hero-description">
+                        <p>Army Veteran bringing military precision to software engineering. Currently completing Computer Science degree at MTSU with focus on full-stack development, networking security, and systems architecture.</p>
+                        <p class="hero-tagline">Building secure, scalable solutions with disciplined engineering.</p>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
+                        <a href="#contact" class="btn btn-secondary">ESTABLISH CONNECTION</a>
+                    </div>
+
+                    <div class="hero-links">
+                        <a href="https://github.com/WebbOfCode" target="_blank" rel="noopener noreferrer" class="hero-link">
+                            <span class="link-icon">→</span> GitHub
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hero-link">
+                            <span class="link-icon">→</span> LinkedIn
+                        </a>
+                        <a href="/resume.pdf" target="_blank" class="hero-link">
+                            <span class="link-icon">→</span> Resume.pdf
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-frame">
+                        <div class="frame-corner tl"></div>
+                        <div class="frame-corner tr"></div>
+                        <div class="frame-corner bl"></div>
+                        <div class="frame-corner br"></div>
+                        <div class="visual-content">
+                            <div class="scan-line"></div>
+                            <div class="identity-display">
+                                <div class="id-row">
+                                    <span class="id-label">IDENTITY:</span>
+                                    <span class="id-value">WEBB-RIVERA, DEMARICK</span>
+                                </div>
+                                <div class="id-row">
+                                    <span class="id-label">CLEARANCE:</span>
+                                    <span class="id-value">ARMY VETERAN</span>
+                                </div>
+                                <div class="id-row">
+                                    <span class="id-label">LOCATION:</span>
+                                    <span class="id-value">TENNESSEE, USA</span>
+                                </div>
+                                <div class="id-row">
+                                    <span class="id-label">STATUS:</span>
+                                    <span class="id-value status-active">OPERATIONAL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects-section panel">
+                <div class="section-header">
+                    <h2 class="section-title">PROJECT_ARCHIVE</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: TrafficWiz -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">TrafficWiz</h3>
+                            <span class="project-status">LIVE</span>
+                        </div>
+                        
+                        <p class="project-description">
+                            AI-powered traffic violation detection and citation generation system. Deployed ML models for real-time vehicle recognition with automated report generation pipeline.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/WebbOfCode/TrafficWiz" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span class="link-arrow">→</span> Source
+                            </a>
+                            <a href="#" class="project-link">
+                                <span class="link-arrow">→</span> Live Demo
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Chat-Room MTSU -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Chat-Room MTSU</h3>
+                            <span class="project-status">ACTIVE</span>
+                        </div>
+                        
+                        <p class="project-description">
+                            Real-time messaging platform built for university community. Implemented WebSocket architecture with JWT authentication and encrypted message storage.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/WebbOfCode" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span class="link-arrow">→</span> Source
+                            </a>
+                            <a href="#" class="project-link">
+                                <span class="link-arrow">→</span> Live Demo
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Portfolio Systems -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-title">Portfolio Systems</h3>
+                            <span class="project-status">DEV</span>
+                        </div>
+                        
+                        <p class="project-description">
+                            Dual-theme portfolio platform with retro-futuristic design system. Desktop-first architecture with accessible theme switching and CSS variable-based styling.
+                        </p>
+
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Accessibility</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/WebbOfCode" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <span class="link-arrow">→</span> Source
+                            </a>
+                            <a href="#" class="project-link">
+                                <span class="link-arrow">→</span> You're Here
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section panel">
+                <div class="section-header">
+                    <h2 class="section-title">STACK_INVENTORY</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Development -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">▶</span> Development
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">JavaScript / TypeScript</span>
+                                    <span class="skill-level">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">React / Next.js</span>
+                                    <span class="skill-level">PROFICIENT</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-level">PROFICIENT</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Systems & Security -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">▶</span> Systems & Security
+                        </h3>
+                        <div class="skill-bars">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Network Architecture</span>
+                                    <span class="skill-level">ADVANCED</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Security Protocols</span>
+                                    <span class="skill-level">PROFICIENT</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Linux Administration</span>
+                                    <span class="skill-level">PROFICIENT</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name">Database Design</span>
+                                    <span class="skill-level">PROFICIENT</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-fill" style="--skill-width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <span class="category-icon">▶</span> Tools & Platforms
+                        </h3>
+                        <div class="tool-grid">
+                            <span class="tool-badge">Git</span>
+                            <span class="tool-badge">Docker</span>
+                            <span class="tool-badge">AWS</span>
+                            <span class="tool-badge">PostgreSQL</span>
+                            <span class="tool-badge">MongoDB</span>
+                            <span class="tool-badge">Redis</span>
+                            <span class="tool-badge">Nginx</span>
+                            <span class="tool-badge">CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section panel">
+                <div class="section-header">
+                    <h2 class="section-title">BACKGROUND_DATA</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-main">
+                        <h3 class="about-heading">Systems Thinking Meets Software Engineering</h3>
+                        
+                        <p>Transitioning from military service to software development, I bring a unique perspective shaped by systems thinking, operational discipline, and real-world problem solving under pressure.</p>
+
+                        <p>My approach to engineering is methodical: understand the system, identify failure points, build with resilience in mind. Whether architecting network infrastructure or designing full-stack applications, I focus on security, scalability, and maintainability.</p>
+
+                        <p>Currently completing Computer Science degree at Middle Tennessee State University, combining academic foundations with practical engineering experience. My military background in systems and logistics translates directly to modern DevOps practices and infrastructure thinking.</p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-icon">★</span>
+                                <div class="highlight-content">
+                                    <strong>Army Veteran</strong>
+                                    <p>Bringing military precision and systems thinking to software engineering</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">★</span>
+                                <div class="highlight-content">
+                                    <strong>MTSU Computer Science</strong>
+                                    <p>Building theoretical foundations while shipping production code</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">★</span>
+                                <div class="highlight-content">
+                                    <strong>Full-Stack Focus</strong>
+                                    <p>Equally comfortable with React frontends and distributed backend systems</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-sidebar">
+                        <div class="info-panel">
+                            <h4 class="info-title">CURRENT_STATUS</h4>
+                            <ul class="info-list">
+                                <li><span class="info-label">Education:</span> MTSU Computer Science</li>
+                                <li><span class="info-label">Location:</span> Tennessee, USA</li>
+                                <li><span class="info-label">Status:</span> <span class="status-active">Available</span></li>
+                                <li><span class="info-label">Focus:</span> Full-Stack Development</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-panel">
+                            <h4 class="info-title">CORE_PRINCIPLES</h4>
+                            <ul class="principle-list">
+                                <li>Security by design</li>
+                                <li>Test before deploy</li>
+                                <li>Document for humans</li>
+                                <li>Optimize when measured</li>
+                                <li>Build for maintainability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section panel">
+                <div class="section-header">
+                    <h2 class="section-title">SIGNAL_INTERFACE</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-intro">
+                        <p>Interested in collaboration or have a project in mind? Establish secure communication through the channels below.</p>
+                    </div>
+
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">IDENTITY</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">SIGNAL_ADDRESS</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">SUBJECT</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">MESSAGE_PAYLOAD</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            TRANSMIT MESSAGE
+                        </button>
+                    </form>
+
+                    <div class="contact-alt">
+                        <h3 class="alt-title">DIRECT_CHANNELS</h3>
+                        <div class="alt-links">
+                            <a href="mailto:contact@example.com" class="alt-link">
+                                <span class="link-icon">✉</span> contact@example.com
+                            </a>
+                            <a href="https://github.com/WebbOfCode" target="_blank" rel="noopener noreferrer" class="alt-link">
+                                <span class="link-icon">→</span> github.com/WebbOfCode
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="alt-link">
+                                <span class="link-icon">→</span> LinkedIn Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p class="footer-text">&copy; 2025 Demarick Webb-Rivera. Built with intention.</p>
+                </div>
+                <div class="footer-section">
+                    <p class="footer-system">SYSTEM_VERSION: 2.0.0 | STATUS: <span class="status-active">OPERATIONAL</span></p>
+                </div>
+                <div class="footer-section">
+                    <p class="footer-credit">Engineered with semantic HTML, CSS variables, and zero frameworks.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="theme.js"></script>
+</body>
+</html>

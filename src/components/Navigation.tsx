@@ -1,9 +1,34 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [theme, setTheme] = useState<'modern' | 'retro'>('modern')
+
+  // Load theme from localStorage on mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('portfolio-theme') as 'modern' | 'retro' | null
+    
+    if (savedTheme) {
+      // Use saved preference
+      setTheme(savedTheme)
+      document.documentElement.setAttribute('data-theme', savedTheme)
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // No saved preference, check system preference
+      // We interpret dark mode as interest in retro theme
+      setTheme('retro')
+      document.documentElement.setAttribute('data-theme', 'retro')
+    }
+  }, [])
+
+  // Toggle theme
+  const toggleTheme = () => {
+    const newTheme = theme === 'modern' ? 'retro' : 'modern'
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme)
+    localStorage.setItem('portfolio-theme', newTheme)
+  }
 
   const navItems: Array<{ label: string; href: string }> = [
     { label: 'Home', href: '#hero' },
@@ -38,6 +63,20 @@ export default function Navigation() {
                 {item.label}
               </a>
             ))}
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border-default hover:border-accent-gold transition-all duration-200 bg-bg-main/50 hover:bg-bg-elevated group"
+              aria-label={`Switch to ${theme === 'modern' ? 'retro' : 'modern'} theme`}
+              aria-pressed={theme === 'retro'}
+            >
+              <span className="text-lg group-hover:scale-110 transition-transform">
+                {theme === 'modern' ? '⚡' : '◆'}
+              </span>
+              <span className="text-xs font-mono font-semibold text-text-muted group-hover:text-accent-gold">
+                {theme === 'modern' ? 'RETRO' : 'MODERN'}
+              </span>
+            </button>
             <a
               href="#contact"
               className="bg-accent-gold hover:bg-accent-gold-dark text-black px-4 py-2 rounded-lg font-semibold transition-all duration-200"
@@ -47,7 +86,18 @@ export default function Navigation() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-2">
+            {/* Theme Toggle Button (Mobile) */}
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-1 px-2 py-2 rounded-lg border border-border-default hover:border-accent-gold transition-all duration-200 bg-bg-main/50"
+              aria-label={`Switch to ${theme === 'modern' ? 'retro' : 'modern'} theme`}
+              aria-pressed={theme === 'retro'}
+            >
+              <span className="text-base">
+                {theme === 'modern' ? '⚡' : '◆'}
+              </span>
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 text-text-secondary hover:text-burnt-orange transition-colors duration-200"

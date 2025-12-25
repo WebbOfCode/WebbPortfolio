@@ -14,9 +14,24 @@ export default function ScrollProgress() {
     setMounted(true)
     
     const updateProgress = () => {
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrollPercent = (scrollTop / docHeight) * 100
+      // Check if we're in retro mode with viewport scrolling
+      const isRetro = document.documentElement.getAttribute('data-theme') === 'retro'
+      const viewportElement = document.querySelector('.viewport-content')
+      
+      let scrollPercent = 0
+      
+      if (isRetro && viewportElement) {
+        // Use viewport scroll for retro mode
+        const scrollTop = viewportElement.scrollTop
+        const scrollHeight = viewportElement.scrollHeight - viewportElement.clientHeight
+        scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0
+      } else {
+        // Use window scroll for modern mode
+        const scrollTop = window.scrollY
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight
+        scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0
+      }
+      
       setProgress(Math.min(scrollPercent, 100))
     }
 
@@ -32,10 +47,21 @@ export default function ScrollProgress() {
       }
     }
 
+    // Listen to both window and viewport scroll
     window.addEventListener('scroll', handleScroll)
+    const viewportElement = document.querySelector('.viewport-content')
+    if (viewportElement) {
+      viewportElement.addEventListener('scroll', handleScroll)
+    }
+    
     updateProgress() // Initial call
 
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (viewportElement) {
+        viewportElement.removeEventListener('scroll', handleScroll)
+      }
+    }
   }, [])
 
   if (!mounted) {
