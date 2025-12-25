@@ -1,6 +1,22 @@
 'use client'
 
 import Image from 'next/image'
+import { useEffect, useMemo, useRef, useState } from 'react'
+
+type ProjectMeta = {
+  id: number
+  title: string
+  problem?: string
+  approach?: string
+  result?: string
+  description?: string
+  technologies: string[]
+  image: string
+  liveUrl: string
+  githubUrl: string
+  featured?: boolean
+  year?: string
+}
 
 export default function Projects() {
   const projects = [
@@ -118,6 +134,35 @@ export default function Projects() {
     }
   ]
 
+  const [selected, setSelected] = useState<ProjectMeta | null>(null)
+  const [loadingDetail, setLoadingDetail] = useState(false)
+  const [reducedMotion, setReducedMotion] = useState(false)
+  const [isRetro, setIsRetro] = useState(false)
+  const panelRef = useRef<HTMLDivElement>(null)
+  const prevFocusRef = useRef<HTMLElement | null>(null)
+
+  const featured = useMemo(() => projects.filter(p => p.featured), [projects])
+  const additional = useMemo(() => projects.filter(p => !p.featured), [projects])
+
+  const openDetails = (p: ProjectMeta) => {
+    prevFocusRef.current = (document.activeElement as HTMLElement) || null
+    setLoadingDetail(true)
+    setSelected(p)
+    setTimeout(() => setLoadingDetail(false), 500)
+  }
+
+  const closeDetails = () => {
+    setSelected(null)
+    setLoadingDetail(false)
+    // Restore focus to previously focused element
+    prevFocusRef.current?.focus()
+  }
+
+  const handleLoadProject = (p: ProjectMeta) => {
+    const target = p.liveUrl && p.liveUrl !== '#' ? p.liveUrl : p.githubUrl
+    window.open(target, '_blank', 'noopener,noreferrer')
+  }
+
   const handleLiveDemo = (url: string, title: string) => {
     if (url === '#') {
       alert(`This is the ${title} you&apos;re currently viewing!`)
@@ -130,6 +175,68 @@ export default function Projects() {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
+  // Respect prefers-reduced-motion
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const apply = () => setReducedMotion(mq.matches)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
+
+  // Detect retro theme changes for styling
+  useEffect(() => {
+    const applyTheme = () => {
+      const theme = document.documentElement.getAttribute('data-theme')
+      setIsRetro(theme === 'retro')
+    }
+    applyTheme()
+    const observer = new MutationObserver(applyTheme)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
+    return () => observer.disconnect()
+  }, [])
+
+  // Focus trap and ESC close when detail panel is open
+  useEffect(() => {
+    if (!selected || !panelRef.current) return
+
+    const root = panelRef.current
+    const focusables = Array.from(
+      root.querySelectorAll<HTMLElement>(
+        'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      )
+    )
+    ;(focusables[0] || root).focus()
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (!selected) return
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        closeDetails()
+        return
+      }
+      if (e.key === 'Tab' && focusables.length) {
+        const first = focusables[0]
+        const last = focusables[focusables.length - 1]
+        const active = document.activeElement as HTMLElement | null
+        if (e.shiftKey) {
+          if (active === first || !root.contains(active)) {
+            e.preventDefault()
+            last.focus()
+          }
+        } else {
+          if (active === last) {
+            e.preventDefault()
+            first.focus()
+          }
+        }
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [selected])
+
   return (
     <section id="projects" className="py-16 px-6 lg:px-8 bg-bg-elevated">
       <div className="max-w-5xl mx-auto">
@@ -140,10 +247,100 @@ export default function Projects() {
           </p>
         </div>
 
+        {/* Detail Panel */}
+        {selected && (
+          <div
+            role="dialog"
+            aria-labelledby={`project-detail-${selected.id}-title`}
+            aria-describedby={`project-detail-${selected.id}-desc`}
+            aria-modal="true"
+            tabIndex={-1}
+            ref={panelRef}
+            className="mb-10 grid md:grid-cols-2 gap-6 bg-bg-main border border-border-default rounded-xl overflow-hidden"
+          >
+            {/* Left: Metadata */}
+            <div className="p-6 border-r border-border-default">
+              <h3 id={`project-detail-${selected.id}-title`} className="text-xl font-semibold text-accent-gold mb-2">{selected.title}</h3>
+              <div className="mb-4">
+                {selected.year && (
+                  <span className="inline-block text-xs font-mono text-text-muted border border-border-default rounded px-2 py-1 mr-2">YEAR: {selected.year}</span>
+                )}
+                <span className="inline-block text-xs font-mono text-text-muted border border-border-default rounded px-2 py-1">ROLE: Builder</span>
+              </div>
+              <div className="mb-4">
+                <h4 className="font-mono text-sm text-accent-teal mb-2">STACK</h4>
+                <div className="flex flex-wrap gap-2">
+                  {selected.technologies.map((tech) => (
+                    <span key={tech} className="px-2 py-1 bg-bg-elevated text-accent-teal text-xs font-medium rounded-lg border border-accent-teal/30">{tech}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex items-center gap-2 mt-4">
+                <button
+                  onClick={() => handleLoadProject(selected)}
+                  className="bg-accent-gold text-black px-3 py-2 rounded font-semibold hover:bg-accent-gold-dark transition-colors"
+                >
+                  Load project
+                </button>
+                <button
+                  onClick={closeDetails}
+                  className="bg-bg-elevated text-text-primary px-3 py-2 rounded font-semibold border border-border-default hover:bg-bg-main"
+                >
+                  Close
+                </button>
+              </div>
+              {/* Subtle progress bar */}
+              <div className="mt-3 h-1 bg-bg-elevated">
+                <div
+                  className={`h-1 bg-accent-gold ${
+                    reducedMotion ? '' : 'transition-all duration-500'
+                  } ${loadingDetail ? (reducedMotion ? 'w-1/2' : 'w-1/3 animate-pulse') : 'w-full'}`}
+                ></div>
+              </div>
+            </div>
+
+            {/* Right: Description + Outcomes */}
+            <div className="p-6">
+              <div id={`project-detail-${selected.id}-desc`} className="space-y-3">
+                {selected.problem && (
+                  <div>
+                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Problem</span>
+                    <p className="text-sm text-text-muted mt-1">{selected.problem}</p>
+                  </div>
+                )}
+                {selected.approach && (
+                  <div>
+                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Approach</span>
+                    <p className="text-sm text-text-muted mt-1">{selected.approach}</p>
+                  </div>
+                )}
+                {selected.result && (
+                  <div>
+                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Outcome</span>
+                    <p className="text-sm text-text-muted mt-1">{selected.result}</p>
+                  </div>
+                )}
+                {selected.description && (
+                  <div>
+                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Summary</span>
+                    <p className="text-sm text-text-muted mt-1">{selected.description}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Featured Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {projects.filter(project => project.featured).map((project) => (
-            <div key={project.id} className="bg-bg-main border border-border-default rounded-xl overflow-hidden hover:shadow-lg transition-all duration-200">
+          {featured.map((project) => (
+            <div
+              key={project.id}
+              className="bg-bg-main border border-border-default rounded-xl overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer"
+              onClick={() => openDetails(project)}
+              aria-label={`Open details for ${project.title}`}
+              tabIndex={0}
+            >
               <div className="relative group">
                 <Image 
                   src={project.image} 
@@ -163,14 +360,14 @@ export default function Projects() {
                   <div className="flex space-x-3">
                     {project.liveUrl !== project.githubUrl && (
                       <button
-                        onClick={() => handleLiveDemo(project.liveUrl, project.title)}
+                        onClick={(e) => { e.stopPropagation(); handleLiveDemo(project.liveUrl, project.title) }}
                         className="bg-bg-elevated backdrop-blur-sm text-text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent-gold hover:text-black transition-colors duration-200 border border-border-default"
                       >
                         Try it
                       </button>
                     )}
                     <button
-                      onClick={() => handleGithubView(project.githubUrl)}
+                      onClick={(e) => { e.stopPropagation(); handleGithubView(project.githubUrl) }}
                       className="bg-accent-gold text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-gold-dark transition-colors duration-200"
                     >
                       Code
@@ -217,8 +414,14 @@ export default function Projects() {
         <div>
           <h3 className="text-2xl font-semibold text-text-primary mb-8">Additional Work</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.filter(project => !project.featured).map((project) => (
-              <div key={project.id} className="bg-bg-main border border-border-default rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-200">
+            {additional.map((project) => (
+              <div
+                key={project.id}
+                className="bg-bg-main border border-border-default rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-200 cursor-pointer"
+                onClick={() => openDetails(project)}
+                aria-label={`Open details for ${project.title}`}
+                tabIndex={0}
+              >
                 <div className="relative group">
                   <Image 
                     src={project.image} 
@@ -232,14 +435,14 @@ export default function Projects() {
                     <div className="flex space-x-2">
                       {project.liveUrl !== project.githubUrl && (
                         <button
-                          onClick={() => handleLiveDemo(project.liveUrl, project.title)}
+                          onClick={(e) => { e.stopPropagation(); handleLiveDemo(project.liveUrl, project.title) }}
                           className="bg-bg-elevated text-text-primary px-3 py-1 rounded text-sm font-semibold hover:bg-accent-teal hover:text-black transition-colors duration-200 border border-border-default"
                         >
                           Demo
                         </button>
                       )}
                       <button
-                        onClick={() => handleGithubView(project.githubUrl)}
+                        onClick={(e) => { e.stopPropagation(); handleGithubView(project.githubUrl) }}
                         className="bg-accent-gold text-black px-3 py-1 rounded text-sm font-semibold hover:bg-accent-gold-dark transition-colors duration-200"
                       >
                         Code
@@ -271,9 +474,20 @@ export default function Projects() {
         {/* Now & Uses sections */}
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           {/* Now */}
-          <div className="bg-warm-white rounded-xl p-6 border border-gray-100">
+          <div className={`rounded-xl p-6 border ${isRetro ? 'bg-accent-gold/10 border-accent-gold/40' : 'bg-warm-white border-gray-100'}`}>
+            {isRetro && (
+              <div
+                aria-hidden="true"
+                className="-mx-6 -mt-6 px-4 py-2 bg-bg-main/60 border-b border-border-default flex items-center gap-2 rounded-t-xl"
+              >
+                <span className={`w-2 h-2 rounded-full bg-accent-gold ${reducedMotion ? '' : 'animate-pulse'}`}></span>
+                <span className="w-2 h-2 rounded-full bg-accent-gold/70"></span>
+                <span className="w-2 h-2 rounded-full bg-accent-gold/40"></span>
+                <span className="ml-auto font-mono text-[10px] text-text-muted">CARD: NOW</span>
+              </div>
+            )}
             <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+              <div className={`w-2 h-2 bg-green-500 rounded-full mr-2 ${reducedMotion ? '' : 'animate-pulse'}`}></div>
               Currently Working On
             </h3>
             <ul className="space-y-2 text-text-secondary">
@@ -285,7 +499,18 @@ export default function Projects() {
           </div>
 
           {/* Uses */}
-          <div className="bg-warm-white rounded-xl p-6 border border-gray-100">
+          <div className={`rounded-xl p-6 border ${isRetro ? 'bg-accent-teal/10 border-accent-teal/40' : 'bg-warm-white border-gray-100'}`}>
+            {isRetro && (
+              <div
+                aria-hidden="true"
+                className="-mx-6 -mt-6 px-4 py-2 bg-bg-main/60 border-b border-border-default flex items-center gap-2 rounded-t-xl"
+              >
+                <span className={`w-2 h-2 rounded-full bg-accent-teal ${reducedMotion ? '' : 'animate-pulse'}`}></span>
+                <span className="w-2 h-2 rounded-full bg-accent-teal/70"></span>
+                <span className="w-2 h-2 rounded-full bg-accent-teal/40"></span>
+                <span className="ml-auto font-mono text-[10px] text-text-muted">CARD: STACK</span>
+              </div>
+            )}
             <h3 className="text-lg font-semibold text-text-primary mb-4">Tech Stack</h3>
             <ul className="space-y-2 text-text-secondary">
               <li>• VS Code + GitHub Copilot</li>

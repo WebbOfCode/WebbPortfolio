@@ -41,9 +41,9 @@
   --color-text-secondary: #b0b0b0;
   --color-text-tertiary: #808080;
   
-  --color-accent: #00ff88;
-  --color-accent-dim: #00cc6a;
-  --color-accent-glow: rgba(0, 255, 136, 0.15);
+  --color-accent: #fbbf24;
+  --color-accent-dim: #f59e0b;
+  --color-accent-glow: transparent;
   
   --color-border: #333333;
   --color-border-light: #444444;
@@ -56,7 +56,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px var(--color-accent-glow);
+  --shadow-glow: none;
   
   /* Panel Effects - Modern Theme */
   --panel-bg: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-elevated) 100%);
@@ -394,6 +394,7 @@ html[data-theme="retro"] .panel::before {
   background: linear-gradient(135deg, var(--color-accent) 0%, transparent 50%, var(--color-accent) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0.3;
   pointer-events: none;

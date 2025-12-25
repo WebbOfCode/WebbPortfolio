@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
+import SystemInfo from '@/components/SystemInfo'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
 import YouTube from '@/components/YouTube'
@@ -11,6 +12,8 @@ import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import TabNavigation from '@/components/TabNavigation'
+import { ConsolePanelTitle } from '@/components/ConsoleModule'
+import DevVerifier from '@/components/DevVerifier'
 
 interface Tab {
   id: string
@@ -18,7 +21,7 @@ interface Tab {
   icon: string
 }
 
-const TABS: Tab[] = [
+const BASE_TABS: Tab[] = [
   { id: 'home', label: 'HOME', icon: '◆' },
   { id: 'projects', label: 'PROJECTS', icon: '◇' },
   { id: 'skills', label: 'SKILLS', icon: '▶' },
@@ -35,7 +38,7 @@ export default function Home() {
   useEffect(() => {
     setMounted(true)
     const savedTab = sessionStorage.getItem('activeTab')
-    if (savedTab && TABS.find((tab) => tab.id === savedTab)) {
+    if (savedTab && BASE_TABS.find((tab) => tab.id === savedTab)) {
       setActiveTab(savedTab)
     }
     
@@ -66,6 +69,12 @@ export default function Home() {
   if (!mounted) {
     return null
   }
+
+  // Compute tabs for retro vs modern modes
+  const TABS: Tab[] = isRetro
+    ? BASE_TABS.map(t => t.id === 'about' ? { ...t, label: 'SYSTEM', icon: '★' } : t)
+    : BASE_TABS
+
   return (
     <>
       {/* Skip to main content link for keyboard users */}
@@ -102,6 +111,7 @@ export default function Home() {
                 aria-labelledby="home-tab"
                 className={`tab-panel ${activeTab === 'home' ? 'active' : ''}`}
               >
+                <ConsolePanelTitle title="SYSTEM MAIN" status="ONLINE" />
                 <Hero />
                 <YouTube />
               </div>
@@ -113,6 +123,7 @@ export default function Home() {
                 aria-labelledby="projects-tab"
                 className={`tab-panel ${activeTab === 'projects' ? 'active' : ''}`}
               >
+                <ConsolePanelTitle title="PROJECT CATALOG" status="LOADED" />
                 <Projects />
               </div>
 
@@ -123,17 +134,19 @@ export default function Home() {
                 aria-labelledby="skills-tab"
                 className={`tab-panel ${activeTab === 'skills' ? 'active' : ''}`}
               >
+                <ConsolePanelTitle title="SKILL MATRIX" status="READY" />
                 <Skills />
               </div>
 
-              {/* About Tab */}
+              {/* About Tab (Retro: System Diagnostics) */}
               <div
                 role="tabpanel"
                 id="about-panel"
                 aria-labelledby="about-tab"
                 className={`tab-panel ${activeTab === 'about' ? 'active' : ''}`}
               >
-                <About />
+                <ConsolePanelTitle title="SYSTEM DIAGNOSTICS" status="ONLINE" />
+                <SystemInfo />
               </div>
 
               {/* Contact Tab */}
@@ -143,6 +156,7 @@ export default function Home() {
                 aria-labelledby="contact-tab"
                 className={`tab-panel ${activeTab === 'contact' ? 'active' : ''}`}
               >
+                <ConsolePanelTitle title="CONTACT SYSTEM" status="ACTIVE" />
                 <Contact />
               </div>
 
@@ -162,6 +176,9 @@ export default function Home() {
           </div>
         )}
       </main>
+      
+      {/* Development Verifier - Only visible when DEV_VERIFY is true */}
+      <DevVerifier />
     </>
   )
 }
