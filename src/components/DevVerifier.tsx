@@ -182,7 +182,7 @@ export default function DevVerifier() {
       const boxShadow = frameStyle.boxShadow
       
       newState.consoleFrameGradient = background.includes('gradient') || background.includes('rgb(')
-      newState.consoleFrameShadows = boxShadow && boxShadow !== 'none' && boxShadow.includes(',')
+      newState.consoleFrameShadows = !!boxShadow && boxShadow !== 'none' && boxShadow.includes(',')
       
       if (!newState.consoleFrameGradient && newState.currentMode === 'retro') {
         console.warn('⚠️ VERIFICATION WARNING: Console frame background might not be a gradient')
@@ -213,8 +213,8 @@ export default function DevVerifier() {
     
     // Temporarily switch to retro to check variables
     const originalTheme = currentTheme
-    if (originalTheme !== 'retro') {
-      document.documentElement.setAttribute('data-theme', 'retro')
+    if (originalTheme && originalTheme !== 'retro') {
+      document.documentElement.setAttribute('data-theme', originalTheme);
     }
     
     const retroStyle = window.getComputedStyle(document.documentElement)
@@ -225,8 +225,8 @@ export default function DevVerifier() {
     }
     
     // Restore original theme
-    if (originalTheme !== 'retro') {
-      document.documentElement.setAttribute('data-theme', originalTheme)
+    if (originalTheme && originalTheme !== 'retro') {
+      document.documentElement.setAttribute('data-theme', originalTheme);
     }
     
     newState.themeVariablesDistinct = 
@@ -256,7 +256,7 @@ export default function DevVerifier() {
         const newFocus = document.activeElement
         const focusMoved = newFocus !== firstTab && newFocus?.classList.contains('console-tab')
         
-        setState(prev => ({ ...prev, keyboardNavigationWorking: initiallyFocused && focusMoved }))
+        setState(prev => ({ ...prev, keyboardNavigationWorking: initiallyFocused && !!focusMoved }))
         
         if (!focusMoved) {
           console.error('🚨 VERIFICATION FAILED: Keyboard navigation is not working!')
