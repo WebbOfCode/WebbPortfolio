@@ -41,7 +41,7 @@ export default function DevVerifier() {
   })
 
   const [isVisible, setIsVisible] = useState(DEV_VERIFY)
-  const verificationInterval = useRef<NodeJS.Timeout>()
+  const verificationInterval = useRef<NodeJS.Timeout | null>(null)
 
   // Run comprehensive verification checks
   const runVerification = () => {
