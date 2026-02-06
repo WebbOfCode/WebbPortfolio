@@ -490,7 +490,7 @@ export default function Projects() {
               <div className={`w-2 h-2 bg-green-500 rounded-full mr-2 ${reducedMotion ? '' : 'animate-pulse'}`}></div>
               Currently Working On
             </h3>
-            <ul className="space-y-2 text-text-secondary">
+            <ul className="space-y-2 text-text-muted">
               <li>• Completing CS degree at MTSU (May 2026)</li>
               <li>• Building restaurant POS system in React</li>
               <li>• Exploring Three.js for 3D web experiences</li>

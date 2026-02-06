@@ -56,6 +56,10 @@ export default function Home() {
     const observer = new MutationObserver(handleThemeChange)
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
     
+    // Ensure the site always launches in professional mode
+    document.documentElement.setAttribute('data-theme', 'professional');
+    setIsRetro(false);
+    
     return () => observer.disconnect()
   }, [])
 
