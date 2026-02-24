@@ -7,13 +7,13 @@ import About from '@/components/About'
 import SystemInfo from '@/components/SystemInfo'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
-import YouTube from '@/components/YouTube'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import ScrollProgress from '@/components/ScrollProgress'
 import TabNavigation from '@/components/TabNavigation'
 import { ConsolePanelTitle } from '@/components/ConsoleModule'
 import DevVerifier from '@/components/DevVerifier'
+import StickyMobileCTA from '@/components/StickyMobileCTA'
 
 interface Tab {
   id: string
@@ -117,7 +117,6 @@ export default function Home() {
               >
                 <ConsolePanelTitle title="SYSTEM MAIN" status="ONLINE" />
                 <Hero />
-                <YouTube />
               </div>
 
               {/* Projects Tab */}
@@ -173,13 +172,15 @@ export default function Home() {
             <Hero />
             <About />
             <Projects />
-            <YouTube />
             <Skills />
             <Contact />
             <Footer />
           </div>
         )}
       </main>
+      
+      {/* Sticky Mobile CTA & Desktop Bar */}
+      {!isRetro && <StickyMobileCTA />}
       
       {/* Development Verifier - Only visible when DEV_VERIFY is true */}
       <DevVerifier />

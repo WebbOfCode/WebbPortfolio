@@ -1,69 +1,81 @@
-'use client'
-
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
-import { getFeatureFlags } from '@/config/features'
+import Image from 'next/image'
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false)
-  const [featureFlags, setFeatureFlags] = useState({ showBartenderServices: false })
-
-  useEffect(() => {
-    setMounted(true)
-    setFeatureFlags(getFeatureFlags())
-  }, [])
-
   return (
-    <section id="hero" className="relative pt-32 pb-20 px-6 lg:px-8 min-h-screen flex items-center justify-center">
-      {/* Simple gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-
-      <div className="max-w-4xl mx-auto relative z-10 text-center">
-        {/* Status badge */}
-        <div className={`inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-slate-800/50 border border-amber-400/30 backdrop-blur-sm transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-          <span className="text-sm text-slate-300">Full Stack Developer | Army Veteran</span>
+    <>
+      {/* Hero Section with Clear "Open to Work" Signal */}
+      <section id="hero" className="section-padding">
+        <div className="container-professional">
+          {/* Status Badge - Prominent but professional */}
+          <div className="hero-status">
+            <span className="hero-status-dot"></span>
+            <span>Open to Work — Software Engineer</span>
+            <span style={{ color: 'var(--text-subtle)', margin: '0 0.5rem' }}>|</span>
+            <span style={{ color: 'var(--text-muted)' }}>Available Immediately</span>
+          </div>
+          
+          {/* Hero Content with Photo */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '2rem', alignItems: 'center' }} className="md:grid-cols-[auto,1fr]">
+            {/* Professional Headshot */}
+            <div style={{ order: 2 }} className="md:order-1">
+              <div style={{ 
+                width: '200px', 
+                height: '200px', 
+                borderRadius: '12px', 
+                overflow: 'hidden',
+                border: '3px solid var(--accent-primary)',
+                boxShadow: '0 4px 12px rgba(37, 99, 235, 0.2)',
+                margin: '0 auto'
+              }}>
+                <Image 
+                  src="/headshot.jpg" 
+                  alt="Demarick Webb-Rivera"
+                  width={200}
+                  height={200}
+                  priority
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+            
+            {/* Hero Text */}
+            <div style={{ order: 1 }} className="md:order-2">
+              <h1 className="text-hero" style={{ marginBottom: '1rem' }}>
+                Demarick Webb-Rivera
+                <span style={{ display: 'block', color: 'var(--text-muted)', fontSize: '0.6em', fontWeight: 600, marginTop: '0.5rem' }}>
+                  Full Stack Developer & Army Veteran
+                </span>
+              </h1>
+              
+              <p className="text-body" style={{ maxWidth: '600px', marginBottom: '2rem' }}>
+                Building secure, scalable web applications with 4 years of military IT experience 
+                and modern full-stack expertise. Currently seeking my first dev role where I can 
+                contribute on day one.
+              </p>
+              
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href="#projects" className="btn btn-primary">
+                  View Projects
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12L2 6h12l-6 6z"/></svg>
+                </a>
+                <a href="mailto:demarickw104@live.com" className="btn btn-success">
+                  Hire Me
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 4h12v8H2V4zm0-2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z"/><path d="M2 4l6 4 6-4"/></svg>
+                </a>
+                <a href="/resume.pdf" className="btn btn-secondary" download>
+                  Download Resume
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* Name */}
-        <h1 className={`text-5xl md:text-7xl font-bold text-white mb-6 transition-all duration-700 delay-100 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          Demarick Webb-Rivera
-        </h1>
-
-        {/* Tagline */}
-        <p className={`text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto transition-all duration-700 delay-200 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          Building secure, scalable web applications with a military IT background and full-stack expertise.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className={`flex flex-wrap gap-4 justify-center transition-all duration-700 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <a
-            href="#projects"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-slate-700 to-amber-600 text-white font-medium hover:from-slate-600 hover:to-amber-500 transition-all duration-300 rounded-lg"
-          >
-            View Projects
-            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-
-          {featureFlags.showBartenderServices && (
-            <Link
-              href="/bartender"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-medium hover:from-amber-600 hover:to-orange-700 transition-all duration-300 rounded-lg"
-            >
-              Bartender Services
-            </Link>
-          )}
-
-          <a
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 border-2 border-slate-600 text-slate-300 font-medium hover:border-amber-500 hover:text-white transition-all duration-300 rounded-lg"
-          >
-            Get In Touch
-          </a>
-        </div>
-      </div>
-    </section>
+      {/* Floating Mobile CTA */}
+      <a href="mailto:demarickw104@live.com" className="floating-cta">
+        <span>Let&apos;s Talk</span>
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M2 4h12v8H2V4zm0-2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z"/></svg>
+      </a>
+    </>
   )
 }

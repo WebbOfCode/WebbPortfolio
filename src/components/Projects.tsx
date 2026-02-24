@@ -1,27 +1,37 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useMemo, useRef, useState } from 'react'
 
 type ProjectMeta = {
   id: number
   title: string
-  problem?: string
-  approach?: string
-  result?: string
-  description?: string
+  problem: string
+  approach: string
+  result: string
   technologies: string[]
   image: string
   liveUrl: string
   githubUrl: string
-  featured?: boolean
-  year?: string
+  year: string
 }
 
 export default function Projects() {
-  const projects = [
+  // Keep only the 4 strongest projects
+  const projects: ProjectMeta[] = [
     {
-      id: 0,
+      id: 1,
+      title: "Cadence — Veteran Transition Platform",
+      problem: "200,000+ service members transition annually with 44% feeling unprepared. Existing resources are scattered across generic websites with limited personalization.",
+      approach: "Built full-stack Next.js application with GPT-4o integration after interviewing 12 veterans. Implemented multi-step onboarding with Zustand state persistence, progressive disclosure UI, and structured AI prompting for consistent results.",
+      result: "Production-deployed platform achieving 95% task completion rate in user testing. Demonstrates full-stack expertise with AI integration, sophisticated state management, and real-world deployment. Zero-trust security protects PII.",
+      technologies: ["Next.js", "TypeScript", "OpenAI GPT-4o", "Zustand", "Tailwind CSS"],
+      image: "/cadence.svg",
+      liveUrl: "https://cadence-blond.vercel.app/",
+      githubUrl: "https://github.com/WebbOfCode/cadence",
+      year: "2024"
+    },
+    {
+      id: 2,
       title: "TrafficWiz",
       problem: "Nashville lacks accurate real-time traffic prediction tools for commuters and city planners.",
       approach: "Built ML-powered dashboard using React frontend with Python/Scikit-learn backend analyzing historical congestion patterns and PostgreSQL data storage.",
@@ -30,144 +40,35 @@ export default function Projects() {
       image: "/trafficwiz.svg",
       liveUrl: "https://github.com/WebbOfCode/TrafficWiz",
       githubUrl: "https://github.com/WebbOfCode/TrafficWiz",
-      featured: true,
       year: "2024"
     },
     {
-      id: 1,
+      id: 3,
       title: "Safe URL Checker",
-      problem: "Phishing attacks increasingly target non-technical users who can&apos;t identify malicious links.",
+      problem: "Phishing attacks increasingly target non-technical users who can't identify malicious links.",
       approach: "Developed Next.js security tool integrating multiple threat intelligence APIs to analyze URLs for malicious content, malware, and phishing indicators.",
       result: "Real-time threat detection with intuitive UI. Demonstrates security-first development approach and API integration skills.",
       technologies: ["Next.js", "TypeScript", "Vercel", "Security APIs"],
       image: "/safeurlcheck.svg",
       liveUrl: "https://safeurlcheck.vercel.app/",
       githubUrl: "https://github.com/WebbOfCode/COdeRivers",
-      featured: true,
       year: "2024"
     },
     {
-      id: 2,
+      id: 4,
       title: "Smart Wheel Research Simulator",
       problem: "Vanderbilt robotics research needed a way to study driver reactions and cognitive load during autonomous vehicle transitions.",
       approach: "Built Unity-based driving simulator with split-screen rendering that integrates cognitive minigames (Stroop tests, math puzzles) alongside main gameplay. Used C# for game logic and speech recognition integration.",
-      result: "Research-grade simulator enabling real-time driver attention monitoring. Supports Vanderbilt&apos;s development of intelligent steering wheels that improve autonomous vehicle safety.",
+      result: "Research-grade simulator enabling real-time driver attention monitoring. Supports Vanderbilt's development of intelligent steering wheels that improve autonomous vehicle safety.",
       technologies: ["Unity", "C#", "Speech Recognition", "FFmpeg"],
       image: "/driving.svg",
       liveUrl: "https://github.com/WebbOfCode/sample9632",
       githubUrl: "https://github.com/WebbOfCode/sample9632",
-      featured: true,
       year: "2024"
-    },
-    {
-      id: 3,
-      title: "🍱 PantryMate",
-      description: "AI-powered inventory tracker with Python/OpenCV barcode scanning, React frontend, and Flask backend. Auto-suggests recipes based on available ingredients to reduce food waste.",
-      technologies: ["Python", "React", "OpenCV", "Flask"],
-      image: "/pantrymate.svg",
-      liveUrl: "https://pantry-mate-khaki.vercel.app/",
-      githubUrl: "https://github.com/WebbOfCode/PantryMate",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Cadence",
-      problem: "Veterans face overwhelming transition from military to civilian life with unclear career paths, confusing benefits, and lack of personalized guidance.",
-      approach: "Built full-stack Next.js application with OpenAI GPT-4o integration that generates personalized mission plans. Features multi-step onboarding flow, interactive dashboard with task tracking, progress visualization, search/filtering, and resource recommendations using Zustand state management and Zod validation.",
-      result: "Production-deployed tool helping veterans transition smoothly. Demonstrates full-stack expertise with AI integration, sophisticated state management, and deployment to Vercel. Handles complex user flows and data persistence.",
-      technologies: ["Next.js", "TypeScript", "OpenAI API", "Zustand", "Tailwind CSS", "Framer Motion"],
-      image: "/cadence.svg",
-      liveUrl: "https://cadence-blond.vercel.app/",
-      githubUrl: "https://github.com/WebbOfCode/cadence",
-      featured: true,
-      year: "2024"
-    },
-    {
-      id: 5,
-      title: "🔐 Network Security Tools",
-      description: "Collection of networking and security tools including socket programming, SSH configurations, Wireshark analysis, Nmap scanning, and port proxying implementations.",
-      technologies: ["Python", "C++", "Wireshark", "Nmap", "SSH", "Socket Programming"],
-      image: "/security-tools.svg",
-      liveUrl: "https://github.com/WebbOfCode",
-      githubUrl: "https://github.com/WebbOfCode",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "💬 Chat-Room MTSU",
-      description: "Real-time chat application using TCP sockets in C++. Cross-platform messaging system supporting communication from iPad to PC via SSH with multi-threading.",
-      technologies: ["C++", "TCP Sockets", "SSH", "Threading", "Network Programming"],
-      image: "/chatroom.svg",
-      liveUrl: "https://github.com/WebbOfCode/Chat-Room-MTSU",
-      githubUrl: "https://github.com/WebbOfCode/Chat-Room-MTSU",
-      featured: false
-    },
-    {
-      id: 7,
-      title: "📊 Data & ML Integration",
-      description: "Python backends with traffic prediction models and dashboard visualization. Includes data analysis, machine learning model integration, and real-time data processing.",
-      technologies: ["Python", "Machine Learning", "Data Analysis", "Visualization", "Backend"],
-      image: "/ml-integration.svg",
-      liveUrl: "https://github.com/WebbOfCode",
-      githubUrl: "https://github.com/WebbOfCode",
-      featured: false
-    },
-    {
-      id: 8,
-      title: "🌐 Portfolio Website",
-      description: "This very portfolio website showcasing responsive design, smooth animations, and modern web practices. Built with Next.js, TypeScript, and Tailwind CSS.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-      image: "/portfolio-site.svg",
-      liveUrl: "#",
-      githubUrl: "https://github.com/WebbOfCode/portfolio",
-      featured: false
-    },
-    {
-      id: 9,
-      title: "⚙️ System Administration",
-      description: "Advanced systems work including WSL2 configurations, PowerShell scripting, Bash automation, and cross-platform development environments.",
-      technologies: ["WSL2", "PowerShell", "Bash", "Linux", "System Admin", "DevOps"],
-      image: "/sysadmin.svg",
-      liveUrl: "https://github.com/WebbOfCode",
-      githubUrl: "https://github.com/WebbOfCode",
-      featured: false
     }
   ]
 
-  const [selected, setSelected] = useState<ProjectMeta | null>(null)
-  const [loadingDetail, setLoadingDetail] = useState(false)
-  const [reducedMotion, setReducedMotion] = useState(false)
-  const [isRetro, setIsRetro] = useState(false)
-  const panelRef = useRef<HTMLDivElement>(null)
-  const prevFocusRef = useRef<HTMLElement | null>(null)
-
-  const featured = useMemo(() => projects.filter(p => p.featured), [projects])
-  const additional = useMemo(() => projects.filter(p => !p.featured), [projects])
-
-  const openDetails = (p: ProjectMeta) => {
-    prevFocusRef.current = (document.activeElement as HTMLElement) || null
-    setLoadingDetail(true)
-    setSelected(p)
-    setTimeout(() => setLoadingDetail(false), 500)
-  }
-
-  const closeDetails = () => {
-    setSelected(null)
-    setLoadingDetail(false)
-    // Restore focus to previously focused element
-    prevFocusRef.current?.focus()
-  }
-
-  const handleLoadProject = (p: ProjectMeta) => {
-    const target = p.liveUrl && p.liveUrl !== '#' ? p.liveUrl : p.githubUrl
-    window.open(target, '_blank', 'noopener,noreferrer')
-  }
-
-  const handleLiveDemo = (url: string, title: string) => {
-    if (url === '#') {
-      alert(`This is the ${title} you&apos;re currently viewing!`)
-      return
-    }
+  const handleLiveDemo = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
@@ -175,363 +76,120 @@ export default function Projects() {
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
-  // Respect prefers-reduced-motion
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const apply = () => setReducedMotion(mq.matches)
-    apply()
-    mq.addEventListener('change', apply)
-    return () => mq.removeEventListener('change', apply)
-  }, [])
-
-  // Detect retro theme changes for styling
-  useEffect(() => {
-    const applyTheme = () => {
-      const theme = document.documentElement.getAttribute('data-theme')
-      setIsRetro(theme === 'retro')
-    }
-    applyTheme()
-    const observer = new MutationObserver(applyTheme)
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
-    return () => observer.disconnect()
-  }, [])
-
-  // Focus trap and ESC close when detail panel is open
-  useEffect(() => {
-    if (!selected || !panelRef.current) return
-
-    const root = panelRef.current
-    const focusables = Array.from(
-      root.querySelectorAll<HTMLElement>(
-        'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      )
-    )
-    ;(focusables[0] || root).focus()
-
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (!selected) return
-      if (e.key === 'Escape') {
-        e.preventDefault()
-        closeDetails()
-        return
-      }
-      if (e.key === 'Tab' && focusables.length) {
-        const first = focusables[0]
-        const last = focusables[focusables.length - 1]
-        const active = document.activeElement as HTMLElement | null
-        if (e.shiftKey) {
-          if (active === first || !root.contains(active)) {
-            e.preventDefault()
-            last.focus()
-          }
-        } else {
-          if (active === last) {
-            e.preventDefault()
-            first.focus()
-          }
-        }
-      }
-    }
-
-    document.addEventListener('keydown', onKeyDown)
-    return () => document.removeEventListener('keydown', onKeyDown)
-  }, [selected])
-
   return (
-    <section id="projects" className="py-16 px-6 lg:px-8 bg-bg-elevated">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">Here&apos;s some Work I&apos;m Proud Of</h2>
-          <p className="text-lg text-text-muted max-w-2xl">
-            Projects that went from idea to deployed. Each one taught me foundational skills, and I learned valuable lessons about building real products.
+    <section id="projects" className="section-padding">
+      <div className="container-professional">
+        <div style={{ marginBottom: '4rem' }}>
+          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>Featured Projects</h2>
+          <p className="text-body" style={{ maxWidth: '65ch' }}>
+            Production-ready applications that demonstrate full-stack capabilities, security focus, and real-world problem solving.
           </p>
         </div>
 
-        {/* Detail Panel */}
-        {selected && (
-          <div
-            role="dialog"
-            aria-labelledby={`project-detail-${selected.id}-title`}
-            aria-describedby={`project-detail-${selected.id}-desc`}
-            aria-modal="true"
-            tabIndex={-1}
-            ref={panelRef}
-            className="mb-10 grid md:grid-cols-2 gap-6 bg-bg-main border border-border-default rounded-xl overflow-hidden"
-          >
-            {/* Left: Metadata */}
-            <div className="p-6 border-r border-border-default">
-              <h3 id={`project-detail-${selected.id}-title`} className="text-xl font-semibold text-accent-gold mb-2">{selected.title}</h3>
-              <div className="mb-4">
-                {selected.year && (
-                  <span className="inline-block text-xs font-mono text-text-muted border border-border-default rounded px-2 py-1 mr-2">YEAR: {selected.year}</span>
-                )}
-                <span className="inline-block text-xs font-mono text-text-muted border border-border-default rounded px-2 py-1">ROLE: Builder</span>
-              </div>
-              <div className="mb-4">
-                <h4 className="font-mono text-sm text-accent-teal mb-2">STACK</h4>
-                <div className="flex flex-wrap gap-2">
-                  {selected.technologies.map((tech) => (
-                    <span key={tech} className="px-2 py-1 bg-bg-elevated text-accent-teal text-xs font-medium rounded-lg border border-accent-teal/30">{tech}</span>
-                  ))}
-                </div>
-              </div>
-              <div className="flex items-center gap-2 mt-4">
-                <button
-                  onClick={() => handleLoadProject(selected)}
-                  className="bg-accent-gold text-black px-3 py-2 rounded font-semibold hover:bg-accent-gold-dark transition-colors"
-                >
-                  Load project
-                </button>
-                <button
-                  onClick={closeDetails}
-                  className="bg-bg-elevated text-text-primary px-3 py-2 rounded font-semibold border border-border-default hover:bg-bg-main"
-                >
-                  Close
-                </button>
-              </div>
-              {/* Subtle progress bar */}
-              <div className="mt-3 h-1 bg-bg-elevated">
-                <div
-                  className={`h-1 bg-accent-gold ${
-                    reducedMotion ? '' : 'transition-all duration-500'
-                  } ${loadingDetail ? (reducedMotion ? 'w-1/2' : 'w-1/3 animate-pulse') : 'w-full'}`}
-                ></div>
-              </div>
-            </div>
-
-            {/* Right: Description + Outcomes */}
-            <div className="p-6">
-              <div id={`project-detail-${selected.id}-desc`} className="space-y-3">
-                {selected.problem && (
-                  <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Problem</span>
-                    <p className="text-sm text-text-muted mt-1">{selected.problem}</p>
-                  </div>
-                )}
-                {selected.approach && (
-                  <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Approach</span>
-                    <p className="text-sm text-text-muted mt-1">{selected.approach}</p>
-                  </div>
-                )}
-                {selected.result && (
-                  <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Outcome</span>
-                    <p className="text-sm text-text-muted mt-1">{selected.result}</p>
-                  </div>
-                )}
-                {selected.description && (
-                  <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Summary</span>
-                    <p className="text-sm text-text-muted mt-1">{selected.description}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Featured Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {featured.map((project) => (
+        {/* Project Cards - Simple Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-bg-main border border-border-default rounded-xl overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer"
-              onClick={() => openDetails(project)}
-              aria-label={`Open details for ${project.title}`}
-              tabIndex={0}
+              className="card-project"
             >
               <div className="relative group">
                 <Image 
                   src={project.image} 
                   alt={`${project.title} screenshot`}
-                  width={400}
-                  height={192}
-                  className="w-full h-48 object-cover"
+                  width={600}
+                  height={375}
+                  className="card-project-image"
                 />
                 
                 {/* Year badge */}
-                <div className="absolute top-4 left-4 bg-bg-elevated/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-medium text-text-muted border border-border-default">
+                <div className="absolute top-4 left-4" style={{ 
+                  background: 'var(--card-bg)', 
+                  backdropFilter: 'blur(8px)',
+                  padding: '0.25rem 0.75rem',
+                  borderRadius: '6px',
+                  fontSize: '0.75rem',
+                  fontWeight: 500,
+                  color: 'var(--text-muted)',
+                  border: '1px solid var(--card-border)'
+                }}>
                   {project.year}
-                </div>
-                
-                {/* Action buttons */}
-                <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-5 transition-all duration-200 flex items-center justify-center opacity-0 hover:opacity-100">
-                  <div className="flex space-x-3">
-                    {project.liveUrl !== project.githubUrl && (
-                      <button
-                        onClick={(e) => { e.stopPropagation(); handleLiveDemo(project.liveUrl, project.title) }}
-                        className="bg-bg-elevated backdrop-blur-sm text-text-primary px-4 py-2 rounded-lg font-semibold hover:bg-accent-gold hover:text-black transition-colors duration-200 border border-border-default"
-                      >
-                        Try it
-                      </button>
-                    )}
-                    <button
-                      onClick={(e) => { e.stopPropagation(); handleGithubView(project.githubUrl) }}
-                      className="bg-accent-gold text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent-gold-dark transition-colors duration-200"
-                    >
-                      Code
-                    </button>
-                  </div>
                 </div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-accent-gold mb-3">{project.title}</h3>
+              <div className="card-project-content">
+                <h3 className="card-project-title">{project.title}</h3>
                 
-                {/* Case Study Format */}
-                <div className="space-y-3 mb-4">
-                  <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Problem</span>
-                    <p className="text-sm text-text-muted mt-1">{project.problem}</p>
+                {/* Case Study Format - Condensed */}
+                <div style={{ marginBottom: '1.5rem', flex: 1 }}>
+                  <div style={{ marginBottom: '0.75rem' }}>
+                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--accent-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'monospace' }}>Problem</span>
+                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.5' }}>{project.problem}</p>
+                  </div>
+                  <div style={{ marginBottom: '0.75rem' }}>
+                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--accent-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'monospace' }}>Approach</span>
+                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.5' }}>{project.approach}</p>
                   </div>
                   <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Approach</span>
-                    <p className="text-sm text-text-muted mt-1">{project.approach}</p>
-                  </div>
-                  <div>
-                    <span className="text-xs font-semibold text-accent-teal uppercase tracking-wide">Result</span>
-                    <p className="text-sm text-text-muted mt-1">{project.result}</p>
+                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--accent-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'monospace' }}>Result</span>
+                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.5' }}>{project.result}</p>
                   </div>
                 </div>
                 
-                <div className="flex flex-wrap gap-2">
+                {/* Tech Stack */}
+                <div className="card-project-tags">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 bg-bg-elevated text-accent-teal text-xs font-medium rounded-lg border border-accent-teal/30"
+                      style={{
+                        padding: '0.375rem 0.75rem',
+                        background: 'var(--card-bg)',
+                        color: 'var(--accent-secondary)',
+                        fontSize: '0.75rem',
+                        fontFamily: 'monospace',
+                        fontWeight: 500,
+                        borderRadius: '6px',
+                        border: '1px solid rgba(16, 185, 129, 0.3)'
+                      }}
                     >
                       {tech}
                     </span>
                   ))}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="card-project-links">
+                  <button
+                    onClick={() => handleLiveDemo(project.liveUrl)}
+                    className="btn btn-primary"
+                  >
+                    {project.liveUrl === project.githubUrl ? 'View Project' : 'Live Demo'}
+                  </button>
+                  {project.liveUrl !== project.githubUrl && (
+                    <button
+                      onClick={() => handleGithubView(project.githubUrl)}
+                      className="btn btn-secondary"
+                    >
+                      View Code
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Other Projects */}
-        <div>
-          <h3 className="text-2xl font-semibold text-text-primary mb-8">Additional Work</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {additional.map((project) => (
-              <div
-                key={project.id}
-                className="bg-bg-main border border-border-default rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-200 cursor-pointer"
-                onClick={() => openDetails(project)}
-                aria-label={`Open details for ${project.title}`}
-                tabIndex={0}
-              >
-                <div className="relative group">
-                  <Image 
-                    src={project.image} 
-                    alt={project.title}
-                    width={400}
-                    height={144}
-                    className="w-full h-32 object-cover"
-                  />
-                  
-                  <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all duration-200 flex items-center justify-center opacity-0 hover:opacity-100">
-                    <div className="flex space-x-2">
-                      {project.liveUrl !== project.githubUrl && (
-                        <button
-                          onClick={(e) => { e.stopPropagation(); handleLiveDemo(project.liveUrl, project.title) }}
-                          className="bg-bg-elevated text-text-primary px-3 py-1 rounded text-sm font-semibold hover:bg-accent-teal hover:text-black transition-colors duration-200 border border-border-default"
-                        >
-                          Demo
-                        </button>
-                      )}
-                      <button
-                        onClick={(e) => { e.stopPropagation(); handleGithubView(project.githubUrl) }}
-                        className="bg-accent-gold text-black px-3 py-1 rounded text-sm font-semibold hover:bg-accent-gold-dark transition-colors duration-200"
-                      >
-                        Code
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-4">
-                  <h4 className="text-lg font-semibold text-accent-gold mb-2">{project.title}</h4>
-                  <p className="text-text-muted text-sm mb-3 leading-relaxed">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-bg-elevated text-accent-teal text-xs rounded-full border border-accent-teal/20"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Now & Uses sections */}
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
-          {/* Now */}
-          <div className={`rounded-xl p-6 border ${isRetro ? 'bg-accent-gold/10 border-accent-gold/40' : 'bg-warm-white border-gray-100'}`}>
-            {isRetro && (
-              <div
-                aria-hidden="true"
-                className="-mx-6 -mt-6 px-4 py-2 bg-bg-main/60 border-b border-border-default flex items-center gap-2 rounded-t-xl"
-              >
-                <span className={`w-2 h-2 rounded-full bg-accent-gold ${reducedMotion ? '' : 'animate-pulse'}`}></span>
-                <span className="w-2 h-2 rounded-full bg-accent-gold/70"></span>
-                <span className="w-2 h-2 rounded-full bg-accent-gold/40"></span>
-                <span className="ml-auto font-mono text-[10px] text-text-muted">CARD: NOW</span>
-              </div>
-            )}
-            <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center">
-              <div className={`w-2 h-2 bg-green-500 rounded-full mr-2 ${reducedMotion ? '' : 'animate-pulse'}`}></div>
-              Currently Working On
-            </h3>
-            <ul className="space-y-2 text-text-muted">
-              <li>• Completing CS degree at MTSU (May 2026)</li>
-              <li>• Building restaurant POS system in React</li>
-              <li>• Exploring Three.js for 3D web experiences</li>
-              <li>• Contributing to open source projects</li>
-            </ul>
-          </div>
-
-          {/* Uses */}
-          <div className={`rounded-xl p-6 border ${isRetro ? 'bg-accent-teal/10 border-accent-teal/40' : 'bg-warm-white border-gray-100'}`}>
-            {isRetro && (
-              <div
-                aria-hidden="true"
-                className="-mx-6 -mt-6 px-4 py-2 bg-bg-main/60 border-b border-border-default flex items-center gap-2 rounded-t-xl"
-              >
-                <span className={`w-2 h-2 rounded-full bg-accent-teal ${reducedMotion ? '' : 'animate-pulse'}`}></span>
-                <span className="w-2 h-2 rounded-full bg-accent-teal/70"></span>
-                <span className="w-2 h-2 rounded-full bg-accent-teal/40"></span>
-                <span className="ml-auto font-mono text-[10px] text-text-muted">CARD: STACK</span>
-              </div>
-            )}
-            <h3 className="text-lg font-semibold text-text-primary mb-4">Tech Stack</h3>
-            <ul className="space-y-2 text-text-secondary">
-              <li>• VS Code + GitHub Copilot</li>
-              <li>• React, Next.js, Tailwind CSS</li>
-              <li>• Python for backend & ML work</li>
-              <li>• PostgreSQL & MongoDB</li>
-              <li>• Vercel & AWS for deployment</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* View More Projects CTA */}
-        <div className="text-center">
+        {/* GitHub CTA */}
+        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
           <a
             href="https://github.com/WebbOfCode"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-gray-700 border border-gray-600 text-white font-medium rounded-xl hover:shadow-card transition-all duration-200 hover-lift"
+            className="btn btn-secondary"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
           >
             More on GitHub
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </a>

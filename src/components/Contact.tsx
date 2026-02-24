@@ -131,174 +131,107 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-16 px-6 lg:px-8 bg-bg-main">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-manrope font-bold text-accent-gold mb-4">
-            Let&apos;s Build Something
-          </h2>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto">
-            Got a project, job lead, or just want to chat about tech? Send me a message—I&apos;ll get back to you within 24 hours.
+    <section id="contact" className="section-padding">
+      <div className="container-professional">
+        <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '65ch', marginLeft: 'auto', marginRight: 'auto' }}>
+          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>Let&apos;s Work Together</h2>
+          <p className="text-body" style={{ marginBottom: '1rem' }}>
+            Open to full-time software engineering roles starting immediately. I respond to all inquiries within 24 hours.
+          </p>
+          <p className="text-body">
+            Or reach me directly: <a href="mailto:demarickw104@live.com" style={{ color: 'var(--accent-primary)', textDecoration: 'underline' }}>demarickw104@live.com</a> | <a href="https://www.linkedin.com/in/demarick-webb1/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)', textDecoration: 'underline' }}>LinkedIn</a>
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
-            <h3 className="text-xl font-semibold text-text-primary mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
-                    Name <span className="text-accent-gold" aria-label="required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    aria-required="true"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-bg-elevated border border-border-default rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-                    Email <span className="text-accent-gold" aria-label="required">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    aria-required="true"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-bg-elevated border border-border-default rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-text-primary mb-2">
-                  Subject <span className="text-accent-gold" aria-label="required">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  aria-required="true"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-bg-elevated border border-border-default rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200"
-                  placeholder="Project inquiry, job opportunity, etc."
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
-                  Message <span className="text-accent-gold" aria-label="required">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  aria-required="true"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-bg-elevated border border-border-default rounded-lg text-text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold resize-vertical transition-all duration-200"
-                  placeholder="Tell me about your project, timeline, or any questions you have..."
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                aria-disabled={isSubmitting}
-                className="w-full bg-accent-gold hover:bg-accent-gold-dark text-black py-3 px-6 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2 focus:ring-offset-bg-main disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-              >
-                {isSubmitting ? (
-                  <>
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </>
-                ) : (
-                  'Send Message'
-                )}
-              </button>
-            </form>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
-              <h3 className="text-xl font-semibold text-text-primary mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="text-accent-gold bg-bg-elevated p-2 rounded-lg">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <div className="text-text-muted text-sm font-medium">{info.label}</div>
-                      {info.link ? (
-                        <a
-                          href={info.link}
-                          className="text-text-primary hover:text-accent-gold transition-colors duration-200 font-medium"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <div className="text-text-primary font-medium">{info.value}</div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+        {/* Simplified Contact Form */}
+        <div className="glass" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto', padding: '2.5rem', borderRadius: '12px' }}>
+          <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
+            <div>
+              <label htmlFor="name" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                aria-required="true"
+                value={formData.name}
+                onChange={handleChange}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: 'var(--card-bg)',
+                  border: '1px solid var(--card-border)',
+                  borderRadius: '8px',
+                  color: 'var(--text-main)',
+                  fontSize: '1rem'
+                }}
+                placeholder="Your name"
+              />
             </div>
-
-            {/* Social Links */}
-            <div className="bg-bg-elevated rounded-xl border border-border-default p-8">
-              <h3 className="text-xl font-semibold text-text-primary mb-6">Connect Online</h3>
-              <div className="grid grid-cols-3 gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-bg-elevated hover:bg-bg-main border border-border-default hover:border-accent-gold rounded-lg p-4 flex flex-col items-center justify-center text-text-muted hover:text-accent-gold transition-all duration-200 group"
-                    title={social.name}
-                  >
-                    <div className="mb-2 transform group-hover:scale-110 transition-transform duration-200">{social.icon}</div>
-                    <div className="text-sm font-medium">{social.name}</div>
-                  </a>
-                ))}
-              </div>
+            
+            <div>
+              <label htmlFor="email" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                aria-required="true"
+                value={formData.email}
+                onChange={handleChange}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: 'var(--card-bg)',
+                  border: '1px solid var(--card-border)',
+                  borderRadius: '8px',
+                  color: 'var(--text-main)',
+                  fontSize: '1rem'
+                }}
+                placeholder="your.email@example.com"
+              />
             </div>
-
-            {/* Quick Response Note */}
-            <div className="bg-bg-elevated border border-border-default rounded-xl p-6">
-              <div className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-accent-gold rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <svg className="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="text-text-primary font-medium mb-1">Response Time</h4>
-                  <p className="text-text-muted text-sm">
-                    I typically respond within 24 hours on weekdays. For urgent inquiries, LinkedIn is the fastest channel.
-                  </p>
-                </div>
-              </div>
+            
+            <div>
+              <label htmlFor="message" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                aria-required="true"
+                rows={6}
+                value={formData.message}
+                onChange={handleChange}
+                style={{
+                  width: '100%',
+                  padding: '0.75rem 1rem',
+                  background: 'var(--card-bg)',
+                  border: '1px solid var(--card-border)',
+                  borderRadius: '8px',
+                  color: 'var(--text-main)',
+                  fontSize: '1rem',
+                  resize: 'vertical'
+                }}
+                placeholder="Tell me about your project, timeline, or any questions you have..."
+              />
             </div>
-          </div>
+            
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              aria-disabled={isSubmitting}
+              className="btn btn-primary"
+              style={{ width: '100%' }}
+            >
+              {isSubmitting ? 'Sending...' : 'Send Message'}
+            </button>
+          </form>
         </div>
       </div>
     </section>
