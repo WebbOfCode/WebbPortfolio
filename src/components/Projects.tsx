@@ -20,10 +20,10 @@ export default function Projects() {
   const projects: ProjectMeta[] = [
     {
       id: 1,
-      title: "Cadence — Veteran Transition Platform",
-      problem: "200,000+ service members transition annually with 44% feeling unprepared. Existing resources are scattered across generic websites with limited personalization.",
-      approach: "Built full-stack Next.js application with GPT-4o integration after interviewing 12 veterans. Implemented multi-step onboarding with Zustand state persistence, progressive disclosure UI, and structured AI prompting for consistent results.",
-      result: "Production-deployed platform achieving 95% task completion rate in user testing. Demonstrates full-stack expertise with AI integration, sophisticated state management, and real-world deployment. Zero-trust security protects PII.",
+      title: "CADENCE / VETERAN TRANSITION PLATFORM",
+      problem: "200,000+ SERVICE MEMBERS TRANSITION ANNUALLY WITH 44% FEELING UNPREPARED EXISTING RESOURCES ARE SCATTERED WITH LIMITED PERSONALIZATION",
+      approach: "BUILT FULL STACK NEXT JS PLATFORM WITH GPT 4O INTEGRATION AFTER INTERVIEWING 12 VETERANS MULTI STEP ONBOARDING WITH ZUSTAND STATE AND STRUCTURED PROMPTS",
+      result: "PRODUCTION DEPLOYED PLATFORM WITH 95% TASK COMPLETION RATE IN TESTING ZERO TRUST SECURITY PROTECTS PII",
       technologies: ["Next.js", "TypeScript", "OpenAI GPT-4o", "Zustand", "Tailwind CSS"],
       image: "/cadence.svg",
       liveUrl: "https://cadence-blond.vercel.app/",
@@ -32,10 +32,10 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "TrafficWiz",
-      problem: "Nashville lacks accurate real-time traffic prediction tools for commuters and city planners.",
-      approach: "Built ML-powered dashboard using React frontend with Python/Scikit-learn backend analyzing historical congestion patterns and PostgreSQL data storage.",
-      result: "Achieved 15% better prediction accuracy than existing city tools. Earned A grade on MTSU capstone project demonstrating real-world ML application.",
+      title: "TRAFFICWIZ",
+      problem: "NASHVILLE LACKS ACCURATE REAL TIME TRAFFIC PREDICTION TOOLS FOR COMMUTERS AND CITY PLANNERS",
+      approach: "BUILT ML DASHBOARD WITH REACT FRONTEND AND PYTHON SCIKIT LEARN BACKEND WITH POSTGRESQL",
+      result: "15% BETTER PREDICTION ACCURACY THAN EXISTING CITY TOOLS MTSU CAPSTONE A GRADE",
       technologies: ["React", "Python", "Scikit-learn", "PostgreSQL"],
       image: "/trafficwiz.svg",
       liveUrl: "https://github.com/WebbOfCode/TrafficWiz",
@@ -44,10 +44,10 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Safe URL Checker",
-      problem: "Phishing attacks increasingly target non-technical users who can't identify malicious links.",
-      approach: "Developed Next.js security tool integrating multiple threat intelligence APIs to analyze URLs for malicious content, malware, and phishing indicators.",
-      result: "Real-time threat detection with intuitive UI. Demonstrates security-first development approach and API integration skills.",
+      title: "SAFE URL CHECKER",
+      problem: "PHISHING ATTACKS TARGET NON TECHNICAL USERS WHO CANNOT IDENTIFY MALICIOUS LINKS",
+      approach: "NEXT JS SECURITY TOOL INTEGRATING MULTIPLE THREAT INTELLIGENCE APIS FOR URL ANALYSIS",
+      result: "REAL TIME THREAT DETECTION WITH SECURITY FIRST DEVELOPMENT AND API INTEGRATION",
       technologies: ["Next.js", "TypeScript", "Vercel", "Security APIs"],
       image: "/safeurlcheck.svg",
       liveUrl: "https://safeurlcheck.vercel.app/",
@@ -56,10 +56,10 @@ export default function Projects() {
     },
     {
       id: 4,
-      title: "Smart Wheel Research Simulator",
-      problem: "Vanderbilt robotics research needed a way to study driver reactions and cognitive load during autonomous vehicle transitions.",
-      approach: "Built Unity-based driving simulator with split-screen rendering that integrates cognitive minigames (Stroop tests, math puzzles) alongside main gameplay. Used C# for game logic and speech recognition integration.",
-      result: "Research-grade simulator enabling real-time driver attention monitoring. Supports Vanderbilt's development of intelligent steering wheels that improve autonomous vehicle safety.",
+      title: "SMART WHEEL RESEARCH SIMULATOR",
+      problem: "VANDERBILT ROBOTICS NEEDED A WAY TO STUDY DRIVER REACTIONS AND COGNITIVE LOAD DURING AUTONOMOUS TRANSITIONS",
+      approach: "BUILT UNITY DRIVING SIMULATOR WITH SPLIT SCREEN AND COGNITIVE MINIGAMES C# LOGIC AND SPEECH RECOGNITION",
+      result: "RESEARCH GRADE SIMULATOR FOR REAL TIME ATTENTION MONITORING AND SAFER AUTONOMOUS TRANSITIONS",
       technologies: ["Unity", "C#", "Speech Recognition", "FFmpeg"],
       image: "/driving.svg",
       liveUrl: "https://github.com/WebbOfCode/sample9632",
@@ -80,9 +80,9 @@ export default function Projects() {
     <section id="projects" className="section-padding">
       <div className="container-professional">
         <div style={{ marginBottom: '4rem' }}>
-          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>Featured Projects</h2>
+          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>WORK</h2>
           <p className="text-body" style={{ maxWidth: '65ch' }}>
-            Production-ready applications that demonstrate full-stack capabilities, security focus, and real-world problem solving.
+            PRODUCTION READY SYSTEMS THAT DEMONSTRATE FULL STACK CAPABILITY SECURITY FOCUS AND REAL WORLD PROBLEM SOLVING
           </p>
         </div>
 
@@ -91,27 +91,25 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="card-project"
+              className="card-project yzy-project"
             >
-              <div className="relative group">
+              <div className="relative group yzy-project-media">
                 <Image 
                   src={project.image} 
                   alt={`${project.title} screenshot`}
                   width={600}
                   height={375}
-                  className="card-project-image"
+                  className="card-project-image yzy-project-image"
                 />
                 
                 {/* Year badge */}
-                <div className="absolute top-4 left-4" style={{ 
-                  background: 'var(--card-bg)', 
-                  backdropFilter: 'blur(8px)',
+                <div className="absolute top-4 left-4 yzy-mono" style={{ 
+                  background: 'var(--yzy-ash)', 
                   padding: '0.25rem 0.75rem',
-                  borderRadius: '6px',
-                  fontSize: '0.75rem',
+                  fontSize: '0.6875rem',
                   fontWeight: 500,
-                  color: 'var(--text-muted)',
-                  border: '1px solid var(--card-border)'
+                  color: 'var(--yzy-bone)',
+                  border: '1px solid var(--yzy-ash)'
                 }}>
                   {project.year}
                 </div>
@@ -123,16 +121,16 @@ export default function Projects() {
                 {/* Case Study Format - Condensed */}
                 <div style={{ marginBottom: '1.5rem', flex: 1 }}>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--accent-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'monospace' }}>Problem</span>
-                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.5' }}>{project.problem}</p>
+                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>PROBLEM</span>
+                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.6' }}>{project.problem}</p>
                   </div>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--accent-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'monospace' }}>Approach</span>
-                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.5' }}>{project.approach}</p>
+                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>APPROACH</span>
+                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.6' }}>{project.approach}</p>
                   </div>
                   <div>
-                    <span style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--accent-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em', fontFamily: 'monospace' }}>Result</span>
-                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.5' }}>{project.result}</p>
+                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>RESULT</span>
+                    <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.6' }}>{project.result}</p>
                   </div>
                 </div>
                 
@@ -143,13 +141,12 @@ export default function Projects() {
                       key={tech}
                       style={{
                         padding: '0.375rem 0.75rem',
-                        background: 'var(--card-bg)',
-                        color: 'var(--accent-secondary)',
-                        fontSize: '0.75rem',
-                        fontFamily: 'monospace',
+                        background: 'var(--yzy-ash)',
+                        color: 'var(--yzy-bone)',
+                        fontSize: '0.6875rem',
+                        fontFamily: 'var(--font-mono)',
                         fontWeight: 500,
-                        borderRadius: '6px',
-                        border: '1px solid rgba(16, 185, 129, 0.3)'
+                        border: '1px solid var(--yzy-ash)'
                       }}
                     >
                       {tech}
@@ -163,14 +160,14 @@ export default function Projects() {
                     onClick={() => handleLiveDemo(project.liveUrl)}
                     className="btn btn-primary"
                   >
-                    {project.liveUrl === project.githubUrl ? 'View Project' : 'Live Demo'}
+                    {project.liveUrl === project.githubUrl ? 'VIEW WORK →' : 'VIEW WORK →'}
                   </button>
                   {project.liveUrl !== project.githubUrl && (
                     <button
                       onClick={() => handleGithubView(project.githubUrl)}
                       className="btn btn-secondary"
                     >
-                      View Code
+                      VIEW CODE
                     </button>
                   )}
                 </div>
@@ -188,10 +185,7 @@ export default function Projects() {
             className="btn btn-secondary"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
           >
-            More on GitHub
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            MORE ON GITHUB →
           </a>
         </div>
       </div>
