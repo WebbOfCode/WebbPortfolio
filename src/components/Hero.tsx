@@ -52,7 +52,7 @@ export default function Hero({ photoMode }: HeroProps) {
                 <a href="#projects" className="btn btn-primary">
                   SEE WHAT I HAVE BUILT →
                 </a>
-                <a href="mailto:demarickw104@live.com" className="btn btn-success">
+                <a href="mailto:demarickwebb@demarickwebb.dev" className="btn btn-success">
                   LET US TALK
                 </a>
                 <a href="/resume.docx" className="btn btn-secondary" download>

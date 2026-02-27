@@ -12,7 +12,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="yzy-footer-links">
-          <a href="mailto:demarickw104@live.com" className="yzy-footer-link">[EMAIL]</a>
+          <a href="mailto:demarickwebb@demarickwebb.dev" className="yzy-footer-link">[EMAIL]</a>
           <a href="https://www.linkedin.com/in/demarick-webb1/" target="_blank" rel="noopener noreferrer" className="yzy-footer-link">[LINKEDIN]</a>
           <a href="https://github.com/WebbOfCode" target="_blank" rel="noopener noreferrer" className="yzy-footer-link">[GITHUB]</a>
         </div>

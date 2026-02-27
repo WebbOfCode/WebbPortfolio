@@ -41,7 +41,7 @@ export default function StickyMobileCTA() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="mailto:demarickw104@live.com"
+              href="mailto:demarickwebb@demarickwebb.dev"
               className="px-4 py-2 rounded-lg bg-trust-blue hover:bg-trust-blue-dark text-white text-sm font-semibold transition-colors"
             >
               Email Me
