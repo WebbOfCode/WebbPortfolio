@@ -15,7 +15,7 @@ export default function Navigation({ photoMode, onTogglePhotoMode }: NavigationP
 
   const navItems: Array<{ label: string; href: string }> = [
     { label: 'PROJECTS', href: '#projects' },
-    { label: 'RESUME', href: '/Demarick Webb-Resume Fall 25.docx' },
+    { label: 'RESUME', href: '/resume.docx' },
     { label: 'CONTACT', href: '#contact' },
   ]
 
@@ -49,7 +49,7 @@ export default function Navigation({ photoMode, onTogglePhotoMode }: NavigationP
               {item.label}
             </a>
           ))}
-          <button type="button" className="yzy-nav-link yzy-photo-toggle" onClick={onTogglePhotoMode}>
+          <button type="button" className="yzy-nav-link yzy-photo-toggle yzy-nav-button" onClick={onTogglePhotoMode}>
             PHOTO {photoMode === 'backdrop' ? 'BACKDROP' : 'NAV'}
           </button>
         </div>
@@ -81,9 +81,6 @@ export default function Navigation({ photoMode, onTogglePhotoMode }: NavigationP
               {item.label}
             </a>
           ))}
-          <button type="button" className="yzy-mobile-link yzy-photo-toggle" onClick={onTogglePhotoMode}>
-            PHOTO {photoMode === 'backdrop' ? 'BACKDROP' : 'NAV'}
-          </button>
         </div>
       )}
     </nav>

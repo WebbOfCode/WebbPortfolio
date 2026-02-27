@@ -5,6 +5,9 @@ import { useState, useEffect, useRef } from 'react'
 // DEV VERIFICATION FLAG - Set to false to disable all verification
 const DEV_VERIFY = true
 
+// Konami code: Up, Up, Down, Down, Left, Right, Left, Right, B, A
+const KONAMI_CODE = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a']
+
 interface VerificationState {
   currentMode: 'modern' | 'retro'
   activeTab: string
@@ -40,8 +43,42 @@ export default function DevVerifier() {
     keyboardNavigationWorking: false
   })
 
-  const [isVisible, setIsVisible] = useState(DEV_VERIFY)
+  const [isVisible, setIsVisible] = useState(false)
+  const [autoHideTimer, setAutoHideTimer] = useState<NodeJS.Timeout | null>(null)
   const verificationInterval = useRef<NodeJS.Timeout | null>(null)
+  const konamiSequence = useRef<string[]>([])
+
+  // Konami code detection
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Add key to sequence
+      const key = e.key === ' ' ? 'Space' : e.key
+      konamiSequence.current.push(key)
+
+      // Keep only the last 10 keys
+      if (konamiSequence.current.length > 10) {
+        konamiSequence.current.shift()
+      }
+
+      // Check if last 10 keys match Konami code
+      if (konamiSequence.current.length === 10 && 
+          konamiSequence.current.every((key, idx) => key.toLowerCase() === KONAMI_CODE[idx].toLowerCase())) {
+        setIsVisible(true)
+        konamiSequence.current = []
+
+        // Auto-hide after 5 seconds
+        if (autoHideTimer) clearTimeout(autoHideTimer)
+        const timer = setTimeout(() => setIsVisible(false), 5000)
+        setAutoHideTimer(timer)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      if (autoHideTimer) clearTimeout(autoHideTimer)
+    }
+  }, [autoHideTimer])
 
   // Run comprehensive verification checks
   const runVerification = () => {
@@ -153,7 +190,7 @@ export default function DevVerifier() {
     }
 
     // 8. Theme attribute validation
-    newState.themeAttributeValid = !!currentTheme && (currentTheme === 'modern' || currentTheme === 'retro')
+    newState.themeAttributeValid = !!currentTheme && (currentTheme === 'modern' || currentTheme === 'retro' || currentTheme === 'yeezy')
     if (!newState.themeAttributeValid) {
       console.error('🚨 VERIFICATION FAILED: Theme attribute is missing or incorrect!')
     }
@@ -206,7 +243,7 @@ export default function DevVerifier() {
     // 12. Theme variables distinctness check
     const rootStyle = window.getComputedStyle(document.documentElement)
     const modernVars = {
-      accentGold: rootStyle.getPropertyValue('--accent-gold'),
+      construction: rootStyle.getPropertyValue('--yzy-construction'),
       bgMain: rootStyle.getPropertyValue('--bg-main'),
       textMain: rootStyle.getPropertyValue('--text-main')
     }
@@ -219,7 +256,7 @@ export default function DevVerifier() {
     
     const retroStyle = window.getComputedStyle(document.documentElement)
     const retroVars = {
-      accentGold: retroStyle.getPropertyValue('--accent-gold'),
+      construction: retroStyle.getPropertyValue('--yzy-construction'),
       bgMain: retroStyle.getPropertyValue('--bg-main'),
       textMain: retroStyle.getPropertyValue('--text-main')
     }
@@ -230,7 +267,7 @@ export default function DevVerifier() {
     }
     
     newState.themeVariablesDistinct = 
-      modernVars.accentGold !== retroVars.accentGold ||
+      modernVars.construction !== retroVars.construction ||
       modernVars.bgMain !== retroVars.bgMain ||
       modernVars.textMain !== retroVars.textMain
 

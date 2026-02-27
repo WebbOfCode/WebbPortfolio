@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Suppress hydration warnings caused by browser extensions (Grammarly, etc.)
-  reactStrictMode: true,
+  // Disabled to prevent double-mounting/ghosting in development
+  reactStrictMode: false,
   onDemandEntries: {
     maxInactiveAge: 25 * 1000,
     pagesBufferLength: 2,

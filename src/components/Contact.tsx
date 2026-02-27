@@ -23,22 +23,21 @@ export default function Contact() {
     
     // Validation
     if (!formData.name.trim()) {
-      alert('ENTER YOUR NAME')
+      alert('PLEASE ENTER YOUR NAME')
       return
     }
     if (!formData.email.trim() || !formData.email.includes('@')) {
-      alert('ENTER A VALID EMAIL')
+      alert('PLEASE ENTER A VALID EMAIL')
       return
     }
     if (!formData.message.trim()) {
-      alert('ENTER A MESSAGE')
+      alert('PLEASE ENTER A MESSAGE')
       return
     }
     
     setIsSubmitting(true)
     
     try {
-      // Send email using EmailJS (init is not needed when using send directly)
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_vtlp32a',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_ghiu8yb',
@@ -55,13 +54,13 @@ export default function Contact() {
       )
       
       console.log('Email sent successfully:', result)
-      alert('MESSAGE SENT')
+      alert('MESSAGE SENT. I WILL GET BACK TO YOU SOON.')
       setFormData({ name: '', email: '', message: '' })
       
     } catch (error: any) {
       console.error('Failed to send email:', error)
       console.error('Error details:', error.text || error.message)
-      alert('ERROR SENDING MESSAGE EMAIL ME DIRECTLY AT DEMARICKW104@LIVE.COM')
+      alert('SOMETHING WENT WRONG. PLEASE EMAIL ME DIRECTLY AT DEMARICKW104@LIVE.COM')
     } finally {
       setIsSubmitting(false)
     }
@@ -71,21 +70,21 @@ export default function Contact() {
     <section id="contact" className="section-padding">
       <div className="container-professional">
         <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '65ch', marginLeft: 'auto', marginRight: 'auto' }}>
-          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>CONTACT</h2>
+          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>LET US CONNECT</h2>
           <p className="text-body" style={{ marginBottom: '1rem' }}>
-            OPEN TO FULL TIME SOFTWARE ENGINEERING ROLES STARTING IMMEDIATELY
+            I AM ACTIVELY LOOKING FOR MY FIRST FULL-TIME SOFTWARE ENGINEERING ROLE. IF YOU HAVE AN OPPORTUNITY OR JUST WANT TO TALK SHOP, REACH OUT.
           </p>
           <p className="text-body">
-            EMAIL <a href="mailto:demarickw104@live.com" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>DEMARICKW104@LIVE.COM</a> / <a href="https://www.linkedin.com/in/demarick-webb1/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>LINKEDIN</a>
+            EMAIL ME AT <a href="mailto:demarickw104@live.com" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>DEMARICKW104@LIVE.COM</a>, CALL <a href="tel:719-644-3459" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>719-644-3459</a>, OR FIND ME ON <a href="https://www.linkedin.com/in/demarick-webb1/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>LINKEDIN</a>
           </p>
         </div>
 
-        {/* Simplified Contact Form */}
+        {/* Contact Form */}
         <div className="glass" style={{ maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto', padding: '2.5rem' }}>
           <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
             <div>
               <label htmlFor="name" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
-                NAME
+                YOUR NAME
               </label>
               <input
                 type="text"
@@ -101,15 +100,16 @@ export default function Contact() {
                   background: 'var(--yzy-concrete)',
                   border: '1px solid var(--yzy-ash)',
                   color: 'var(--yzy-bone)',
-                  fontSize: '1rem'
+                  fontSize: '1rem',
+                  fontFamily: 'inherit'
                 }}
-                placeholder="YOUR NAME"
+                placeholder="JANE DOE"
               />
             </div>
             
             <div>
               <label htmlFor="email" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
-                EMAIL
+                YOUR EMAIL
               </label>
               <input
                 type="email"
@@ -125,15 +125,16 @@ export default function Contact() {
                   background: 'var(--yzy-concrete)',
                   border: '1px solid var(--yzy-ash)',
                   color: 'var(--yzy-bone)',
-                  fontSize: '1rem'
+                  fontSize: '1rem',
+                  fontFamily: 'inherit'
                 }}
-                placeholder="YOUR.EMAIL@EXAMPLE.COM"
+                placeholder="JANE@COMPANY.COM"
               />
             </div>
             
             <div>
               <label htmlFor="message" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-main)', marginBottom: '0.5rem' }}>
-                MESSAGE
+                YOUR MESSAGE
               </label>
               <textarea
                 id="message"
@@ -150,9 +151,10 @@ export default function Contact() {
                   border: '1px solid var(--yzy-ash)',
                   color: 'var(--yzy-bone)',
                   fontSize: '1rem',
+                  fontFamily: 'inherit',
                   resize: 'vertical'
                 }}
-                placeholder="PROJECT DETAILS / TIMELINE / QUESTIONS"
+                placeholder="TELL ME ABOUT THE ROLE, YOUR TEAM, OR WHAT YOU ARE BUILDING..."
               />
             </div>
             
@@ -163,7 +165,7 @@ export default function Contact() {
               className="btn btn-primary"
               style={{ width: '100%' }}
             >
-              {isSubmitting ? 'SENDING' : 'SEND'}
+              {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
             </button>
           </form>
         </div>

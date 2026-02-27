@@ -40,7 +40,7 @@ export default function SystemInfo() {
       {/* Progress bar */}
       <div className="h-1 bg-bg-elevated">
         <div
-          className={`h-1 bg-accent-gold ${reducedMotion ? '' : 'transition-all duration-500'} ${loading ? (reducedMotion ? 'w-1/2' : 'w-1/3 animate-pulse') : 'w-full'}`}
+          className={`h-1 bg-yzy-construction ${reducedMotion ? '' : 'transition-all duration-500'} ${loading ? (reducedMotion ? 'w-1/2' : 'w-1/3 animate-pulse') : 'w-full'}`}
           aria-hidden="true"
         ></div>
       </div>
@@ -49,7 +49,7 @@ export default function SystemInfo() {
       <div className="grid md:grid-cols-2 gap-6 p-6">
         {/* Stack Overview */}
         <div className="border border-border-default rounded-lg p-4 bg-bg-elevated">
-          <h3 className="font-mono text-sm text-accent-teal mb-2">STACK OVERVIEW</h3>
+          <h3 className="font-mono text-sm text-yzy-construction mb-2">STACK OVERVIEW</h3>
           <ul className="font-mono text-xs text-text-secondary space-y-1">
             <li>• React 18 (Client + Server Components)</li>
             <li>• Next.js 14 App Router</li>
@@ -60,7 +60,7 @@ export default function SystemInfo() {
 
         {/* Deployment Targets */}
         <div className="border border-border-default rounded-lg p-4 bg-bg-elevated">
-          <h3 className="font-mono text-sm text-accent-teal mb-2">DEPLOYMENT TARGETS</h3>
+          <h3 className="font-mono text-sm text-yzy-construction mb-2">DEPLOYMENT TARGETS</h3>
           <ul className="font-mono text-xs text-text-secondary space-y-1">
             <li>• Vercel (primary)</li>
             <li>• AWS (S3 + CloudFront when needed)</li>
@@ -70,7 +70,7 @@ export default function SystemInfo() {
 
         {/* Design Philosophy */}
         <div className="border border-border-default rounded-lg p-4 bg-bg-elevated">
-          <h3 className="font-mono text-sm text-accent-teal mb-2">DESIGN PHILOSOPHY</h3>
+          <h3 className="font-mono text-sm text-yzy-construction mb-2">DESIGN PHILOSOPHY</h3>
           <ul className="font-mono text-xs text-text-secondary space-y-1">
             <li>• Semantic HTML and accessible patterns</li>
             <li>• Motion with restraint; prefers-reduced-motion respected</li>
@@ -81,7 +81,7 @@ export default function SystemInfo() {
 
         {/* Performance & Accessibility */}
         <div className="border border-border-default rounded-lg p-4 bg-bg-elevated">
-          <h3 className="font-mono text-sm text-accent-teal mb-2">PERFORMANCE / ACCESSIBILITY</h3>
+          <h3 className="font-mono text-sm text-yzy-construction mb-2">PERFORMANCE / ACCESSIBILITY</h3>
           <ul className="font-mono text-xs text-text-secondary space-y-1">
             <li>• Image optimization via Next/Image</li>
             <li>• ARIA roles for tabs, panels, dialogs</li>

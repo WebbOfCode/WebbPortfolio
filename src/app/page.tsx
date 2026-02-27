@@ -19,9 +19,32 @@ export default function Home() {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const clickCount = useRef(0)
   const lastClick = useRef(0)
+  const lastScroll = useRef(0)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', 'yeezy')
+  }, [])
+
+  // Smart scroll: keep status bar visible, hide nav on scroll down
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY
+      const navBar = document.querySelector('.yzy-nav')
+      
+      if (!navBar) return
+      
+      // Hide nav when scrolling down past 100px, show when scrolling up
+      if (currentScroll > lastScroll.current && currentScroll > 100) {
+        navBar.classList.add('yzy-nav-hidden')
+      } else {
+        navBar.classList.remove('yzy-nav-hidden')
+      }
+      
+      lastScroll.current = currentScroll
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
@@ -112,7 +135,7 @@ export default function Home() {
       {/* Skip to main content link for keyboard users */}
       <a 
         href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-burnt-orange focus:text-white focus:rounded-lg focus:font-medium"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-yzy-construction focus:text-white focus:rounded-lg focus:font-medium"
       >
         Skip to main content
       </a>
@@ -142,7 +165,7 @@ export default function Home() {
 
       <button
         type="button"
-        className="yzy-audio-toggle"
+        className={`yzy-audio-toggle ${isAudioPlaying ? 'yzy-audio-toggle-active' : ''}`}
         onClick={() => {
           const audio = audioRef.current
           if (!audio) return

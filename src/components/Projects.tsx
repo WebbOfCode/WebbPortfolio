@@ -16,14 +16,13 @@ type ProjectMeta = {
 }
 
 export default function Projects() {
-  // Keep only the 4 strongest projects
   const projects: ProjectMeta[] = [
     {
       id: 1,
-      title: "CADENCE / VETERAN TRANSITION PLATFORM",
-      problem: "200,000+ SERVICE MEMBERS TRANSITION ANNUALLY WITH 44% FEELING UNPREPARED EXISTING RESOURCES ARE SCATTERED WITH LIMITED PERSONALIZATION",
-      approach: "BUILT FULL STACK NEXT JS PLATFORM WITH GPT 4O INTEGRATION AFTER INTERVIEWING 12 VETERANS MULTI STEP ONBOARDING WITH ZUSTAND STATE AND STRUCTURED PROMPTS",
-      result: "PRODUCTION DEPLOYED PLATFORM WITH 95% TASK COMPLETION RATE IN TESTING ZERO TRUST SECURITY PROTECTS PII",
+      title: "CADENCE",
+      problem: "OVER 200,000 SERVICE MEMBERS TRANSITION OUT EVERY YEAR, AND 44% FEEL UNPREPARED. EXISTING RESOURCES ARE SCATTERED, GENERIC, AND HARD TO NAVIGATE. VETERANS DESERVE BETTER.",
+      approach: "I BUILT A FULL STACK PLATFORM USING NEXT.JS AND GPT-4O TO CREATE PERSONALIZED ROADMAPS. I INTERVIEWED 12 VETERANS TO UNDERSTAND REAL PAIN POINTS. MULTI-STEP ONBOARDING WITH ZUSTAND STATE MANAGEMENT AND STRUCTURED PROMPTS ENSURE EVERY USER GETS A TAILORED PLAN, NOT A GENERIC CHECKLIST.",
+      result: "PRODUCTION-DEPLOYED PLATFORM WITH A 95% TASK COMPLETION RATE IN USER TESTING. BUILT WITH ZERO-TRUST SECURITY PRINCIPLES TO PROTECT SENSITIVE PII. THIS IS THE TOOL I WISH I HAD WHEN I TRANSITIONED.",
       technologies: ["Next.js", "TypeScript", "OpenAI GPT-4o", "Zustand", "Tailwind CSS"],
       image: "/cadence.svg",
       liveUrl: "https://cadence-blond.vercel.app/",
@@ -33,9 +32,9 @@ export default function Projects() {
     {
       id: 2,
       title: "TRAFFICWIZ",
-      problem: "NASHVILLE LACKS ACCURATE REAL TIME TRAFFIC PREDICTION TOOLS FOR COMMUTERS AND CITY PLANNERS",
-      approach: "BUILT ML DASHBOARD WITH REACT FRONTEND AND PYTHON SCIKIT LEARN BACKEND WITH POSTGRESQL",
-      result: "15% BETTER PREDICTION ACCURACY THAN EXISTING CITY TOOLS MTSU CAPSTONE A GRADE",
+      problem: "NASHVILLE TRAFFIC IS NOTORIOUS, BUT EXISTING PREDICTION TOOLS ARE EITHER INACCURATE OR BUILT FOR CITY PLANNERS, NOT COMMUTERS. PEOPLE NEED ACTIONABLE INSIGHTS, NOT RAW DATA DUMPS.",
+      approach: "I BUILT AN ML-POWERED DASHBOARD WITH A REACT FRONTEND AND PYTHON BACKEND USING SCIKIT-LEARN. TRAINED MODELS ON HISTORICAL TRAFFIC DATA TO PREDICT CONGESTION PATTERNS. POSTGRESQL FOR DATA PERSISTENCE. FOCUSED ON MAKING COMPLEX ML OUTPUTS ACTUALLY USABLE FOR REGULAR PEOPLE.",
+      result: "15% BETTER PREDICTION ACCURACY THAN THE CITY'S EXISTING TOOLS. EARNED AN A IN MY MTSU CAPSTONE COURSE. PROVED I CAN TAKE A PROJECT FROM DATA COLLECTION TO DEPLOYED PRODUCT.",
       technologies: ["React", "Python", "Scikit-learn", "PostgreSQL"],
       image: "/trafficwiz.svg",
       liveUrl: "https://github.com/WebbOfCode/TrafficWiz",
@@ -45,9 +44,9 @@ export default function Projects() {
     {
       id: 3,
       title: "SAFE URL CHECKER",
-      problem: "PHISHING ATTACKS TARGET NON TECHNICAL USERS WHO CANNOT IDENTIFY MALICIOUS LINKS",
-      approach: "NEXT JS SECURITY TOOL INTEGRATING MULTIPLE THREAT INTELLIGENCE APIS FOR URL ANALYSIS",
-      result: "REAL TIME THREAT DETECTION WITH SECURITY FIRST DEVELOPMENT AND API INTEGRATION",
+      problem: "PHISHING ATTACKS ARE GETTING MORE SOPHISTICATED, AND NON-TECHNICAL USERS ARE THE MOST VULNERABLE. MOST PEOPLE CANNOT SPOT A MALICIOUS LINK UNTIL IT IS TOO LATE.",
+      approach: "BUILT A SECURITY-FOCUSED TOOL USING NEXT.JS THAT INTEGRATES MULTIPLE THREAT INTELLIGENCE APIS. REAL-TIME URL ANALYSIS WITH CLEAR, ACTIONABLE RESULTS. NO SECURITY JARGON — JUST A SIMPLE VERDICT WITH CONTEXT.",
+      result: "REAL-TIME THREAT DETECTION WITH SUB-SECOND RESPONSE TIMES. SECURITY-FIRST DEVELOPMENT PRACTICES INCLUDING INPUT SANITIZATION AND RATE LIMITING. A TOOL THAT ACTUALLY PROTECTS PEOPLE.",
       technologies: ["Next.js", "TypeScript", "Vercel", "Security APIs"],
       image: "/safeurlcheck.svg",
       liveUrl: "https://safeurlcheck.vercel.app/",
@@ -57,9 +56,9 @@ export default function Projects() {
     {
       id: 4,
       title: "SMART WHEEL RESEARCH SIMULATOR",
-      problem: "VANDERBILT ROBOTICS NEEDED A WAY TO STUDY DRIVER REACTIONS AND COGNITIVE LOAD DURING AUTONOMOUS TRANSITIONS",
-      approach: "BUILT UNITY DRIVING SIMULATOR WITH SPLIT SCREEN AND COGNITIVE MINIGAMES C# LOGIC AND SPEECH RECOGNITION",
-      result: "RESEARCH GRADE SIMULATOR FOR REAL TIME ATTENTION MONITORING AND SAFER AUTONOMOUS TRANSITIONS",
+      problem: "VANDERBILT'S AUTONOMOUS VEHICLE RESEARCH TEAM NEEDED A WAY TO STUDY HOW DRIVERS REACT WHEN AUTONOMOUS SYSTEMS HAND BACK CONTROL. COGNITIVE LOAD AND REACTION TIME ARE HARD TO MEASURE IN THE REAL WORLD.",
+      approach: "BUILT A UNITY-BASED DRIVING SIMULATOR WITH SPLIT-SCREEN COGNITIVE MINIGAMES TO TEST ATTENTION UNDER LOAD. C# LOGIC FOR REAL-TIME DATA COLLECTION AND SPEECH RECOGNITION FOR VOICE COMMANDS. DESIGNED TO GENERATE RESEARCH-GRADE DATA.",
+      result: "RESEARCH-GRADE SIMULATOR DEPLOYED FOR ACTIVE STUDIES. ENABLES REAL-TIME ATTENTION MONITORING AND SAFER AUTONOMOUS TRANSITIONS. WORKING WITH PHD RESEARCHERS TAUGHT ME A LOT ABOUT BUILDING FOR EXACTING REQUIREMENTS.",
       technologies: ["Unity", "C#", "Speech Recognition", "FFmpeg"],
       image: "/driving.svg",
       liveUrl: "https://github.com/WebbOfCode/sample9632",
@@ -80,18 +79,18 @@ export default function Projects() {
     <section id="projects" className="section-padding">
       <div className="container-professional">
         <div style={{ marginBottom: '4rem' }}>
-          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>WORK</h2>
+          <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>SELECTED WORK</h2>
           <p className="text-body" style={{ maxWidth: '65ch' }}>
-            PRODUCTION READY SYSTEMS THAT DEMONSTRATE FULL STACK CAPABILITY SECURITY FOCUS AND REAL WORLD PROBLEM SOLVING
+            THESE PROJECTS SHOW WHAT I CAN BUILD WHEN GIVEN A PROBLEM WORTH SOLVING. EACH ONE DEMONSTRATES FULL STACK CAPABILITY, SECURITY AWARENESS, AND A FOCUS ON REAL-WORLD IMPACT.
           </p>
         </div>
 
-        {/* Project Cards - Simple Grid */}
+        {/* Project Cards */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="card-project yzy-project"
+              className="card-project yzy-project yzy-project-card"
             >
               <div className="relative group yzy-project-media">
                 <Image 
@@ -103,14 +102,7 @@ export default function Projects() {
                 />
                 
                 {/* Year badge */}
-                <div className="absolute top-4 left-4 yzy-mono" style={{ 
-                  background: 'var(--yzy-ash)', 
-                  padding: '0.25rem 0.75rem',
-                  fontSize: '0.6875rem',
-                  fontWeight: 500,
-                  color: 'var(--yzy-bone)',
-                  border: '1px solid var(--yzy-ash)'
-                }}>
+                <div className="yzy-project-year">
                   {project.year}
                 </div>
               </div>
@@ -118,18 +110,18 @@ export default function Projects() {
               <div className="card-project-content">
                 <h3 className="card-project-title">{project.title}</h3>
                 
-                {/* Case Study Format - Condensed */}
+                {/* Case Study Format */}
                 <div style={{ marginBottom: '1.5rem', flex: 1 }}>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>PROBLEM</span>
+                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>THE PROBLEM</span>
                     <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.6' }}>{project.problem}</p>
                   </div>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>APPROACH</span>
+                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>MY APPROACH</span>
                     <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.6' }}>{project.approach}</p>
                   </div>
                   <div>
-                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>RESULT</span>
+                    <span className="yzy-mono" style={{ fontSize: '0.625rem', fontWeight: 700, color: 'var(--yzy-construction)', letterSpacing: '0.08em' }}>THE RESULT</span>
                     <p className="text-small" style={{ marginTop: '0.25rem', lineHeight: '1.6' }}>{project.result}</p>
                   </div>
                 </div>
@@ -160,7 +152,7 @@ export default function Projects() {
                     onClick={() => handleLiveDemo(project.liveUrl)}
                     className="btn btn-primary"
                   >
-                    {project.liveUrl === project.githubUrl ? 'VIEW WORK →' : 'VIEW WORK →'}
+                    {project.liveUrl === project.githubUrl ? 'VIEW PROJECT →' : 'LIVE DEMO →'}
                   </button>
                   {project.liveUrl !== project.githubUrl && (
                     <button
@@ -185,7 +177,7 @@ export default function Projects() {
             className="btn btn-secondary"
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
           >
-            MORE ON GITHUB →
+            SEE MORE ON GITHUB →
           </a>
         </div>
       </div>
