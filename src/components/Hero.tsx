@@ -50,10 +50,10 @@ export default function Hero({ photoMode }: HeroProps) {
               
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <a href="#projects" className="btn btn-primary">
-                  SEE WHAT I HAVE BUILT →
+                  SEE WHAT I'VE BUILT →
                 </a>
                 <a href="mailto:demarickwebb@demarickwebb.dev" className="btn btn-success">
-                  LET US TALK
+                  LET'S CONNECT
                 </a>
                 <a href="/resume.docx" className="btn btn-secondary" download>
                   DOWNLOAD RESUME (DOCX)

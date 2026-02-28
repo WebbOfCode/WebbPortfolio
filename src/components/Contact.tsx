@@ -72,10 +72,10 @@ export default function Contact() {
         <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: '65ch', marginLeft: 'auto', marginRight: 'auto' }}>
           <h2 className="text-section" style={{ marginBottom: '1.5rem' }}>LET US CONNECT</h2>
           <p className="text-body" style={{ marginBottom: '1rem' }}>
-            I AM ACTIVELY LOOKING FOR MY FIRST FULL-TIME SOFTWARE ENGINEERING ROLE. IF YOU HAVE AN OPPORTUNITY OR JUST WANT TO TALK SHOP, REACH OUT.
+            I AM ACTIVELY LOOKING FOR MY FIRST FULL-TIME SOFTWARE ENGINEERING ROLE. IF YOU HAVE AN OPPORTUNITY OR JUST WANT TO TALK TECH, JUST REACH OUT.
           </p>
           <p className="text-body">
-            EMAIL ME AT <a href="mailto:demarickw104@live.com" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>DEMARICKW104@LIVE.COM</a>, CALL <a href="tel:719-644-3459" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>719-644-3459</a>, OR FIND ME ON <a href="https://www.linkedin.com/in/demarick-webb1/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>LINKEDIN</a>
+            EMAIL ME AT <a href="mailto:DEMARICK@DEMARICKWEBB.DEV" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>DEMARICK@DEMARICKWEBB.DEV</a> OR FIND ME ON <a href="https://www.linkedin.com/in/demarick-webb1/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--yzy-construction)', textDecoration: 'underline' }}>LINKEDIN</a>
           </p>
         </div>
 
