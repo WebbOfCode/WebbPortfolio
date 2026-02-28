@@ -27,7 +27,7 @@ export default function Projects() {
       image: "/cadence.svg",
       liveUrl: "https://cadence-blond.vercel.app/",
       githubUrl: "https://github.com/WebbOfCode/cadence",
-      year: "2024"
+      year: "2026"
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export default function Projects() {
       image: "/trafficwiz.svg",
       liveUrl: "https://github.com/WebbOfCode/TrafficWiz",
       githubUrl: "https://github.com/WebbOfCode/TrafficWiz",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ export default function Projects() {
       image: "/safeurlcheck.svg",
       liveUrl: "https://safeurlcheck.vercel.app/",
       githubUrl: "https://github.com/WebbOfCode/COdeRivers",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 4,
