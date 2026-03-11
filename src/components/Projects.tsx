@@ -51,7 +51,7 @@ export default function Projects() {
       image: "/safeurlcheck.svg",
       liveUrl: "https://safeurlcheck.vercel.app/",
       githubUrl: "https://github.com/WebbOfCode/COdeRivers",
-      year: "2024"
+      year: "2025"
     },
     {
       id: 4,
