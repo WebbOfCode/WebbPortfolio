@@ -24,6 +24,11 @@ export default function Footer() {
         {/* Copyright */}
         <div className="yzy-footer-copyright">© {currentYear} DEMARICK WEBB-RIVERA</div>
       </div>
+
+<!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com/" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=21482940&style=0001&nbdigits=5&type=page&initCount=0" title="Free Tools" Alt="Free Tools"   border="0" /></a>                                    
+
     </footer>
   )
 }
